@@ -1,1 +1,2 @@
-# cat-theory-w22-ucsc
+# Category Theory Seminar, Winter 2022, UCSC
+Lecture Notes
