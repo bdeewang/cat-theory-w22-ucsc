@@ -1,0 +1,252 @@
+\vspace*{1em}
+
+\begin{discussion}\label{unit-counit}
+Suppose we have an adjunction $F \dashv G$, where $F:\cat{C} \rightleftarrows \cat{D}:G$. That is, we have bijections, natural in their entries
+\[\tau_{X,\,Y}: \mathrm{Hom}_{\cat{D}}(F(X),Y) \overset{\!\!\sim}{\to} \mathrm{Hom}_{\cat{C}}(X,G(Y))\]
+Fixing an object $C$ in $\cat{C}$, this asserts that the functor $\mathrm{Hom}_{\cat{C}}(C,G(-))$ is represented by $F(C)$, so a representation will be given by $(F(C),\eta_C)$ where $\eta_C$ is an element of $\mathrm{Hom}_{\cat{C}}(C,G(F(C)))$ that affords the required natural isomorphism. Specifically, \[\eta_C = \tau_{C,\,F(C)}(1_{F(C)}).\]
+The naturality of the adjunction gives us that $\eta_C$ assembles into a natural transformation
+\[\eta:1_{\cat{C}} \Rightarrow GF\]
+and is called the \emph{unit} of the adjunction.\\[1em]
+Dually, fixing an object $D$ in $\cat{D}$, the adjunction asserts that the functor $\mathrm{Hom}_{\cat{D}}(F(-),D)$ is represented by $G(D)$, so a representation will be given by $(G(D),\epsilon_D)$ where $\epsilon_D$ is an element of $\mathrm{Hom}_{\cat{D}}(F(G(D)),D)$ that affords the required natural isomorphism. Specifically, \[\epsilon_D = \tau^{-1}_{G(D),\,D}(1_{G(D)}).\]
+The naturality of the adjunction gives us that $\epsilon_D$ assembles into a natural transformation
+\[\epsilon:FG \Rightarrow 1_{\cat{D}}\]
+and is called the \emph{counit} of the adjunction.\\[1em]
+We ask ourselves the question: are there conditions that we can ask $\eta$ and $\epsilon$ to satisfy such that they characterise the adjunction $F\dashv G$. The answer is yes. 
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{theorem}[Adjunction via Unit-Counit]\label{adjunitco}
+Given a pair of functors $F : \cat{C} \rightleftarrows \cat{D}: G$, we have $F\dashv G$ if and only if there exists a pair of natural transformations $\eta : 1_\cat{C} \Rightarrow GF$ and $\epsilon : FG \Rightarrow 1_{\cat{D}}$ satisfying the triangle identities, which is that the following triangle of natural transformations commute
+\[\begin{tikzcd}[column sep=large, row sep=huge]
+F \arrow[r, "F\eta", Rightarrow] \arrow[rd, "1_F"', Rightarrow] & FGF \arrow[d, "\,\epsilon F", Rightarrow] \\[0.5em]
+                                                                & F                                      
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[column sep=large, row sep=huge]
+G \arrow[r, "\eta G", Rightarrow] \arrow[rd, "1_G"', Rightarrow] & GFG \arrow[d, "\,G\epsilon", Rightarrow] \\[0.5em]
+                                                                 & G                                     
+\end{tikzcd}\]
+To reiterate, the left-hand triangle asserts that a certain diagram commutes in $\cat{D}^\cat{C}$, while the right-hand triangle asserts that the dual diagram commutes in $\cat{C}^\cat{D}$.
+\end{theorem}
+
+ \vspace*{0.1in}
+
+\begin{example}
+Let's find the unit $\eta$ and counit $\epsilon$ of the tensor-hom adjunction. So, let's fix an $R$-module $M$, where $R$ is a commutative ring. Then we have the following bijection natural in its entries
+\begin{align*}
+\tau_{L,\,N}:\mathrm{Hom}_R(L\otimes_R M,N) &\overset{\sim}{\longrightarrow} \mathrm{Hom}_R(L,\mathrm{Hom}_R(M,N))\\[0.5em]
+\phi &\longmapsto (x \mapsto (m \mapsto \phi(x \otimes m)))\\[0.5em]
+(x \otimes m \mapsto \psi(x)(m))&\longmapsfrom \psi 
+\end{align*}
+Let $N = L\otimes_R M$, this gives us
+\[\tau_{L,\,L\otimes_R M}:\mathrm{Hom}_R(L\otimes_R M,L\otimes_R M) \overset{\sim}{\longrightarrow} \mathrm{Hom}_R(L,\mathrm{Hom}_R(M,L\otimes_R M))\]
+Then the component of $\eta$ at $L$ is $\eta_L = \tau_{L,\,L\otimes_R M}(1_{L\otimes_R M})$, that is, it's the morphism
+\begin{align*}
+\eta_L:L &\to \mathrm{Hom}_R(M,L\otimes_R M)\\[0.5em]
+x &\mapsto (m \mapsto x \otimes m)
+\end{align*}
+Let $L = \mathrm{Hom}_R(M,N)$, this gives us
+\[\tau_{\mathrm{Hom}_R(M,N),\,N}:\mathrm{Hom}_R(\mathrm{Hom}_R(M,N)\otimes_R M,N) \overset{\sim}{\longrightarrow} \mathrm{Hom}_R(\mathrm{Hom}_R(M,N),\mathrm{Hom}_R(M,N))\]
+Then the component of $\epsilon$ at $N$ is $\epsilon_N = \tau_{\mathrm{Hom}_R(M,N),\,N}^{-1}(1_{\mathrm{Hom}_R(M,N)})$, that is, it's the morphism
+\begin{align*}
+\epsilon_N: \mathrm{Hom}_R(M,N)\otimes_R M &\to N\\[0.5em]
+f \otimes m&\mapsto f(m)
+\end{align*}
+\end{example}
+%
+%\vspace*{0.1in}
+%
+%\begin{example}
+%Suppose we have an adjunction $F \dashv G$, where $F:\cat{C} \rightleftarrows \cat{D}:G$. That is, we have bijections, natural in their entries
+%\[\tau_{X,\,Y}: \mathrm{Hom}_{\cat{D}}(F(X),Y) \overset{\sim}{\to} \mathrm{Hom}_{\cat{C}}(X,G(Y))\]
+%Fixing an object $C$ in $\cat{C}$, this asserts that the functor $\mathrm{Hom}_{\cat{C}}(C,G(-))$ is represented by $F(C)$, so a representation will be given by $(F(C),\eta_C)$ where $\eta_C$ is an element of $\mathrm{Hom}_{\cat{C}}(C,G(F(C)))$ that affords the required natural isomorphism. Specifically, \[\eta_C = \tau_{C,\,F(C)}(1_{F(C)}).\]
+%The naturality of the adjunction gives us that $\eta_C$ assembles into a natural transformation
+%\[\eta:1_{\cat{C}} \Rightarrow GF\]
+%and is called the \emph{unit} of the adjunction.\\[1em]
+%Dually, fixing an object $D$ in $\cat{D}$, the adjunction asserts that the functor $\mathrm{Hom}_{\cat{D}}(F(-),D)$ is represented by $G(D)$, so a representation will be given by $(G(D),\epsilon_D)$ where $\epsilon_D$ is an element of $\mathrm{Hom}_{\cat{D}}(F(G(D)),D)$ that affords the required natural isomorphism. Specifically, \[\epsilon_D = \tau^{-1}_{G(D),\,D}(1_{G(D)}).\]
+%The naturality of the adjunction gives us that $\epsilon_D$ assembles into a natural transformation
+%\[\epsilon:FG \Rightarrow 1_{\cat{D}}\]
+%and is called the \emph{counit} of the adjunction.\\[1em]
+%We ask ourselves the question: are there conditions that we can ask $\eta$ and $\epsilon$ to satisfy such that they characterise the adjunction $F\dashv G$. The answer is yes. 
+%\end{example}
+
+\vspace*{0.1in}
+
+\begin{corollary}[Unit-Counit for Monotone Galois Connections]
+If $\ncat{P}$ and $\ncat{Q}$ are posets and $F : \ncat{P} \rightleftarrows \ncat{Q}$ form a Galois connection, with $F \dashv G$, then $F$ and $G$ satisfy the following fixed point formulae
+\[FGF = F \quad \text{and} \quad GFG = G.\]
+\end{corollary}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Suppose $F \dashv G$ and $F \dashv H$, where $F: \cat{C} \rightleftarrows \cat{D}:G,H$, then Discussion \ref{unit-counit} tells us that, fixing an object $D$ in $\cat{D}$, both $G(D)$ and $H(D)$ represent $\mathrm{Hom}_{\cat{D}}(F(-),D)$. Therefore $G(D) \cong H(D)$, and this isomorphism is natural; one can deduce this from the given adjunctions. Hence $G$ is naturally isomorphic to $H$.\\[0.5em]
+Similarly, if $F \dashv K$ and $G \dashv K$, then we similarly have that $F$ is naturally isomorphic to $G$.\\[1em]
+Hence, any adjoint functor determines its adjoints up to natural isomorphism.
+\end{remark}
+
+\vspace*{0.2in}
+
+How about contravariant functors?
+\begin{definition}
+A pair of contravariant functors $F:\cat{C}^{\text{op}} \to \cat{D}$ and $G:\cat{D}^{\text{op}} \to \cat{C}$ \emph{are mutually left adjoint} if there exists a natural isomorphism
+\[\mathrm{Hom}_{\cat{D}}(F(X),Y) \cong \mathrm{Hom}_{\cat{C}}(G(Y),X)\]
+or \emph{mutually right adjoint} if there exists a natural isomorphism
+\[\mathrm{Hom}_{\cat{D}}(Y,F(X)) \cong \mathrm{Hom}_{\cat{C}}(X,G(Y)).\]
+
+Dualizing Discussion \ref{unit-counit} and Theorem \ref{adjunitco}, a pair of functors $F:\cat{C}^{\text{op}} \to \cat{D}$ and $G:\cat{D}^{\text{op}} \to \cat{C}$ that
+\begin{itemize}
+\item are mutually left adjoints come equipped with a pair of "counit" natural transformations $GF \Rightarrow 1_{\cat{C}}$ and $FG \Rightarrow 1_{\cat{D}}$;
+\item are mutually right adjoints come equipped with a pair of "unit" natural transformations $1_{\cat{C}} \Rightarrow GF$ and $1_{\cat{D}} \Rightarrow FG$.
+\end{itemize}
+The formulation of the triangle identities in each case is left to Problem \ref{prob 9.4}.\\[1em]
+Mutual right adjoints between posets form what is sometimes called an \emph{antitone Galois connection}. The prototypical and eponymous example is the \emph{Fundamental Theorem of Galois Theory}.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}\label{spec-global}
+Let $\ncat{LRS}$ be the category of locally ringed spaces $(X,\cat{O}_X)$. Then the functors
+\[\mathrm{Spec}:\ncat{CRing}^{\text{op}} \to \ncat{LRS},\ A \mapsto \mathrm{Spec}(A)\quad \text{and}\quad \Gamma:\ncat{LRS}^{\text{op}} \to \ncat{CRing},\ (X,\cat{O}_X) \mapsto \Gamma(X,\cat{O}_X)\]
+are mutually right adjoint
+\[\mathrm{Hom}_{\ncat{CRing}}(A,\Gamma(X,\cat{O}_X)) \cong \mathrm{Hom}_{\ncat{LRS}}(X,\mathrm{Spec}(A)).\]
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Recall, from Discussion \ref{cone-adjunc}, that given a \emph{$\cat{J}$-shaped diagram} in a category $\cat{C}$, that is a functor $D: \cat{J} \to \cat{C}$, the \emph{limit of $D$}, if it exists, is a representation (in the sense of Discussion \ref{univel}) of the functor $\mathrm{Cone}(-,D)$. That is, we have a natural isomorphism (natural in $X$)
+\[\mathrm{Hom}_{\cat{C}^{\cat{J}}}(\Delta(X),D) = \mathrm{Nat}(\Delta(X),D) = \mathrm{Cone}(X,D) \cong \mathrm{Hom}_{\cat{C}}(X,\lim D)\]
+Dually, we also have
+\[\mathrm{Hom}_{\cat{C}^{\cat{J}}}(D,\Delta(X)) \cong \mathrm{Hom}_{\cat{C}}(\colim D,X)\]
+Here $\Delta:\cat{C} \to \cat{C}^\cat{J}$ is the functor which sends any object $X$ to the constant diagram $\Delta(X):\cat{J} \to \cat{C}$ which sends every object in $\cat{J}$ to $X$.\\
+\\
+These isomorphisms, in fact, upgrade to adjunctions $\colim \dashv \Delta \dashv \lim$. Hence, we have: \emph{A category $\cat{C}$ admits all limits of diagrams indexed by a small category $\cat{J}$ if and only if the constant diagram functor $\Delta:\cat{C} \to \cat{C}^\cat{J}$ admits a right adjoint, and admits all colimits of $\cat{J}$-shaped diagrams if and only if $\Delta$ admits a left adjoint.}
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{theorem}[RAPL]\label{rapl}
+Right adjoints preserve limits. Dually, left adjoints preserve colimits.\\[1em]
+That is, if $F:\cat{C} \to \cat{D}$ is a right adjoint (there exists a functor $H:\cat{D} \to \cat{C}$ such that $H \dashv F$) then
+\[F(\lim A) \cong \lim F(A)\]
+whenever $\lim A$ exists, where $\lim A$ is the limit of a diagram $A:\cat{J} \to \cat{C}$.
+\end{theorem}
+\begin{proof}[Sketch of Proof for Products]
+Let the adjunction be built from the bijections
+\begin{align*}
+\mathrm{Hom}_{\cat{C}}(H(X),Y) &\leftrightarrow \mathrm{Hom}_{\cat{D}}(X,F(Y))\\[0.5em]
+f^\sharp &\leftrightarrow f^\flat
+\end{align*}
+We'll explicitly prove this result for a baby case. Let $X \times Y$ be a product of objects $X$ and $Y$ in $\cat{C}$, we want to prove that \[F(X \times Y) \cong F(X) \times F(Y);\]
+we prove this by showing that $F(X \times Y)$ satisfies the universal property of products.\\
+\\
+Consider the product diagram
+\[\begin{tikzcd}[row sep=large, column sep=small]
+  & X\times Y \arrow[ld, "p_X"'] \arrow[rd, "p_Y"] &   \\
+X &                                                & Y
+\end{tikzcd}\qquad \underset{\text{apply $F$}}{\leadsto} \qquad
+\begin{tikzcd}[row sep=large, column sep=tiny]
+  & F(X\times Y) \arrow[ld, "F(p_X)"'] \arrow[rd, "F(p_Y)"] &   \\
+F(X) &                                                & F(Y)
+\end{tikzcd}\]
+We show that $(F(X \times Y),F(p_X),F(p_Y))$ is the product of $F(X)$ and $F(Y)$; that is, that it satisfies the universal property. Consider any other object $W$ in $\cat{D}$ such that
+\[\begin{tikzcd}[row sep=huge, column sep=tiny]
+  & W \arrow[ldd, "f_X"', bend right] \arrow[rdd, "f_Y", bend left] &   \\
+  & F(X\times Y) \arrow[ld, "F(p_X)"' description] \arrow[rd, "F(p_Y)" description]                  &   \\
+F(X) &                                                                 & F(Y)
+\end{tikzcd}\qquad \underset{\text{apply adjunction}}{\leadsto} \qquad
+\begin{tikzcd}[row sep=huge]
+  & H(W) \arrow[ldd, "f^\sharp_X"', bend right] \arrow[rdd, "f^\sharp_Y", bend left] &   \\
+  & X\times Y \arrow[ld, "p_X"' description] \arrow[rd, "p_Y" description]                  &   \\
+X &                                                                 & Y
+\end{tikzcd}\]
+Then by the universal property of the product we have
+\[\begin{tikzcd}[row sep=huge]
+  & H(W) \arrow[ldd, "f^\sharp_X"', bend right] \arrow[rdd, "f^\sharp_Y", bend left]  \arrow[d, "h"' description, dashed] &   \\
+  & X\times Y \arrow[ld, "p_X"' description] \arrow[rd, "p_Y" description]                  &   \\
+X &                                                                 & Y
+\end{tikzcd}\qquad \underset{\text{apply adjunction}}{\leadsto} \qquad
+\begin{tikzcd}[row sep=huge, column sep=tiny]
+  & W \arrow[ldd, "f_X"', bend right] \arrow[rdd, "f_Y", bend left]  \arrow[d, "h^\flat"' description, dashed] &   \\
+  & F(X\times Y) \arrow[ld, "F(p_X)"' description] \arrow[rd, "F(p_Y)" description]                  &   \\
+F(X) &                                                                 & F(Y)
+\end{tikzcd}\]
+Uniqueness and commutativity with respect to $h^\flat$ is a consequence of the adjunction, and therefore $F(X \times Y)$ satisfies the universal property of the product. Hence
+\[F(X \times Y) \cong F(X) \times F(Y)\]
+given by a unique $\phi$ such that \[p_{F(X)} \circ \phi = F(p_X) \quad \text{and} \quad p_{F(Y)} \circ \phi = F(p_Y).\]
+The general proof follows as a result of the following adjunction isomorphisms and that $\Delta$ commutes with functors
+\begin{align*}
+\mathrm{Hom}_{\mathcal{D}^{\cat{J}}}(\Delta(X),F(A)) &\cong \mathrm{Hom}_{\mathcal{C}^{\cat{J}}}(H(\Delta(X)),A)\\[0.5em]
+&\cong \mathrm{Hom}_{\mathcal{C}^{\cat{J}}}(\Delta(H(X)),A)\\[0.5em]
+&\cong \mathrm{Hom}_{\mathcal{C}}(H(X),\lim A)\\[0.5em]
+&\cong \mathrm{Hom}_{\mathcal{D}}(X,F(\lim A))
+\end{align*}
+That is, $F(\lim A)$ exhibits the defining universal property of the limit, and therefore $F(\lim A) \cong \lim F(A)$ canonically.
+\end{proof}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+This is precisely why products in categories like $\ncat{Grp},\,\ncat{Ring},\,\ncat{Mod}_R$ and $\ncat{Top}$ are so familiar, that is because the forgetful functors are all right adjoints (the left adjoints are listed in Example \ref{freeforget}). The underlying sets of limits in groups, rings, $R$-modules and topological spaces, like products, pullbacks etc., are the limits in the category of sets.\\[0.5em]
+On the other hand, forgetful functors rarely are left adjoints, therefore colimits in these categories are much different, for example the free product in $\ncat{Grp}$ and the tensor product in $\ncat{CRing}$. But the forgetful functor from the category of topological spaces to sets does possess a right adjoint, making it a left adjoint, and therefore the colimits in $\ncat{Top}$ look exactly like the ones in $\ncat{Set}$ with an appropriate topology. 
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{example}
+We use Theorem \ref{rapl} to show how it can be used to prove the non-existence of adjoints. Consider the forgetful functor $U:\ncat{Ring} \to \ncat{Rng}$, we have seen in Problem \ref{prob 8.2} that it has a left adjoint, the Dorroh extension.\\[0.5em]
+Let's prove that $U$ does not have any right adjoints. Suppose it did, then $U$ would be a left adjoint and then the dual statement of Theorem \ref{rapl} that it would preserve all small colimits. In particular, initial objects (which are empty coproducts). But $U(\zz)$ is not the initial object of $\ncat{Rng}$, which is the $0$ ring, while $\zz$ is the initial object of $\ncat{Ring}$. Hence we have arrived at a contradiction, and thus $U$ has no right adjoint. 
+\end{example}
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob 9.1}
+Pick some (or all) examples given in Examples \ref{freeforget}, \ref{reflect} and \ref{notfreeforget} (1), and work out the unit and counit (you should have proved these are adjunctions in Problem \ref{prob 8.1}).
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 9.2}\hfill
+\begin{itemize}
+\item[(a)] Let $F:\cat{C} \rightleftarrows \cat{D}:G$ be a pair of functors such that $F\dashv G$ with unit $\eta$ and counit $\epsilon$. Write $\mathrm{Fix}(GF)$ for the full subcategory of $\cat{C}$ whose objects are those $C$ in $\cat{C}$ such that $\eta_C$ is an isomorphism, and dually consider $\mathrm{Fix}(FG) \hookrightarrow \cat{D}$.\\[0.5em]
+Prove that the adjunction $(F,G,\eta,\epsilon)$ restricts to an equivalence $(F',G', \eta', \epsilon')$ between $\mathrm{Fix}(GF)$ and $\mathrm{Fix}(FG)$.
+\item[(b)] Part (a) shows that every adjunction restricts to an equivalence between full subcategories in a canonical way.\\[0.5em]
+Pick some (or all) examples given in Examples \ref{freeforget} and \ref{notfreeforget}, and work out the full subcategories that are shown to be equivalent in this way.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 9.3}\hfill
+\begin{itemize}
+\item[(a)] Prove that for the examples in Example \ref{reflect}, the counit is an isomorphism.
+\item[(b)] More generally, show that for any adjunction, the right adjoint is full and faithful if and only if the counit is an isomorphism.\\[1em]
+Such adjunctions, in general, are called \emph{reflections}. The essential image of the right adjoint, in this case, is then a reflective subcategory. Dualising we get \emph{coreflections}, and the essential image of the left adjoint is then a coreflective subcategory.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 9.4}\hfill
+\begin{itemize}
+\item[(a)] Dualize Theorem \ref{adjunitco} to define mutual left adjoints and mutual right adjoints as a pair of contravariant functors equipped with appropriate natural transformations.
+\item[(b)] Repeat Problem \ref{prob 9.2} (a) for mutually left and right adjoints. \\[1em]
+In the case of Example \ref{spec-global}, the adjunction restricts to give an equivalence between the category of commutative unital rings and affine schemes, an example of duality.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 9.5}
+Show that the inverse image (contravariant power set) functor $\cat{P}^*: \ncat{Set}^{\text{op}} \to \ncat{Set}$ is mutually right adjoint to itself. Determine the units of this adjunction, as worked out in Problem \ref{prob 9.4} (a).
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 9.6}
+Which of the examples given in Examples \ref{freeforget}, \ref{reflect} and \ref{notfreeforget} (1) don't have right adjoints.
+\end{problem}

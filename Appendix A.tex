@@ -1,0 +1,318 @@
+\vspace*{1em}
+%https://qchu.wordpress.com/2012/02/06/centers-2-categories-and-the-eckmann-hilton-argument/
+In this section, we will explore (strict) $2$-categories, as teased in Remark \ref{2cat}. We begin by investigating the prototypical example of category of categories.
+
+\vspace*{0.1in}
+
+\begin{discussion}
+For categories $\cat{C}$ and $\cat{D}$, we have already seen the \emph{functor category} $\cat{D}^{\cat{C}}$ in Problem \ref{prob 3.1}, where the morphisms are given by natural transformations. Recall that the identity morphism of an object (functor) $F$ in $\cat{D}^{\cat{C}}$ is given by the natural transformation $1_F:F \Rightarrow F$ with components $(1_F)_X \coloneqq 1_{F(X)}: F(X) \to F(X)$ for any object $X$ in $\cat{C}$.\\[0.5em]
+Furthermore, recall given natural transformations $\alpha:F \Rightarrow G$ and $\beta: G \Rightarrow H$, their composition in $\cat{D}^{\cat{C}}$ is defined as the natural transformation $\beta\cdot \alpha:F \Rightarrow H$. The components are given as
+\[(\beta\cdot\alpha)_X \coloneqq \beta_X\alpha_X,\]
+for any object $X$ in $\cat{C}$; this is the composition of morphisms $\alpha_X:F(X) \to G(X)$ and $\beta:G(X) \to H(X)$ in $\cat{D}$.
+\[\begin{tikzcd}
+	\cat{C} && \cat{D}
+	\arrow[""{name=0, anchor=center, inner sep=3}, "G"{description}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \alpha", shorten <=2pt, shorten >=2pt, Rightarrow, from=1, to=0]
+	\arrow["\ \beta", shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+\end{tikzcd} \qquad \leadsto \qquad \begin{tikzcd}
+	\cat{C} && \cat{D}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \beta\cdot\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+We refer to this composition as \emph{vertical composition}. As terminology suggests, there's also a \emph{horizontal composition}
+\[\begin{tikzcd}
+	\cat{C} && \cat{D} && \cat{E}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "J", curve={height=-25pt}, from=1-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "K"', curve={height=25pt}, from=1-3, to=1-5]
+	\arrow["\ \alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+	\arrow["\ \beta", shorten <=5pt, shorten >=5pt, Rightarrow, from=2, to=3]
+\end{tikzcd} \qquad \leadsto \qquad \begin{tikzcd}
+	\cat{C} && \cat{E}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "JF", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "KG"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \beta*\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+defined in the following lemma whose proof we leave as Problem \ref{prob A.1}.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{lemma}[Horizontal Composition]\label{horcomp}
+Given functors $F,G:\cat{C} \rightrightarrows \cat{D}$ and $J,K:\cat{D} \rightrightarrows \cat{E}$, and natural transformations $\alpha:F \Rightarrow G$ and $\beta: J \Rightarrow K$, there exists a natural transformation 
+\[\beta * \alpha:JF \Rightarrow KG.\]
+The components, for any object $X$ in $\cat{C}$, are given as the composite of the following commutative square
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+J(F(X)) \arrow[d, "J(\alpha_X)"'] \arrow[r, "\beta_{F(X)}"] \arrow[rd, "(\beta*\alpha)_X" description,dashed] & K(F(X)) \arrow[d, "K(\alpha_X)"] \\[1em]
+J(G(X)) \arrow[r, "\beta_{G(X)}"']                                                 & K(G(X))                       
+\end{tikzcd}\]
+\end{lemma}
+
+%\vspace*{0.1in}
+
+Importantly, vertical and horizontal composition can be performed in either order,
+satisfying the \emph{law of middle four interchange} (or the \emph{Godement law}) as stated in the following lemma, whose proof we leave as Problem \ref{prob A.2}.
+\begin{lemma}[Middle Four Interchange]\label{mid4int}
+Given functors and natural transformations
+\[\begin{tikzcd}
+	\cat{C} && \cat{D} && \cat{E}
+	\arrow[""{name=0, anchor=center, inner sep=3}, "G"{description}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \alpha", shorten <=2pt, shorten >=2pt, Rightarrow, from=1, to=0]
+	\arrow["\ \beta", shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]	
+	\arrow[""{name=3, anchor=center, inner sep=3}, "K"{description}, from=1-3, to=1-5]
+	\arrow[""{name=4, anchor=center, inner sep=0}, "J", curve={height=-25pt}, from=1-3, to=1-5]
+	\arrow[""{name=5, anchor=center, inner sep=0}, "L"', curve={height=25pt}, from=1-3, to=1-5]
+	\arrow["\ \gamma", shorten <=2pt, shorten >=2pt, Rightarrow, from=4, to=3]
+	\arrow["\ \delta", shorten <=2pt, shorten >=2pt, Rightarrow, from=3, to=5]
+\end{tikzcd}\]
+the natural transformation $JF \Rightarrow LH$ defined by first composing vertically and then composing horizontally equals the natural transformation defined by first composing horizontally and then composing vertically
+\[\begin{tikzcd}
+	\cat{C} && \cat{D} && \cat{E}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \beta\cdot\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "J", curve={height=-25pt}, from=1-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "L"', curve={height=25pt}, from=1-3, to=1-5]
+	\arrow["\ \delta\cdot\gamma", shorten <=5pt, shorten >=5pt, Rightarrow, from=2, to=3]
+\end{tikzcd}
+\qquad = \qquad
+\begin{tikzcd}[column sep=large]
+	\cat{C} && \cat{E}
+	\arrow[""{name=0, anchor=center, inner sep=3}, "KG"{description}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "JF", curve={height=-35pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "LH"', curve={height=35pt}, from=1-1, to=1-3]
+	\arrow["\ \gamma*\alpha", shorten <=2pt, shorten >=2pt, Rightarrow, from=1, to=0]
+	\arrow["\ \delta*\beta", shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+\end{tikzcd}\]
+That is,
+\[(\delta * \beta)\cdot (\gamma * \alpha) = (\delta\cdot\gamma)*(\beta\cdot\alpha).\]
+\end{lemma}
+
+\vspace*{0.2in}
+
+These observations assemble to give us the definition a (strict) $2$-category.
+\begin{definition}
+A (strict) $2$-category $\mathfrak{C}$ consists of
+\begin{itemize}
+\item a collection of \emph{objects}, for example categories $\cat{C}$;
+\item a collection of \emph{$1$-morphisms} between pairs of objects, for example functors $\cat{C} \overset{F}{\longrightarrow} \cat{D}$;
+\item a collection of \emph{$2$-morphisms} between pairs of $1$-morphisms, for example natural transformations
+\[\begin{tikzcd}[column sep = large]
+	\cat{C} & \cat{D}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ \alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\end{itemize}
+such that:
+\begin{itemize}
+\item the objects and $1$-morphisms form a category, with identities $1_{\ncat{C}}:\ncat{C} \to \ncat{C}$;
+\item for each fixed pair of objects $\ncat{C}$ and $\ncat{D}$, the $1$-morphisms $F:\ncat{C} \to \ncat{D}$ and $2$-morphisms between them form a category under an operation called vertical composition, with identities
+\[\begin{tikzcd}[column sep = large]
+	\ncat{C} & \ncat{D}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "F"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ 1_F", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd};\]
+\item there's a category, whose objects are the usual objects and a morphism from $\ncat{C}$ to $\ncat{D}$ is a $2$-morphism
+\[\begin{tikzcd}[column sep = large]
+	\ncat{C} & \ncat{D}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ \alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+under an operation called horizontal composition, with identities
+\[\begin{tikzcd}[column sep = huge]
+	\ncat{C} & \ncat{C}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "1_{\ncat{C}}", curve={height=-20pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "1_{\ncat{C}}"', curve={height=20pt}, from=1-1, to=1-2]
+	\arrow["\ 1_{1_{\ncat{C}}}", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd};\]
+\item the law of middle four interchange holds.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{definition}
+A \emph{(strict) $2$-functor} from a $2$-category $\mathfrak{C}$ to a $2$-category $\mathfrak{D}$ is a map on objects, $1$-morphisms, and $2$-morphisms preserving composition and identities at all levels.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}\label{2catex}\hfill
+\begin{itemize}[itemsep=1em]
+\item[(1)] Our preliminary discussions tell us that $\ncat{CAT}$ is a $2$-category.
+
+\item[(2)] Just like how we can consider a set as a category with only identity morphisms, a category itself can be considered as a $2$-category with only identity $2$-morphisms.
+
+\item[(3)] We can realise the category of groups $\ncat{Grp}$ as a $2$-category as a special case of (1) by realising groups $G$ as the category with a unique object $\ncat{B}G$. Explicitly, it has as
+\begin{itemize}[itemsep=0.5em]
+\item[$\rhd$] objects groups $G$;
+\item[$\rhd$] $1$-morphisms group homomorphisms $\phi:G \to H$;
+\item[$\rhd$] $2$-morphisms
+\[\begin{tikzcd}[column sep = large]
+	G & H
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\phi", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "\psi"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ h", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+are given by elements $h \in H$ such that $\psi = c_h \circ \phi$, where $c_h: H \to H,\ x \mapsto hxh^{-1}$ denotes the inner automorphism given by $h$. (This is Problem \ref{prob 3.1a} (a)).
+\item[$\bullet$] The composition of $1$-morphisms is the usual composition of group homomorphisms.
+\item[$\bullet$] Vertical composition of $h_1:\phi \Rightarrow \psi$ and $h_2:\psi \Rightarrow \theta$ is simply $h_2h_1$, the product in $H$.
+\item[$\bullet$] Horizontal composition of $h:\phi \Rightarrow \psi$, where $\phi,\psi:G \rightrightarrows H$ and $k:\theta \Rightarrow \sigma$, where $\theta,\sigma:H \rightrightarrows K$ is $\sigma(h)k = k\,\theta(h):\theta\circ\phi \Rightarrow \sigma\circ\psi$.
+\end{itemize}
+
+\item[(4)] We can realise the category of sets $\ncat{Set}$ as a $2$-category $\mathbold{B}\ncat{Set}$. $\mathbold{B}\ncat{Set}$ has as
+\begin{itemize}[itemsep=0.5em]
+\item[$\rhd$] objects, a unique object $\bullet$;
+\item[$\rhd$] $1$-morphisms sets $\bullet \overset{\!X}{\longrightarrow} \bullet$;
+\item[$\rhd$] $2$-morphisms functions between sets.
+\[\begin{tikzcd}[column sep = large]
+	\bullet & \bullet
+	\arrow[""{name=0, anchor=center, inner sep=0}, "X", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "Y"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ f", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\item[$\bullet$] The composition of $1$-morphisms $\bullet \overset{\!X}{\longrightarrow} \bullet \overset{\!Y}{\longrightarrow} \bullet$ is
+\[\begin{tikzcd}
+	\bullet \arrow[r,"Y\times X"] &[0.5em] \bullet
+\end{tikzcd}\]
+\item[$\bullet$] The identity $1$-morphism is the singleton set $\bullet \overset{\!*}{\longrightarrow} \bullet$.
+\item[$\bullet$] Vertical composition of $f:X \Rightarrow Y$ and $g:Y \Rightarrow Z$ is simply $g\circ f$, the usual composition of functions in $\ncat{Set}$.
+\item[$\bullet$] Horizontal composition of $f:X \Rightarrow Y$ and $g:Z \Rightarrow W$ is $g\times f:Z \times X \to W \times Y$.
+\end{itemize}
+
+\item[(5)] We describe the category of bimodules $\ncat{BiMod}$. $\ncat{BiMod}$ has as
+\begin{itemize}[itemsep=0.5em]
+\item[$\rhd$] objects rings $R$;
+\item[$\rhd$] $1$-morphisms from rings $R$ to $S$ a $(R,S)$-bimodules $M$, $R \overset{\! M}{\longrightarrow} S$;
+\item[$\rhd$] $2$-morphisms bimodule homomorphism between bimodules.
+\[\begin{tikzcd}[column sep = large]
+	R & S
+	\arrow[""{name=0, anchor=center, inner sep=0}, "M", curve={height=-15pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "N"', curve={height=15pt}, from=1-1, to=1-2]
+	\arrow["\ \phi", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\item[$\bullet$] The composition of $1$-morphisms $R \overset{\!M}{\longrightarrow} S \overset{\!N}{\longrightarrow} T$ is the $(R,T)$-bimodules
+\[\begin{tikzcd}
+	R \arrow[r,"M\otimes_S N"] &[0.75em] T
+\end{tikzcd}\]
+\item[$\bullet$] The identity $1$-morphism $R \overset{\! R}{\longrightarrow} R$ is the ring as a bimodule over itself.
+\item[$\bullet$] Vertical composition of $f:L \Rightarrow M$ and $g:M \Rightarrow N$ is simply $g\circ f$, the usual composition of bimodule homomorphisms.
+\item[$\bullet$] Horizontal composition of $f:M \Rightarrow P$ and $g:N \Rightarrow Q$ is $f\otimes g:M \otimes_S N \to P \otimes_S Q$.
+\end{itemize}
+
+\item[(6)] For a topological space $X$, we describe the $2$-category $\Pi_2(X)$ called the \emph{fundamental $2$-groupoid}. It has as
+\begin{itemize}[itemsep=0.5em]
+\item[$\rhd$] objects points of $X$;
+\item[$\rhd$] $1$-morphisms from a point $x$ to $y$ a path $\gamma:[0,1] \to X$ from $x$ to $y$, i.e., $\gamma(0) = x$ and $\gamma(1) = y$;
+\item[$\rhd$] $2$-morphisms a homotopy class of homotopy between two paths.
+\[\begin{tikzcd}[column sep = large]
+	x &[0.5em] y
+	\arrow[""{name=0, anchor=center, inner sep=0}, "\gamma_1", curve={height=-20pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "\gamma_2"', curve={height=20pt}, from=1-1, to=1-2]
+	\arrow["{[\Gamma]}", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\item[$\bullet$] The composition of $1$-morphisms is given by concatenation of paths.
+\item[$\bullet$] Thinking of a homotopy between two paths in $X$ as a continuous map $\Gamma : I^2 \to X$, horizontal and vertical composition correspond to two possible ways to combine two copies of the square $I^2$ along a side into another square.\\[0.5em]
+Said another way, the homotopy $\Gamma$ can be regarded either as a homotopy between the paths $\Gamma(t, 0),\, \Gamma(t, 1)$ or between the paths $\Gamma(0, t),\, \Gamma(1, t)$, and both of these interpretations give rise to a notion of composition.
+\end{itemize}
+This example comes from \href{https://qchu.wordpress.com/2012/02/06/centers-2-categories-and-the-eckmann-hilton-argument/}{\color{blue}this blog post}.
+\end{itemize}
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+Let's revisit the example of $\ncat{Grp}$ as a $2$-category, that is, Example \ref{2catex} (3). For a group $G$, consider the identity morphism $1_G$. Let's investigate the monoid (under vertical composition) of endomorphisms of $1_G$
+\begin{align*}
+\mathrm{End}(1_G) &= \set{x:1_G \Rightarrow 1_G}\\[0.5em]
+&= \setp{x \in G}{1_G = c_x \circ 1_G}\\[0.5em]
+&= \setp{x \in G}{g = c_x(g), \text{ for all $g \in G$}}\\[0.5em]
+&= \setp{x \in G}{gx = xg, \text{ for all $g \in G$}}\\[0.5em]
+&= Z(G)
+\end{align*}
+\end{discussion}
+
+\vspace*{0.1in}
+
+This motivates the following definition.
+\begin{definition}\label{centof2catobj}
+Let $\ncat{C}$ be an object in a $2$-category. Its center $\ncat{Z}(\ncat{C})$ is the monoid (under vertical composition) of endomorphisms of the identity morphism $1_{\ncat{C}} : \ncat{C} \to \ncat{C}$.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}\label{centof2catobjex}\hfill
+\begin{itemize}
+\item As seen earlier, for an object $G$ in $\ncat{Grp}$, its center is the center of the group $G$, which is abelian.
+\item Given an object $x$ in the fundamental $2$-groupoid $\Pi_2(X)$ of a topological space $X$, that is a point $x \in X$, we have
+\[\ncat{Z}(x) = \pi_2(X,x),\]
+the $2^{\text{nd}}$ homotopy group of $X$ based at $x$. Note that $\pi_2(X,x)$ is abelian.
+\item Given an object $R$ in the $2$-category of bimodules $\ncat{BiMod}$, let's consider its center.
+\begin{align*}
+\mathrm{End}(1_{R}) &= \mathrm{End}_{(R,R)}(R)\\[0.5em]
+&= \setp{f:R \to R}{f \text{ is a $(R,R)$-bimodule homomorphism}}
+\end{align*}
+Let's look at such homomorphisms, first note that since $f$ is left and right $R$-linear, we have $f(r) = f(1)r = rf(1)$; that is, $f$ is determined by $f(1) \in R$. Furthermore, $f(1)$ is such that it commutes with every element of $R$. Hence
+\[\ncat{Z}(R) = \mathrm{End}(1_R) \cong Z(R)\]
+where the former is the center of $R$ as an object in the $2$-category, while the latter is the honest center of a ring $R$. Note that $Z(R)$ is commutative.
+\end{itemize}
+\end{example}
+
+\vspace*{0.1in}
+
+We have been referring to the center as a monoid under vertical composition. However, horizontal composition also defines a monoid structure on the center. These monoid structures are related by the interchange law, which has the following reassuring consequence.
+\begin{proposition}
+For an object $\ncat{C}$ in a $2$-category, vertical and horizontal composition agree on $\ncat{Z}(\ncat{C})$ and are commutative. That is, $\ncat{Z}(\ncat{C})$ is an abelian monoid with respect to a unique composition law.
+\end{proposition}
+\begin{proof}
+For $\alpha,\beta,\gamma,\delta \in \ncat{Z}(\ncat{C})$, the law of middle four interchange tells us
+\[(\delta * \beta)\cdot (\gamma * \alpha) = (\delta\cdot\gamma)*(\beta\cdot\alpha).\]
+Taking $\beta = \gamma = 1_{1_{\ncat{C}}} \in \ncat{Z}(\ncat{C})$ which is the identity for both vertical and horizontal composition, gives us
+\[\delta \cdot \alpha = \delta * \alpha\]
+Therefore, vertical and horizontal composition agree on $\ncat{Z}(\ncat{C})$. Now, taking $\alpha = \delta = 1_{1_{\ncat{C}}}$, gives us
+\[\beta\cdot\gamma = \gamma * \beta = \gamma\cdot\beta\]
+Hence, they're commutative.
+\end{proof}
+The above argument is known as the Eckmann-Hilton argument.
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob A.1}
+Prove Lemma \ref{horcomp}.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob A.2}
+Prove Lemma \ref{mid4int}.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob A.3}
+Consider two $1$-morphisms $F$ and $G$ in a $2$-category, prove that
+\[1_G * 1_F = 1_{GF}\]
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob A.4}
+Pick one of the examples in Example \ref{2catex}, especially (1), and verify the axioms of a $2$-category.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob A.5}
+We lied when we said (4) and (5) in Example \ref{2catex} were $2$-categories, they aren't according to our definition. They are what we call \emph{bicategories}, where things are equal up to invertible $2$-morphisms. Look up its definition and carefully work out why these examples are bicategories.
+\end{problem}

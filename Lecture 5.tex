@@ -1,0 +1,209 @@
+\vspace*{1em}
+
+Recall the notion of a representable functor: given a functor $F:\cat{C} \to \ncat{Set}$, we say $F$ is representable if there exists an object $X$ in $\cat{C}$ such that we have a natural isomorphism
+\[\mathrm{Hom}_{\cat{C}}(X,-) \cong F.\]
+We may then ask the following questions, that were either directly or implicitly brought up last time.
+\begin{itemize}
+\item Is this $X$ unique?
+\item How does this relate to initial (or terminal) objects?
+\item How does this relate to universal properties?
+\end{itemize}
+First, recall the notation $\cat{D}^\cat{C}$ from Problem \ref{prob 3.1}.
+
+\vspace*{0.1in}
+
+\begin{theorem}[Yoneda Lemma]\label{yoneda}
+Let $\cat{C}$ be locally small and $F:\cat{C} \to \ncat{Set}$ a functor. For any object $X$ in $\cat{C}$ there's a bijection
+\[\mathrm{Nat}(h^X,F) \cong F(X),\]
+where the former is the set of natural transformations from $h^X = \mathrm{Hom}_{\cat{C}}(X,-)$ to $F$, that is, the set of morphisms from $h^X$ to $F$ in $\ncat{Set}^\cat{C}$.\\[0.5em]
+Similarly, if $G:\cat{C}^{\text{op}} \to \ncat{Set}$ is a contravariant functor, then for any object $X$ in $\cat{C}$ there's a bijection
+\[\mathrm{Nat}(h_X,G) \cong G(X),\]
+where the former is the set of morphisms from $h_X = \mathrm{Hom}_{\cat{C}}(-,X)$ to $G$ in $\ncat{Set}^{\cat{C}^{\text{op}}}$.
+\end{theorem}
+We will see a proof soon.
+
+\vspace*{0.1in}
+
+\begin{corollary}[Yoneda Embedding]\label{yonemb}
+The functors
+\[\cat{Y}^*:\cat{C}^{\text{op}} \to \ncat{Set}^\cat{C},\ X \mapsto h^X\]
+and
+\[\cat{Y}_*:\cat{C} \to \ncat{Set}^{\cat{C}^{\text{op}}},\ X \mapsto h_X\]
+are fully faithful.
+\end{corollary}
+\begin{proof}
+Recall that $\cat{Y}^*$ is fully faithful if
+\[\mathrm{Hom}_{\cat{C}}(Y,X) \to \mathrm{Nat}(h^X,h^Y): f \mapsto \cat{Y}^*(f) = -\circ f\]
+is a bijection for any objects $X$ and $Y$. Yoneda Lemma (Theorem \ref{yoneda}) tells us that when applied to $F = h^Y = \mathrm{Hom}_{\cat{C}}(Y,-)$ we get
+\[\mathrm{Hom}_{\cat{C}}(Y,X) = \mathrm{Hom}_{\cat{C}^{\text{op}}}(X,Y) \cong \mathrm{Hom}_{\ncat{Set}^\cat{C}}(\cat{Y}^*(X),\cat{Y}^*(Y)) = \mathrm{Nat}(h^X,h^Y).\]
+The proof of Yoneda Lemma (see end) tells us that this bijection in this case is indeed the map needed. Therefore $\cat{Y}^*$ is fully faithful.\\[1em]
+The second statement for $\cat{Y}_*$ similarly follows from the contravariant version of the Yoneda Lemma.\\[1em]
+In particular, 
+\[\mathrm{Nat}(h^X,h^Y) \cong \mathrm{Hom}_{\cat{C}}(Y,X)\quad \text{and} \quad \mathrm{Nat}(h_X,h_Y)\cong \mathrm{Hom}_{\cat{C}}(X,Y)\]
+That is, natural transformations between representable functors correspond to maps between the representing objects.
+\end{proof}
+%
+%\vspace*{0.1in}
+%
+%\begin{remark}
+%More often than not, this functor takes the category $\cat{C}$ and it lands in an interesting subcategory of $\ncat{Set}^{\cat{C}^{\text{op}}}$. For example, one recognises the latter category as the category of presheaves on $\cat{C}$. Choosing $\cat{C}$ be an interesting category (like the category of topological spaces or schemes), this category of presheaves has the more important category of sheaves as a subcategory. Turns out the Yoneda embedding makes the 
+%\end{remark}
+
+\vspace*{0.1in}
+
+\begin{example}[Revisiting Example \ref{tensorprodrep}]\label{tensvec}
+For a field $k$, consider two vector spaces $V$ and $W$. Recall the functor
+\[\mathrm{Bil}_k(V \times W,-):\ncat{Vec}_k \to \ncat{Set},\]
+where any $k$-vector space $U$ is sent to the set of $k$-bilinear maps $\mathrm{Bil}_R(V \times W,U)$. A representation of this functor is $V \otimes_k W$, that is
+\[\mathrm{Hom}_k(V \otimes_k W,U) \cong \mathrm{Bil}_k(V \times W,U)\]
+Yoneda Lemma (rather, the proof)  tells us that the object $V \otimes_k W$ representing $\mathrm{Bil}_k(V \times W,-)$ is uniquely determined by a "universal element" of $\mathrm{Bil}_k(V \times W,V\otimes_k W)$, which is the bilinear map
+\[\iota:V \times W \to V \otimes_k W,\ (v,w) \mapsto v\otimes w\]
+We can use Problem \ref{prob 5.4}, a consequence of the Yoneda embedding, to prove the following facts about tensor products.
+\begin{itemize}
+\item[(1)] $k\otimes_k V \cong V$ for any vector space $V$;
+\item[(2)] $V \otimes_k W \cong W \otimes_k V$ for any pair of vector spaces $V,\,W$;
+\item[(3)] $(U\otimes_k V)\otimes_k W \cong U \otimes_k (V \otimes_k W)$ for any triple of vector spaces $U,\,V$ and $W$.
+\end{itemize}
+We sketch the proof of (2) and leave the remaining two as exercises. We show that we have a natural isomorphism $\mathrm{Bil}_k(V \times W,-) \cong \mathrm{Bil}_k(W \times V,-)$, then Problem \ref{prob 5.4} immediately gives us $V \otimes_k W \cong W \otimes_k V$.\\[0.5em]
+The components for this natural isomorphism are given as, for any vector space $U$
+\begin{align*}
+\mathrm{Bil}_k(V \times W,U) &\to \mathrm{Bil}_k(W \times V,U)\\[0.5em]
+f &\mapsto \tilde{f} \text{, where }\tilde{f}(w,v) \coloneqq f(v,w)
+\end{align*}
+One checks this is a bijection and natural in $U$, and thus we have $V \otimes_k W \cong W \otimes_k V$.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{proof}[Sketch of Proof of Theorem \ref{yoneda} (Yoneda Lemma)]
+We want to establish a bijection
+\[\mathrm{Nat}(h^X,F) \cong F(X)\]
+Consider a natural transformation $\eta:h^X \to F$, then consider its component at $X$, it is a function $\eta_X: \mathrm{Hom}_{\cat{C}}(X,X) \to F(X)$. Then $x_\eta \coloneqq \eta_X(1_X) \in F(X)$. So we have a function,
+\[\Phi: \mathrm{Nat}(h^X,F) \to F(X),\ \eta \mapsto x_\eta\]
+Furthermore, given a morphism $u:X \to A$ for some object $A$ in $\cat{C}$, by naturality of $\eta$ we have a commutative square
+\[\begin{tikzcd}[row sep=huge]
+{\mathrm{Hom}_{\cat{C}}(X,X)} \arrow[d, "u\circ-"'] \arrow[r, "\eta_X"] & F(X) \arrow[d, "F(u)"] \\
+{\mathrm{Hom}_{\cat{C}}(X,A)} \arrow[r, "\eta_A"']                       & F(A)                 
+\end{tikzcd}\]
+Taking $1_X \in \mathrm{Hom}_{\cat{C}}(X,X)$ along the two sides of the square we get
+\[\eta_A(u) = \eta_A(u\circ 1_X) = F(u)\circ\eta_X(1_X) = F(u)(x_\eta)\]
+This motivates us to give the following function
+\[\Psi:F(X) \to \mathrm{Nat}(h^X,F),\ x \mapsto \eta_x\]
+where $\eta_x$ is the natural transformation with components, for any object $A$ in $\cat{C}$, given by
+\[\eta_{x,A}:\mathrm{Hom}_{\cat{C}}(X,A) \to F(A),\ u \mapsto F(u)(x)\]
+One readily checks that this is indeed natural in $A$, and that $\Phi$ and $\Psi$ are inverses of each other.
+\end{proof}
+
+\vspace*{0.1in}
+
+\begin{proof}[Revisiting the Proof of Corollary \ref{yonemb} (Yoneda Embedding)] Let the notation be as in the statement of Corollary \ref{yonemb}, we now apply the proof of the Yoneda Lemma to the functor $F = h^Y$ and see what the bijection $\Psi$ is explicitly in this case. The claim is that $\Psi$ is equal to the function
+\[\mathrm{Hom}_{\cat{C}}(Y,X) \to \mathrm{Nat}(h^X,h^Y): f \mapsto \cat{Y}^*(f) = -\circ f.\]
+In the language of the theorem, we have
+\[\Psi:\mathrm{Hom}_{\cat{C}}(Y,X) \to \mathrm{Nat}(h^X,h^Y),\ f \mapsto \eta_f,\]
+where $\eta_f$ is the natural transformation with components, for any object $A$ in $\cat{C}$, given by
+\[\eta_{f,A}:\mathrm{Hom}_{\cat{C}}(X,A) \to \mathrm{Hom}_{\cat{C}}(Y,A),\ u \mapsto h^Y(u)(f).\]
+Recall that $h^Y(u) = u\circ -$, and therefore $h^Y(u)(f) = u\circ f$. Hence, 
+\[\eta_{f,A}:u \mapsto u \circ f,\qquad \text{i.e.,}\quad \eta_{f,A} = -\circ f,\]
+for any $A$, which is precisely the claim.
+\end{proof}
+
+\vspace*{0.1in}
+
+\begin{discussion}\label{univel}
+Suppose $F:\cat{C} \to \ncat{Set}$ is representable with representation $(X,\alpha)$, that is $\alpha:h^X \Rightarrow F$ is a natural isomorphism. Now, the Yoneda Lemma tells us that $\alpha$ necessarily corresponds to an element of $F(X)$, which is precisely $\xi \coloneqq \alpha_X(1_X)$ (the map $\Phi$). We can, in fact, construct $\alpha$ from just $\xi$ (the map $\Psi$). $\xi$ is then called a \emph{universal element} and a representation of $F$ is just given to be $(X,\xi)$. More precisely, $\xi \in F(X)$ is an element such that
+\[\alpha_{\xi,A}:\mathrm{Hom}_{\cat{C}}(X,A) \to F(A),\ u \mapsto F(u)(x)\]
+is a bijection, i.e., for every $a \in F(A)$ there exists a unique $u \in \mathrm{Hom}_{\cat{C}}(X,A)$ such that $a = F(u)(\xi)$.
+\\[0.5em]
+For a functor $F$ with a representation $(X,\xi)$, a \emph{universal property} is the description of the natural isomorphism $h^X \Rightarrow F$ given by $\xi$.\\
+\\
+One notes in Examples \ref{tensorprodrep} and \ref{quotkill}, $\iota$ and $\pi$ precisely the image of the identity maps under the given bijections towards the end; they are indeed the universal elements.
+\end{discussion}
+
+\vspace*{0.2in}
+
+\subsection{Problems}
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.1}
+Consider the category $\ncat{Set}^{\cat{C}^{\text{op}}}$, prove that the subcategory of representable functors is equivalent to $\cat{C}$.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.2}
+Using the Yoneda embedding (Corollary \ref{yonemb}) with respect to $\cat{C} = \ncat{Mat}_A$ (see Example \ref{ex3}) prove that \emph{every row operation on matrices with $n$ rows is defined by left multiplication by some $n \times n$ matrix}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.3}
+Using the Yoneda embedding (Corollary \ref{yonemb}) with respect to $\cat{C} = \ncat{B}G$ (see Example \ref{ex3}) prove \emph{Cayley's Theorem: any group is isomorphic to a subgroup of a permutation group}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.4}
+Suppose $F:\cat{C} \to \ncat{Set}$ is representable by objects $X$ and $Y$ in $\cat{C}$, that is
+\[\mathrm{Hom}_{\cat{C}}(X,-) \cong F \cong \mathrm{Hom}_{\cat{C}}(Y,-),\]
+prove that $X \cong Y$ using Yoneda embedding (Corollary \ref{yonemb}) and Problem \ref{prob 3.3}.\\
+\\
+Use this to prove that any two initial objects are isomorphic.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.5}
+Prove statements (1) and (3) in Example \ref{tensvec}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.5a}
+Given an object $X$ in a category $\cat{C}$, what's the universal element (see Discussion \ref{univel}) of the functor $\mathrm{Hom}_{\cat{C}}(X,-)$ (or $\mathrm{Hom}_{\cat{C}}(-,X)$, for that matter)?
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.6}
+Consider Example \ref{tensvec}. Let $V$ and $W$ be $k$-vector spaces.
+\begin{itemize}
+\item[(a)] Construct a \emph{"category of bilinear maps"} out of $V \times W$.
+\item[(b)] Prove that $\iota:M \times N \to M \otimes_k N$ is an initial object in this category.
+\end{itemize}
+More generally, this refers to the \emph{category of elements}, see Problem \ref{prob 5.7} (f), (g), (h).
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 5.7}
+Given functors $F:\cat{D} \to \cat{C}$ and $G: \cat{E} \to \cat{C}$, we describe the \emph{comma category $F\downarrow G$}. It has
+\begin{itemize}
+\item as objects triples $(D,E,f)$, where $D$ is an object in $\cat{D}$ and $E$ in $\cat{E}$, and $f:F(D) \to G(E)$ is a morphism in $\cat{C}$.
+\item as morphisms $(D,E,f) \to (D',E',f')$ pairs of morphisms $(h,k)$ where $h:D \to D'$ is a morphism in $\cat{D}$ and $k: E \to E'$ in $\cat{E}$ such that the diagram
+\[\begin{tikzcd}[row sep=huge]
+{F(D)} \arrow[d, "F(h)"'] \arrow[r, "f"] & G(E) \arrow[d, "G(k)"] \\
+{F(D')} \arrow[r, "f'"']                       & G(E')                 
+\end{tikzcd}\]
+commutes.
+\end{itemize}
+Convince yourself this is indeed a category. What are the identity morphisms? How's composition defined?\\
+\\
+Consider the following questions.
+\begin{itemize}
+\item[(a)] Describe two canonical projection functors $H_{\cat{D}}:F\downarrow G \to \cat{D}$ and $H_{\cat{E}}:F\downarrow G \to \cat{E}$.
+\item[(b)] Let $\cat{D} = \cat{C}$ and $F = 1_{\cat{C}}$, and let $\cat{E} = *$, the singleton set treated as a category. Let $X = G(*)$, then prove that $F\downarrow G$ is the slice category $\cat{C}/X$, which is therefore sometimes denoted as $\cat{C}\downarrow X$.
+\item[(c)] Similarly, provide a description of $X/\cat{C}$ as a comma category. That is, make sense of the alternate notation $X \downarrow \cat{C}$.
+\item[(d)] Describe the projection functors given in (a) in (b) and (c).
+\item[(e)] If we let $\cat{D} = \cat{E} = \cat{C}$ and $F = G = 1_{\cat{C}}$, the resulting category is called the \emph{arrow category of $\cat{C}$} and denoted as either $\cat{C}^{\to}$ or $\mathrm{Arr}(\cat{C})$ or $\cat{C}^2$ or, of course, $1_{\cat{C}}\downarrow 1_{\cat{C}}$. Describe this category, i.e., its objects and morphisms. 
+\item[(f)] Let $F: \cat{C} \to \ncat{Set}$ be a functor and consider $* \to \ncat{Set}$ which we also denote by $*$. The category $*\downarrow F$ is called the \emph{category of elements of $F$} and sometimes denoted as $\int F$ or $\mathrm{el}(F)$. Prove that $\int F$ has the following description: it has
+\begin{itemize}
+\item[$\bullet$] as objects pairs $(C,x)$ where $C$ is an object in $\cat{C}$ and $x\in F(C)$.
+\item[$\bullet$] as morphisms $(C,x) \to (C',x')$ a morphism $f: C \to C'$ such that $F(f)(x) = x'$.
+\end{itemize}
+\item[(g)] Prove that if $F$ is representable, that is $F \cong \mathrm{Hom}_{\cat{C}}(X,-)$, then $\int F$ is equivalent to the category $X/\cat{C}$. In particular, it has an initial element, namely $1_X$.
+\item[(h)] Conversely, prove that if $\int F$ has an initial object, then $F$ is representable.
+%\item[(d)] For a category $\cat{C}$, consider the Yoneda embedding $\text{よ}:\cat{C} \to \ncat{Set}^{\cat{C}^{\text{op}}} = [\cat{C}^{\text{op}},\ncat{Set}]$. With $*$ as in (b), consider the functor $F: * \to \ncat{Set}^{\cat{C}^{\text{op}}}$, where $F$ is the image of $*$. Prove that $F$ is representable if and only if $\text{よ} \downarrow F$ has a terminal object.
+%\item[(e)] As in (e), construct a category with respect to a covariant functor and prove that it's representable if and only if the category you constructed has an initial object.
+\item[(i)] Describe the functor $\int F \to \cat{C}$ as given in (a). Given an object $C$ in $\cat{C}$ describe the objects in $\int F$ that get sent to $C$ under this functor, this is called the fiber over $C$.
+\end{itemize}
+\end{problem}

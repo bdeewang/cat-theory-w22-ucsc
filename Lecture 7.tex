@@ -1,0 +1,235 @@
+\vspace*{1em}
+
+We quickly recall the notion of a limit in a category $\cat{C}$. We start with a diagram indexed by $\cat{J}$, i.e., a functor
+\[F:\cat{J} \to \cat{C},\]
+where $\cat{J}$ is a small category. Let $A_i \coloneqq F(i)$ for $i\in \cat{J}$, then the limit of $F$ is an object $\lim_{\cat{J}} F$ or $\lim_{\cat{J}} A_i$ of $\cat{C}$ along with morphisms $f_j: \lim_{\cat{J}}A_i \to A_j$ for each $j \in \cat{J}$ (the cone over $F$ with summit $\lim_{\cat{J}}A_i$), such that if $j \to k$ is a morphism in $\cat{J}$, then
+\[\begin{tikzcd}[row sep=large]
+                              & \lim_{\cat{J}}A_i \arrow[ld, "f_j"'] \arrow[rd, "f_k"] &     \\
+A_j \arrow[rr, "F(j \to k)"'] &                                                        & A_k
+\end{tikzcd}\]
+commutes, and this object and maps to each $A_i$ are universal (final) with respect to this property.\\[0.5em]
+More precisely, given any other object $W$ along with maps $g_i : W \to A_i$ commuting with the $F(j \to k)$, i.e., $g_k = F(j \to k)g_j$ (a cone over $F$ with summit $W$), then there is a unique map
+\[g: W \to \textstyle\lim_{\cat{J}}A_i\]
+so that $g_i = p_ig$ for all $i$.
+\[\begin{tikzcd}[row sep=large]
+                              & W \arrow[ldd, "g_j"', bend right] \arrow[rdd, "g_k", bend left] \arrow[d, "{\exists !\, g}" description, dashed] &     \\[1em]
+                              & \lim_{\cat{J}}A_i \arrow[ld, "f_j"'] \arrow[rd, "f_k"]                                                           &     \\
+A_j \arrow[rr, "F(j \to k)"'] &                                                                                                                  & A_k
+\end{tikzcd}\]
+That is, all triangles in the diagram above commute.
+
+\vspace*{0.1in}
+
+\begin{example}[Profinite Integers]
+Consider the poset of positive integers with partial order given by divisibility, more precisely, say $m\mid n$ if and only if $m\leq n$. We categorify this poset, which we call $\cat{N}$, by saying there's a morphism $n \to m$ if and only if $m\mid n$. We give a diagram
+\[F: \cat{N} \to \ncat{CRing}\]
+where $F(n) \coloneqq \zz/n\zz$, and $\pi_{nm} \eqqcolon F(n \to m):\zz/n\zz \to \zz/m\zz$ is the usual reduction map. We call the limit $\lim_{\cat{N}}\zz/n\zz$ the \emph{profinite integers} and denote it as $\widehat{\zz}$. A vast generalisation of the Chinese Remainder Theorem gives us
+\[\widehat{\zz} \cong \prod_{p}\zz_p\]
+where $\zz_p$ is the ring of $p$-adic integers described in Example \ref{explimcolimex}. Can you describe the indexing category of the diagram $\zz_p$ is a limit of?
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{discussion}
+You will see all kinds of limits in your journey, but it'll be useful to study in the "prototypical" category of sets. $\ncat{Set}$ is nice for a few reasons.
+\begin{itemize}
+\item It's straightforward.
+\item It turns out to have all \emph{(small)} limits. This is not true for all categories.
+\item You can breakdown limits in certain (locally small) categories as limits in $\ncat{Set}$.
+\end{itemize}
+A limit is called small if the indexing category we're taking the limit over is small, which has been our assumption all along. You should be able to deduce what a small colimit is.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}
+A category $\cat{C}$ is called
+\begin{itemize}
+\item \emph{complete} if it has all small limits.
+\item \emph{cocomplete} if it has all small colimits.
+\end{itemize}
+$\ncat{Set}$ is not only complete but also comcomplete, although the colimits are a bit harder to describe. We will completely describe small limits in $\ncat{Set}$, and Problem \ref{prob 7.4} describes a particular class of colimits.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}[Limits in $\ncat{Set}$]\label{liminset}
+Let's work with the category $\ncat{Set}$ and consider a diagram
+\[F:\cat{J} \to \ncat{Set},\]
+where $\cat{J}$ is small. Now, the limit is a pair $(L = \lim_{\cat{J}}F,(p_i)_{i\in \cat{J}})$ where $(p_i)_{i\in \cat{J}}$ assemble to give a cone over $F$ with summit $L$, i.e. an element of $\mathrm{Cone}(L,F)$ (see Attempting Definition \ref{conlim} and Discussion \ref{cone-adjunc}). The universal property of $(L,(p_i)_i)$ is that the map, for any set $S$,
+\[\mathrm{Hom}_{\ncat{Set}}(S,L) \to \mathrm{Cone}(S,F): g \mapsto (p_i \circ g)_i\]
+is a bijection. Our aim is to get a handle on $L$ and the $p_i$'s, how do we do that?\\
+\\
+Recall that, for any set $X$
+\[\mathrm{Hom}_{\ncat{Set}}(*,X) \to X: f \mapsto f(*),\]
+where $*$ is a singleton set, is a bijection, with an inverse given by $x \mapsto (* \mapsto x)$. So, we will name an element of $\mathrm{Hom}_{\ncat{Set}}(*,X)$ with its image in $X$, i.e., $x: * \to L$ is a function where $x(*) = x \in X$. Hence, we do not distinguish between the map $x: * \to X$ and element $x \in X$.\\
+\\
+Let's go back to our bijection of sets given by the universal property of $L$ for $S = *$, it now reads
+\[\mathrm{Hom}_{\ncat{Set}}(*,L) \to \mathrm{Cone}(*,F): \ell \mapsto (p_i \circ \ell)_i\]
+Let's track this more
+\begin{align*}
+L &\cong \mathrm{Hom}_{\ncat{Set}}(*,L)\\[0.5em]
+&\cong \mathrm{Cone}(*,F)\\[0.5em]
+&= \setp{(a_i: * \to F(i))_i}{\text{any possible triangle commutes}}\\[0.5em]
+&\cong \setp{(a_i)_i \in \prod_i F(i)}{\text{translate the commutativity of triangles to conditions on $a_i$'s}}
+\end{align*}
+Why don't we take this as the definition of $L$? We will have to check that $\mathrm{Cone}(*,F)$ satisfies the universal property of a limit. In this way, $p_i:L \to F(i)$ are simply the projection maps.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}[Products in $\ncat{Set}$]\label{prodinset}
+Let $\cat{J}$ be discrete, i.e., it's a small category where the only morphisms are identity morphisms (a set categorified). It can be visualised as
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+\cdots & \bullet & \bullet & \bullet & \bullet & \bullet & \cdots
+\end{tikzcd}\]
+Consider a diagram $F: \cat{J} \to \ncat{Set}$; we will compute the limit $\lim_{\cat{J}}F$ using our discussion in Example \ref{liminset}. That is, we can take
+\[\lim_{\cat{J}}F = \mathrm{Cone}(*,F)\]
+Let $A_i \coloneqq F(i)$, we now investigate $\mathrm{Cone}(*,F)$. It's the set of a collection of maps as follows
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+       &         &         & * \arrow[ld,"a_{n-1}" description] \arrow[d,"a_n" description] \arrow[rd,"a_{n+1}" description] \arrow[rrd,"a_{n+2}" description] \arrow[lld,"a_{n-2}" description] \arrow[rrrd, dashed] \arrow[llld, dashed] &         &         &        \\
+\cdots & A_{n-2} & A_{n-1} & A_{n} & A_{n+1} & A_{n+2} & \cdots
+\end{tikzcd}\]
+which necessary corresponds to $(a_i)_i \in \prod_i A_i$. Therefore $\lim_{\cat{J}}F = \prod_i A_i$.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}[Fibered Product in $\ncat{Set}$]\label{fibprodinset}
+Let $\cat{J}$ be the category with three objects where the only morphisms, apart from identity morphisms, are where two of the objects map to the third one. It can be visualised as
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+ & \bullet \arrow[d] \\
+\bullet \arrow[r]                                              & \bullet               
+\end{tikzcd}\]
+Consider a diagram $F: \cat{J} \to \ncat{Set}$, where the image is given as
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+ & X \arrow[d, "f"] \\
+Y \arrow[r, "g"']                                              & Z               
+\end{tikzcd}\]
+We will compute the limit $\lim_{\cat{J}}F$ using our discussion in Example \ref{liminset}. That is, we can take
+\[\textstyle\lim_{\cat{J}}F = \mathrm{Cone}(*,F)\]
+and investigate $\mathrm{Cone}(*,F)$. It's the set of a collection of maps as follows
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+* \arrow[rdd, "y"', bend right] \arrow[rrd, "x", bend left] \arrow[rrdd, "z" description] &[-3.5em]                   &                  \\[-4em]
+                                                                                          &[-3.5em]                   & X \arrow[d, "f"] \\
+                                                                                          &[-3.5em] Y \arrow[r, "g"'] & Z               
+\end{tikzcd}\]
+such that the triangles commute, that is it's a triple $(x,y,z)$ such that $z = g\circ y = f\circ x$. Therefore it necessarily corresponds to a pair $(x,y) \in X \times Y$ such that $f(x) = g(y)$. Hence \[X\times_Z Y = \lim_{\cat{J}}F = \setp{(x,y) \times X \times Y}{f(x) = g(y)}.\]
+\end{example}
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob 7.1}
+Fix a category $\cat{C}$
+\begin{itemize}
+\item[(a)] Consider a diagram
+\[F:\cat{J} \to \cat{C}\]
+where $\cat{J}$ is small. Assume $\cat{J}$ has an initial object $e$, prove that $F(e) = \lim_{\cat{J}}F$.
+\item[(b)] State and prove the dual statement for colimits.
+\item[(c)] Recall that the limit of the diagram indexed by
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+ & \bullet \arrow[d] \\
+\bullet \arrow[r]                                              & \bullet               
+\end{tikzcd}\]
+is the fibered product. What about the colimit?
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 7.2}
+Let $\cat{J}$ be a poset considered as a category; in particular, for any two objects in $\cat{J}$ there's at most one map between them. Explicitly describe $\lim_{\cat{J}}F$ where $F:\cat{J} \to \ncat{Set}$ is a diagram in $\ncat{Set}$.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.3}
+Let $X$ be a set, and consider the power set $\mathscr{P}(X)$ considered as a poset with respect to set containment. Treating this poset as a category, find all (small) limits and colimits in this category. They will be very familiar objects. 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.3a}
+In Example \ref{fibprodinset}, we have seen what the fibered product looks like in general in the category of sets. Consider the following special case
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+ & Y \arrow[d, "f"] \\
+U \arrow[r, "i"', hook]                                              & X               
+\end{tikzcd}\]
+where $U$ is a subset of $X$ and $i:U \hookrightarrow X$ is the canonical inclusion map, and $f: Y \to X$ is any function. What is the limit of this diagram, that is, $U \times_X Y$.\\[0.5em]
+We're asking you to give a more concrete expression for this limit beyond realising it as a subset of $U \times Y$. Similarly for the questions below.
+\begin{itemize}
+\item[(a)] What's the fibered product if $U = \set{x}$, for some $x \in X$?
+\item[(b)] What's the fibered product if $Y = V$ is also a subset of $X$ and $f = j:V \hookrightarrow X$ is the canonical inclusion map?
+\end{itemize} 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.3b}
+While we haven't talked about how colimits, in general, look like in $\ncat{Set}$, the following special case is quite tractable. Find the colimit (pushout) of the diagram in the category of sets
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+A\cap B \arrow[r, "i", hook] \arrow[d, "j"', hook] & A \\
+B                                              &            
+\end{tikzcd}\]
+where $i$ and $j$ are the canonical inclusion maps. Problem \ref{prob 7.3} can serve as an inspiration. 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.3c}
+Let $G$ be a non-trivial group, prove that the category $\ncat{B}G$ has fibered products but no products. 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.4}
+A nonempty partially ordered set $(S, \geq)$ is directed (or filtered) if for each $x,\, y \in S$, there is a $z$ such that $x \geq z$ and $y \geq z$.\\
+\\
+Suppose $\cat{J}$ is a directed set treated as a category. Let $F:\cat{J} \to \ncat{Set}$ be a diagram; show that, with the obvious maps to it
+\[{\textstyle \colim_{\cat{J}}F} = \left.\set{(a_i,i) \in \coprod_{i\in \mathscr{I}}A_i}\middle/ \left(\parbox{25em}{\centering $(a_i, i) \sim (a_j, j)$ if and only if there are $f: A_i \to A_k$ and\\ $g: A_j \to A_k$ in the diagram for which $f(a_i) = g(a_j)$ in $A_k$}\right)\right.\]
+where $A_i = F(i)$ and "in the diagram" means there's a morphism $i \to k$ and $j \to k$ in $\cat{J}$ such that $f = F(i \to k)$ and $g = F(j \to k)$.\\
+\\
+First prove that $\sim$ is indeed an equivalence relation. 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.4a}
+Let's consider the following, similar but distinct, diagrams in the category of unital commutative rings $\ncat{CRing}$, where $\ff_p[t]$ is the ring of polynomials in a single variable $t$ over the finite field $\ff_p$. 
+\begin{align*}
+\underline{P}^{\leftarrow}:&\quad \begin{tikzcd}[ampersand replacement=\&]
+\cdots \arrow[r, "\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \ff_p[t]
+\end{tikzcd}\\[1em]
+\underline{P}^{\to}:&\quad \begin{tikzcd}[ampersand replacement=\&]
+\ff_p[t] \arrow[r, "\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \ff_p[t] \arrow[r,"\mathrm{Fr}"] \& \cdots
+\end{tikzcd}
+\end{align*}
+where $\mathrm{Fr}:\ff_p[t] \to \ff_p[t],\ f \mapsto f^p$ is called the \emph{Frobenius map}. Prove that the Frobenius map is equal to the map $t \mapsto t^p$.\\[1em]
+A strategy to compute $\lim \underline{P}^{\leftarrow}$ and $\colim \underline{P}^\to$, vaguely put, is to "replace the terms by their images or preimages so that the maps become inclusions, and then use Problem \ref{prob 7.3} as an inspiration".\\[0.5em]
+Realising this strategy prove that $\lim \underline{P}^{\leftarrow} = \ff_p$ (we use equality loosely), and that $\colim \underline{P}^\to$ can be described as $\ff_p[t,t^{1/p},t^{1/p^2},\ldots] \eqqcolon \ff_p[t^{1/p^\infty}]$, obtained by adjoining all "$p^{\text{th}}$ roots of $t$".\\[0.5em]
+Prove that Frobenius maps on these rings is an isomorphism.
+
+\vspace*{0.1in}
+
+\begin{remark}
+This limit and a colimit is a general phenomenon for any ring of characteristic $p$. More precisely, a ring $A$ (object of $\ncat{CRing}$) is said to be of characteristic $p$ if the canonical map $\zz \to A$ factors through $\ff_p$, equivalently if $p\zz$ is in the kernel. In this case, the the Frobenius map $\mathrm{Fr}:A \to A,\ a \mapsto a^p$ is a ring homomorphism. We can then consider the two diagrams above, then \[A^{\text{perf}}\coloneqq \varprojlim_{\mathrm{Fr}}A \quad \text{and} \quad A_{\text{perf}}\coloneqq \varinjlim_{\mathrm{Fr}}A\]
+are called the \emph{perfection of $A$} and the \emph{perfect closure of $A$} respectively; sometimes these notations (scripts) are switched. Both these rings are \emph{perfect}, in the sense that the (induced) Frobenius maps on them is an isomorphism.
+\end{remark}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 7.5}
+Recall the notion of a presheaf $\cat{F}$ on a topological space $X$.
+\begin{itemize}
+\item[(a)] For any point $x \in X$, one defines the \emph{stalk}
+\[\cat{F}_x \coloneqq \underset{U \ni x}{\colim}\,\cat{F}(U)\]
+Use Problem \ref{prob 7.4} to obtain an explicit description of $\cat{F}_x$: identify the directed set the colimit is indexed over, then identify the equivalence relation, and finally write down the resulting set given by Problem \ref{prob 7.4}.
+\item[(b)] Suppose $\cat{F}$ was a sheaf (of sets) and $U$ an open set such that $U = U_1 \cup U_2$. Let $U_{12} \coloneqq U_1 \cap U_2$. Prove, using Example \ref{fibprodinset}, that
+\[\cat{F}(U) = \cat{F}(U_1) \times_{\cat{F}(U_{12})}\cat{F}(U_2)\]
+What does this tell you when $U_1$ and $U_2$ are disjoint, that is, when $U_{12} = \emptyset$.\\[1em]
+Can you generalise this to an arbitrary cover? That is, given an open set $U$ and a cover $U = \cup_{i \in I}U_i$, find a diagram $D$ such that $\cat{F}(U) = \lim D$.
+\end{itemize}
+\end{problem}

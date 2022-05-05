@@ -1,0 +1,457 @@
+\vspace*{1em}
+
+\begin{discussion}[Optimisation]\label{adjopt}
+Let's pose the following questions
+\begin{itemize}
+\item[(a)] Recall the category $\ncat{Rng}$, the objects are sets that satisfy the ring axioms except the requirement that they possess a multiplicative identity, and the morphisms are ring homomorphisms that are not required to preserve the multiplicative identities, if and when they exist. We call an object of this category a \emph{rng} and morphisms \emph{rng (homo)morphisms}.\\
+\\
+But we like $\ncat{Ring}$ more, having a multiplicative identity makes several things easier. So, we ask ourselves if given a rng $R$ can we produce a ring $\widetilde{R}$ out of it. So that this ring $\widetilde{R}$ is the "right" or the "optimal" choice, we would like it to satisfy a universal property. There are two possible choices for what this universal property could be. 
+\begin{itemize}
+\item[(i)] We have a rng homomorphism $u: R \to \widetilde{R}$ such that for any rng homomorphism $\phi:R \to S$, where $S$ is actually a ring, there exists a unique \textbf{ring} homomorphism $\widetilde{\phi}:\widetilde{R} \to S$ such that
+$\widetilde{\phi}\circ u = \phi$ as rng homomorphisms. That is, the following diagram exists and commutes.
+\[\begin{tikzcd}
+R \arrow[r, "\phi"] \arrow[d, "u"']                           & S \\[1em]
+\widetilde{R} \arrow[ru, "\exists!\widetilde{\phi}"', dashed] &  
+\end{tikzcd}\]
+\item[(ii)] We have a rng homomorphism $v: \widetilde{R} \to R$ such that for any rng homomorphism $\psi:S \to R$, where $S$ is actually a ring, there exists a unique \textbf{ring} homomorphism $\widetilde{\psi}:S \to \widetilde{R}$ such that $v\circ\widetilde{\psi} = \psi$ as rng homomorphisms. That is, the following diagram exists and commutes.
+\[\begin{tikzcd}
+S \arrow[r, "\psi"] \arrow[rd, "\exists!\psi"', dashed] & R \\[1em]
+                                                        & \widetilde{R}  \arrow[u, "v"']  
+\end{tikzcd}\]
+\end{itemize}
+The answer is that such a ring exists but it only satisfies the universal property in (i). There exists no ring that can satisfy the universal property in (ii). This is because, and it may sound a bit random, $\ncat{Rng}$ has the zero ring as its initial object, while the initial object in $\ncat{Ring}$ is $\zz$. This reasoning will be clarified soon.
+
+\item[(b)] Consider a function $f: X \to Y$, with no conditions on $X$ and $Y$. One wonders the following two questions.
+\begin{itemize}
+\item[(i)] Suppose $Y$ was a topological space, with no conditions on its topology. Can we give $X$ a topology such that $f$ itself becomes a continuous map of topological spaces?
+\item[(ii)] Suppose $X$ was a topological space, instead, with no conditions on its topology. Similarly as in (i), Can we give $Y$ a topology such that $f$ itself becomes a continuous map of topological spaces?
+\end{itemize}
+The answer to both (i) and (ii) is yes, we can (see Example \ref{freeforget}).
+\end{itemize}
+We can translate (a) into our language of category theory in a slightly different way. In (i) we are first treating a ring $S$ as a rng; more concretely what we are doing is first considering the forgetful functor
+\[U: \ncat{Ring} \to \ncat{Rng}\]
+which ``forgets" that a ring possesses a multiplicative identity, and then considering $U(S)$. Therefore, $\phi \in \mathrm{Hom}_{\ncat{Rng}}(R,U(S))$.\\[1em]
+Next, we are really asking for a functor $F: \ncat{Rng} \to \ncat{Ring}$ with the universal property in (i) which translates into the following bijection
+\[\tau_{R,\,S}:\mathrm{Hom}_{\ncat{Ring}}(F(R),S) \to \mathrm{Hom}_{\ncat{Rng}}(R,U(S)) \to ,\ \widetilde{\phi} \mapsto \widetilde{\phi}\circ u\]
+We would also like these bijections to be compatible, that is, natural in $R$ and $S$.\\[1em]
+In (ii) we are really asking for a functor $G: \ncat{Rng} \to \ncat{Ring}$ such that there's a bijection
+\[\eta_{RS}:\mathrm{Hom}_{\ncat{Rng}}(U(R),S) \to \mathrm{Hom}_{\ncat{Ring}}(R,G(S))\]
+natural in its entries. Something similar is being asked in (b).\\
+\\
+Codifying examples like these brings us to \emph{adjunction}.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}\label{adjdef}
+Fix categories $\cat{C}$ and $\cat{D}$, assumed to be locally small. An \emph{adjunction} consists of a pair of functors
+\[F:\cat{C} \to \cat{D} \quad \text{and} \quad G:\cat{D} \to \cat{C}\]
+together with a bijection
+\[\tau_{X,\,Y}: \mathrm{Hom}_{\cat{D}}(F(X),Y) \overset{\sim}{\to} \mathrm{Hom}_{\cat{C}}(X,G(Y))\]
+for each object $X$ in $\cat{C}$ and $Y$ in $\cat{D}$, that is natural in both entries. More precisely, if $f:C \to X$ is a morphism in $\cat{C}$ and $g:Y \to D$ is a morphism in $\cat{D}$ then we want the following two squares induced by $f$ and $g$ respectively to commute.
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+{\mathrm{Hom}_{\cat{D}}(F(X),Y)} \arrow[r, "\tau_{X,\,Y}"]   \arrow[d, "-\circ F(f)"']                       & {\mathrm{Hom}_{\cat{C}}(X,G(Y))} \arrow[d, "-\circ f"]                      \\
+{\mathrm{Hom}_{\cat{D}}(F(C),Y)} \arrow[r, "\tau_{C,\,Y}"'] & {\mathrm{Hom}_{\cat{C}}(C,G(Y))} 
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[row sep=huge, column sep=large]
+{\mathrm{Hom}_{\cat{D}}(F(X),Y)} \arrow[r, "\tau_{X,\,Y}"] \arrow[d, "g\circ-"'] & {\mathrm{Hom}_{\cat{C}}(X,G(Y))} \arrow[d, "G(g)\circ-"] \\
+{\mathrm{Hom}_{\cat{D}}(F(X),D)} \arrow[r, "\tau_{X,\,D}"']                      & {\mathrm{Hom}_{\cat{C}}(X,G(D))}                        
+\end{tikzcd}\]
+Here we say $F$ is \emph{left adjoint} to $G$ and $G$ is \emph{right adjoint} to $F$, sometimes indicated as $F \dashv G$.
+\end{definition}
+
+\vspace*{0.1in}
+
+Therefore, in the examples in Discussion \ref{adjopt} we were asking if the forgetful functors
+\[\ncat{Ring} \to \ncat{Rng} \quad \text{and} \quad \ncat{Top} \to \ncat{Set}\]
+admit a right or left adjoint. Let's see some examples.
+
+\vspace*{0.1in}
+
+\begin{remark}
+The use of the word adjoint for such pairs of functors is inspired by the notion of an adjoint operator in linear algebra (or more generally, functional analysis). Recall that given an operator $T:V \to W$ on inner product spaces (or more generally, Hilbert spaces), the \emph{adjoint operator} $T^*:W \to V$ is the (most cases unique) operator such that $\langle Tv,w \rangle_W = \langle v,T^*w\rangle_V$.\\[1em]
+Apart from the visual similarity, one other similarity is that just as the adjoint operator allows us to switch between inner product computations in $V$ and $W$, adjoint pairs of functors allow us to switch between morphisms in $\cat{C}$ and $\cat{D}$. A fact that has interesting consequences: how these functors interact with limits and colimits, for example; as we shall see soon. 
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{example}[Free-Forgetful Adjunction]\label{freeforget}
+The examples treated in Example \ref{adjopt} belong to a large class of examples of adjunctions called the \emph{free-forgetful adjunctions}. These are the examples where the obvious (is it?) forgetful functors have left adjoints that are dubbed \emph{free}. If the forgetful functors has a right adjoint, which is rare, it is dubbed \emph{cofree}.\\[0.5em]
+In these examples, we don't treat the inclusion of a full subcategory as a forgetful functor, they are treated in the next example, Example \ref{reflect}.
+%\begin{itemize}
+%\item[(a)]
+%\end{itemize}
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|}
+    \hline
+    {\bf Forgetful Functors} & \makecell{\bf Left Adjoint $\mathbold{F}$ on Objects (the Free Functors)}\\
+    \hline
+    $U:\ncat{Set}_* \to \ncat{Set}$ & \makecell{$F(X) = X_+ \coloneqq * \amalg X$\\[0.2em] we add a basepoint}\\
+    \hline
+    $U:\ncat{Top}_* \to \ncat{Top}$ & \makecell{$F(X) = X_+ \coloneqq *\amalg X$\\[0.2em] we add a basepoint and\\ give it the disjoint topology}\\
+    \hline
+    \makecell{$U:X/\cat{C} \to \ncat{Cat}$\\ $(X\overset{f}{\longrightarrow}Y) \mapsto Y$\\ assume $\cat{C}$ has coproducts} & \makecell{$F(Y) = (X \overset{\iota_X}{\longrightarrow} X \amalg Y)$\\[0.2em] last two examples are a special case of this;\\ so are some below\\[0.2em] $U$ has a right adjoint if and only if $X$ is initial}\\
+    \hline
+%    $U:\ncat{Top} \to \ncat{Set}$ & \makecell{$F(X) = (X,\mathrm{discrete})$\\[0.2em] we equip $X$ with the discrete topology\\ this is (b)(i) in Example \ref{adjopt}}\\
+%    \hline
+    $U:\ncat{Top} \to \ncat{Set}$ & \makecell{$F(X) = (X,\mathrm{discrete})$\\[0.2em] we equip $X$ with the discrete topology\\ this is (b)(i) in Example \ref{adjopt}}\\
+    \hline
+    $U:\ncat{Grp} \to \ncat{Set}$ & \makecell{$F(X) = F_X$\\[0.2em] the free group of reduced words on $X$}\\
+    \hline
+    \makecell{$U:\ncat{Mod}_R \to \ncat{Set}$\\[0.2em] specialise to $R = \zz$ for $\ncat{Ab}$;\\ and $R = k$, a field, for $\ncat{Vec}_k$} & \makecell{$F(X) = R[X] \coloneqq \bigoplus_{x\in X}R$\\[0.2em] free $R$-module on $X$}\\
+    \hline
+%    $U:\ncat{Ab}\, (=\ncat{Mod}_\zz) \to \ncat{Set}$ & \makecell{$F(X) = \zz[X] \coloneqq \bigoplus_{x\in X}R$\\[0.2em] free abelian group on $X$}\\
+%    \hline
+%    \makecell{$U:\ncat{Vec}_k\, (= \ncat{Mod}_k) \to \ncat{Set}$\\[0.2em] $k$ a field} & \makecell{$F(X) = k[X] \coloneqq \bigoplus_{x\in X}k$\\[0.2em] vector space with basis $X$}\\
+%    \hline
+    $U:\ncat{Ring} \to \ncat{Rng}$ & \makecell{$F(R) = \zz \times R$\\[0.2em] see Problem \ref{prob 8.2} for details,\\ the multiplicative identity is $(1,0)$}\\
+    \hline
+    $U:\ncat{Mon} \to \ncat{Set}$ & \makecell{$F(X) = \coprod_{n\geq 0}X^{\times n}$\\[0.2em] the set of finite lists of elements of $X$,\\ including the empty list $ = X^{\times 0}$}\\
+    \hline
+    \makecell{$U:\ncat{Alg}_R \to \ncat{Mod}_R$\\[0.2em] $\ncat{Alg}_R$ is the category of $R$-algebras,\\ where $R$ is a ring\\[0.2em] specialise to $R = \zz$ for $\ncat{Ring} \to \ncat{Ab}$;\\ and $R = k$, a field, for $\ncat{Alg}_k \to \ncat{Vec}_k$} & \makecell{$F(M) = T^\bullet_R(M) \coloneqq \bigoplus_{n \geq 0}M^{\otimes n}$\\[0.2em] tensor algebra of $M$, where $M^{\otimes 0} = R$}\\
+    \hline
+%    $U:\ncat{Ring}\,(=\ncat{Alg}_\zz) \to \ncat{Ab}\,(=\ncat{Mod}_\zz)$ & \makecell{$F(A) = T_\zz(A) = \bigoplus_{n\geq 0} A^{\otimes n}$\\[0.2em] where $A^{\otimes 0} = \zz$}\\
+%    \hline
+%    \makecell{$U:\ncat{Alg}_k \to \ncat{Vec}_k\,(=\ncat{Mod}_k)$\\[0.2em] $k$ a field} & \makecell{$F(V) = T_k(V) = \bigoplus_{n\geq 0} V^{\otimes n}$\\[0.2em] tensor algebra of $V$, where $V^{\otimes 0} = k$}\\
+%    \hline
+    \makecell{$U:\ncat{CAlg}_R \to \ncat{Set}$\\[0.2em] $\ncat{CAlg}_R$ is the category of commutative\\ $R$-algebras, $R$ a ring\\[0.2em] specialise to $R = \zz$ for $\ncat{CRing}$;\\ and $R = k$, a field, for kicks} & \makecell{$F(X) = R[\set{x}_{x\in X}]$\\[0.2em] the polynomial algebra over $R$ with\\ the set of indeterminants being $X$}\\
+    \hline
+%    $U:\ncat{CRing}\,(=\ncat{Alg}_\zz) \to \ncat{Set}$ & \makecell{$F(X) = \zz[\set{x}_{x\in X}]$\\[0.2em] the polynomial algebra over $\zz$ with the set of indeterminants being $X$}\\
+%    \hline
+%    \makecell{$U:\ncat{CAlg}_k \to \ncat{Set}$\\[0.2em] $k$ a field} & \makecell{$F(X) = k[\set{x}_{x\in X}]$\\[0.2em] the polynomial algebra over $k$ with the set of indeterminants being $X$}\\
+%    \hline
+    \makecell{$U:\ncat{CAlg}_R \to \ncat{Mod}_R$\\[0.2em] specialise to $R = \zz$ for $\ncat{CRing}$;\\ and $R = k$, a field, for kicks} & \makecell{$F(M) = \mathrm{Sym}^\bullet_R(M)$\\[0.2em] the symmetric algebra over $M$\\ which is (non-canonically) isomorphic to the\\ polynomial algebra over $R$ in generators of $M$\\[0.2em] this is a choice-free version of the example above
+    }\\
+    \hline
+%    $U:\ncat{Ring}\,(=\ncat{Alg}_\zz) \to \ncat{Ab}\,(=\ncat{Mod}_\zz)$ & \makecell{$F(A) = T_\zz(A) = \bigoplus_{n\geq 0} A^{\otimes n}$\\[0.2em] where $A^{\otimes 0} = \zz$}\\
+%    \hline
+%    \makecell{$U:\ncat{Alg}_k \to \ncat{Vec}_k\,(=\ncat{Mod}_k)$\\[0.2em] $k$ a field} & \makecell{$F(V) = T_k(V) = \bigoplus_{n\geq 0} V^{\otimes n}$\\[0.2em] tensor algebra of $V$, where $V^{\otimes 0} = k$}\\
+%    \hline
+    \makecell{$\mathrm{Res}_H^G:G\text{-}\ncat{Set} \to H\text{-}\ncat{Set}$\\[0.2em] $G$ a group, $H \leq G$ a subgroup} & \makecell{$F(X) = \mathrm{Ind}_H^G(X) = G \times_H X \coloneqq G\times X/\!\sim$\\[0.2em] where $\sim$ is generated by $(gh,x) \sim (g,hx)$,\\[0.1em] and $g\cdot [(h,x)] \coloneqq [(gh,x)]$%\\[0.2em] a linearization of this is the induction\\ functor in representation theory
+    }\\
+    \hline
+    \makecell{$U:G\text{-}\ncat{Set} \to \ncat{Set}\, (=*\text{-}\ncat{Set})$\\[0.2em] $*\leq G$ trivial subgroup of $G$} & \makecell{$F(X) = G \times X$\\[0.2em] where $g\cdot (h,x) \coloneqq (gh,x)$%\\[0.2em] a linearization of this is the induction\\ functor in representation theory
+    }\\
+    \hline
+    \makecell{$\phi^*:\ncat{Mod}_S \to \ncat{Mod}_R$\\[0.2em] \emph{restriction of scalars} via a\\ ring homorphism $\phi:R \to S$} & \makecell{$F(M) = \phi_!(M) = S \otimes_R M$\\[0.2em] \emph{extension of scalars}}\\
+    \hline
+    \makecell{$U:\ncat{Mod}_R \to \ncat{Ab}\,(=\ncat{Mod}_\zz)$\\[0.2em] via the canonical map $\zz \to R$} & \makecell{$F(A) = R \otimes_\zz A$}\\
+    \hline
+    \makecell{$\mathrm{Res}_H^G:\ncat{Mod}_{kG} \to \ncat{Mod}_{kH}$\\[0.2em] \emph{restriction of scalars} induced by\\ $H \hookrightarrow G$} & \makecell{$F(M) = \mathrm{Ind}_R^S(M) = kG \otimes_{kH} M$\\[0.2em] \emph{induced representation}}\\
+    \hline
+    \makecell{$U:\ncat{Mod}_{kG} \to \ncat{Vec}_{k} (=\ncat{Mod}_{k*})$\\[0.2em] $* \hookrightarrow G$, trivial subgroup} & \makecell{$F(V) = \mathrm{Ind}_*^G(M) = kG \otimes_k V$}\\
+    \hline
+    \makecell{$U:\ncat{Vec}_\cc\,(=\ncat{Mod}_\cc) \to \ncat{Vec}_\rr\,(=\ncat{Mod}_\rr)$\\[0.2em] \emph{restriction of scalars} via\\ $\rr \hookrightarrow \cc$} & \makecell{$F(V) = V_\cc = \cc \otimes_\rr V$\\[0.2em] \emph{complexification}}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\vspace*{-2em}    
+Here are some examples of cofree functors.\vspace*{-1em}
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|}
+    \hline
+    {\bf Forgetful Functors} & \makecell{\bf Right Adjoint $\mathbold{F'}$ on Objects (the Cofree Functors)}\\
+    \hline
+    \makecell{$U:\cat{C}/X \to \ncat{Cat}$\\ $(Y\overset{f}{\longrightarrow}X) \mapsto Y$\\ assume $\cat{C}$ has products} & \makecell{$F'(Y) = (X \times Y \overset{\pi_X}{\longrightarrow} X)$\\[0.2em] $U$ has a left adjoint if and only if $X$ is terminal}\\
+    \hline
+    $U:\ncat{Top} \to \ncat{Set}$ & \makecell{$F'(X) = (X,\mathrm{indiscrete})$\\[0.2em] we equip $X$ with the indiscrete topology\\ this is (b)(ii) in Example \ref{adjopt}}\\
+    \hline
+    \makecell{$\mathrm{Res}_H^G:G\text{-}\ncat{Set} \to H\text{-}\ncat{Set}$\\[0.2em] $G$ a group, $H \leq G$ a subgroup} & \makecell{$F'(X) = \mathrm{CoInd}_H^G(X) = \mathrm{Hom}_{H\text{-}\ncat{Set}}(G,X)$\\[0.2em] where $(g'\cdot f)(g) \coloneqq f(gg')$%\\[0.2em] a linearization of this is the induction\\ functor in representation theory
+    }\\
+    \hline
+    \makecell{$U:G\text{-}\ncat{Set} \to \ncat{Set}\,(=*\text{-}\ncat{Set})$\\[0.2em] $*\leq G$ trivial subgroup of $G$} & \makecell{$F'(X) = \mathrm{Hom}_{\ncat{Set}}(G,X)$\\[0.2em] where $(g'\cdot f)(g) \coloneqq f(gg')$%\\[0.2em] a linearization of this is the induction\\ functor in representation theory
+    }\\
+    \hline
+    \makecell{$\phi^*:\ncat{Mod}_S \to \ncat{Mod}_R$\\[0.2em] \emph{restriction of scalars} via a\\ ring homorphism $\phi:R \to S$} & \makecell{$F(M) = \phi_*(M) = \mathrm{Hom}_S(R,M)$\\[0.2em] \emph{co-extension of scalars}\\ where $(r'\cdot f)(r) = f(rr')$}\\
+    \hline
+    \makecell{$\mathrm{Res}_H^G:\ncat{Mod}_{kG} \to \ncat{Mod}_{kH}$\\[0.2em] \emph{restriction of scalars} induced by\\ $H \hookrightarrow G$} & \makecell{$F'(M) = \mathrm{CoInd}_H^G(M) = \mathrm{Hom}_{kH}(kG,M)$\\[0.2em]\emph{co-induced representation}\\ where $(g'\cdot f)(g) \coloneqq f(gg')$%\\[0.2em] a linearization of this is the induction\\ functor in representation theory
+    }\\
+    \hline
+    \makecell{$U:\ncat{Vec}_\cc\,(=\ncat{Mod}_\cc) \to \ncat{Vec}_\rr\,(=\ncat{Mod}_\rr)$\\[0.2em] \emph{restriction of scalars} via\\ $\rr \hookrightarrow \cc$} & \makecell{$F'(V) = \mathrm{Hom}_{\rr}(\cc,V)$\\[0.2em] \emph{co-complexification}\\ where $(z\cdot f)(w) \coloneqq f(wz)$}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\vspace*{-1em}
+None of the functors that forget algebraic structure on fields, into commutative unital rings, abelian groups or sets, admit left or right adjoints (see Problem \ref{prob 8.3}).
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}[Reflector-Inclusion Adjunction]\label{reflect}
+Another class of examples, which are really a sub-class of free-forgetful adjunctions but with a more specific flavour, are the reflector-inclusion adjunctions.\\
+\\
+We call a full subcategory $\cat{D}$ of $\cat{C}$ \emph{reflective}, if the inclusion functor $i:\cat{D} \hookrightarrow \cat{C}$ has a left adjoint which we call the \emph{reflector}. Dually, $\cat{D}$ is said to be \emph{coreflective} when the inclusion functor has a right adjoint, which is then called the \emph{coreflector}.
+%\begin{itemize}
+%\item[(a)]
+%\end{itemize}
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|c|}
+    \hline
+    {\bf Inclusions} & \makecell{\bf Left Adjoint $\mathbold{F}$ on Objects (the Reflector)}\\
+    \hline
+    $\ncat{Ab} \hookrightarrow \ncat{Grp}$ & \makecell{$F(G) = G^{\text{ab}} \coloneqq G/[G,G]$\\[0.2em] the abelianisation}\\
+    \hline
+    \makecell{$\ncat{Ab} \hookrightarrow \ncat{AbSemiGrp}$ (resp. $\ncat{AbMon}$)\\[0.2em] $\ncat{AbSemiGrp}$ (resp. $\ncat{AbMon}$) is the\\ category of abelian\\ semigroups (resp. monoids)} & \makecell{$F(S) = \mathrm{Gr}(S) = K(S)$\\[0.2em] the \emph{group completion} or\\ \emph{Grothendieck group} of $S$\\ (see Problems \ref{prob 8.4} and \ref{prob 8.4a})}\\
+    \hline
+    $\ncat{Grp} \hookrightarrow \ncat{Mon}$ & \makecell{$F(M)$\\[0.2em] the \emph{group completion} of $M$}\\
+    \hline
+    $\ncat{Mon} \hookrightarrow \ncat{SemiGrp}$ & \makecell{$F(S) \coloneqq S \cup \set{e}$\\[0.2em] add an extra element and declare it neutral}\\
+    \hline
+    $\ncat{CRing} \hookrightarrow \ncat{Ring}$ & \makecell{$F(R) = R/[R,R]$\\[0.2em] where $[R,R]$ is the commutator ideal}\\
+    \hline
+    \makecell{$\ncat{Field} \hookrightarrow \ncat{IntDom}$\\ $\ncat{IntDom}$ is the category of integral\\ domains with morphisms being\\ injective ring homomorphisms} & \makecell{$F(A) = \mathrm{Frac}(A)$\\[0.2em] field of fractions of $A$}\\
+    \hline
+    \makecell{$\ncat{Haus} \hookrightarrow \ncat{Top}$\\ $\ncat{Haus}$ is the category of\\ Hausdorff spaces} & \makecell{$F(X) = H(X) = X/\!\!\sim$\\[0.2em] where $x \sim y$ if and only if $f(x) = f(y)$\\ for every continuous map from $X$ to\\ a Hausdorff space.}\\
+    \hline
+    \makecell{$\ncat{CHaus} \hookrightarrow \ncat{Top}$\\ $\ncat{CHaus}$ is the category of\\ compact Hausdorff spaces} & \makecell{$F(X) = \beta X$\\[0.2em] \emph{Stone-\v{C}ech compactifiction}}\\
+    \hline
+    \makecell{$\ncat{Cauchy} \hookrightarrow \ncat{Metric}$\\ $\ncat{Metric}$ is the category of metric spaces\\ with morphisms being uniformly\\ continuous maps. $\ncat{Cauchy}$ is the full\\ subcategory of complete metric spaces} & \makecell{$F(X) = \widehat{X}$\\[0.2em] \emph{metric completion}\\ the ring of Cauchy sequences\\ modulo the (maximal ideal of)\\ null sequences}\\
+    \hline
+    \makecell{$\ncat{Sh}_X \hookrightarrow \ncat{PSh}_X$\\ category of sheaves an\ presheaves\\ on a topological space $X$} & \makecell{$F(\cat{F}) = a(\cat{F})$\\[0.2em] \emph{sheafification}}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\vspace*{-1em}    
+Here are two examples of coreflectors.\vspace*{-0.5em}
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|}
+    \hline
+    {\bf Inclusions} & \makecell{\bf Right Adjoint $\mathbold{F'}$ on Objects (the Coreflector)}\\
+    \hline
+    \makecell{$\ncat{TorAb} \hookrightarrow \ncat{Set}$\\ $\ncat{TorAb}$ is the subcategory of\\ torsion abelian groups, where\\ all elements have finite order} & \makecell{$F'(A) = TA$\\[0.2em] the torsion subgroup}\\
+    \hline
+    \makecell{$\ncat{Grp} \hookrightarrow \ncat{Mon}$} & \makecell{$F'(M) = M^*$\\[0.2em] the group of invertible elements}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{discussion}\label{adjuniv}
+The adjunctions in Examples \ref{freeforget} and \ref{reflect} are all given or exhibited by a universal property. That is, in all of these there's a universal map such that the relevant bijection is given by composing with it. As hinted in our discussion in Example \ref{adjopt} (a)(i).
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{example}[Adjunctions of Posets]
+Recall how we categorify a poset (or more generally, a preorder), also recall from Problem \ref{prob 2.10} that functors $F : \ncat{P} \to \ncat{Q}$ and $G: \ncat{Q} \to \ncat{P}$ between posets $\ncat{P}$ and $\ncat{Q}$ are simply order-preserving functions.\\
+\\
+An adjunction $F \dashv G$, called a \emph{monotone Galois connection}, asserts that
+\[Fa \leq b \text{ if and only if } a \leq Gb\]
+for all $a \in \ncat{P}$ and $b \in \ncat{Q}$. In this context, $F$ is the lower adjoint and $G$ is the upper adjoint.\\[0.5em]
+Here are some examples.
+\begin{itemize}
+\item The inclusion of posets $i:\zz \hookrightarrow \rr$, with the usual ordering $\leq$, has both left and right adjoints, namely, the \emph{ceiling} and \emph{floor functions} respectively.\\[1em]
+For any integer $n$ and real number $r$, \[n \leq r \text{ if and only if } n \leq \lfloor r \rfloor,\]
+The floor function is order-preserving, defining a functor $\lfloor\,\cdot\,\rfloor: \rr \to \zz$ that is right adjoint to the inclusion $i$.\\[0.5em]
+Dually, \[r \leq n \text{ if and only if } \lceil r\rceil  \leq n,\] and this order-preserving function defines a functor $\lceil\,\cdot\,\rceil: \rr \to \zz$ that is left adjoint to the inclusion.\\[0.5em]
+This is also tells us that $\zz$ is a reflective and coreflective subcategory $\rr$, in the sense of Example \ref{reflect}.
+
+\item Let $X$ be a topological space, then its power set $\mathscr{P}(X)$ and its set of closed sets $\mathcal{C}(X)$ are posets with respect to set containment. Then the inclusion $\mathcal{C}(X) \hookrightarrow \cat{P}(X)$ has a left adjoint, given by the \emph{closure}. Since, for any set $S$ and closet set $A$
+\[S \subseteq A \text{ if and only if } \overline{S} \subseteq A\]
+Since the closure is order preserving, it defines a functor $\overline{(\,\cdot\,)}:\cat{P}(X) \to \mathcal{C}(X)$.\\[1em]
+Similarly, the inclusion $\mathcal{O}(X) \hookrightarrow \cat{P}(X)$, where $\mathcal{O}(X)$ is the set of open sets of $X$, has a right adjoint, given by the \emph{interior}.
+
+\item Let $f:X \to Y$ be any function, then it induces the \emph{inverse image functor} on the posets of power sets of $X$ and $Y$
+\[f^{-1}:\cat{P}(Y) \to \cat{P}(X),\ T \mapsto f^{-1}(T)\]
+This functor has both a left and right adjoint.\\[1em]
+The left adjoint is the \emph{direct image functor}
+\[f_*:\cat{P}(X) \to \cat{P}(Y),\ S \mapsto f(S)\]
+since 
+\[f(S) \subseteq T \text{ if and only if } S \subseteq f^{-1}(T)\]\\
+The right adjoint is the \emph{extension by zero functor}
+\[f_!:\cat{P}(X) \to \cat{P}(Y),\ S \mapsto \setp{y \in Y}{f^{-1}(y) \subseteq S}\]
+where $f_!$ is read as \emph{$f$-lower shriek}. It immediately follows from definitions that
+\[f^{-1}(T) \subseteq S \text{ if and only if } T \subseteq f_!(S)\]
+These names are inspired by sheaf theory.
+\end{itemize}
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}[Beyond Free-Forgetful]\label{notfreeforget}
+As mentioned in Discussion \ref{adjuniv}, the free-forgetful functors essentially are exhibited or witnessed by universal properties. But the notion of an adjoint functor is more general. Let's look at some more examples that sit more as instances of duality and symmetry.\\[0.5em]
+We ease into this with an example that invokes the vibe of a free-forgetful adjunction
+\begin{itemize}
+\item[(1)] The unit functor \[(-)^\times:\ncat{Ring} \to \ncat{Grp}\]
+has a left adjoint given by the group ring functor \[\zz[-]:\ncat{Grp} \to \ncat{Ring}\]
+More generally, we have the adjoint pair $R[-]:\ncat{Grp} \rightleftarrows \ncat{Alg}_R:(-)^\times$, where $R$ is a ring.
+\end{itemize}
+We now consider the example that started it all, the motivating example in Daniel M. Kan's 1958 paper \href{https://www.jstor.org/stable/1993102}{\color{darkblue}\emph{Adjoint Functors}} where he first introduces the notion of an adjoint.
+\begin{itemize}[itemsep=1em]
+\item \textbf{Tensor-Hom Adjunction}. For simplicity let's fix a commutative ring $R$, and consider an $R$-module $M$. Then we have two functors
+\[- \otimes_R M:\ncat{Mod}_R \to \ncat{Mod}_R \quad \text{and} \quad \mathrm{Hom}_R(M,-):\ncat{Mod}_R \to \ncat{Mod}_R\]
+These two functors define an adjoint pair, that is we have bijections
+\[\mathrm{Hom}_R(L\otimes_R M,N) \cong \mathrm{Hom}_R(L,\mathrm{Hom}_R(M,N))\]
+natural in $L$ and $N$. Let's prove this.\\[0.5em]
+For any $R$-modules $L$ and $N$, we have have the following bijection
+\begin{align*}
+\tau_{L,\,N}:\mathrm{Hom}_R(L\otimes_R M,N) &\overset{\sim}{\longrightarrow} \mathrm{Hom}_R(L,\mathrm{Hom}_R(M,N))\\[0.5em]
+\phi &\longmapsto (x \mapsto (m \mapsto \phi(x \otimes m)))\\[0.5em]
+(x \otimes m \mapsto \psi(x)(m))&\longmapsfrom \psi 
+\end{align*}
+For ease, we note that the morphism $\tau_{L,\,N}(\phi)$ can be written down as \[\tau_{L,\,N}(\phi)(x)(-) = \phi(x\otimes-).\]
+Now for maps $f: L \to L'$ and $g:N \to N'$, letting $F = -\otimes_R M$ and $G = \mathrm{Hom}_R(M,-)$, we have $F(f) = f\otimes 1$ and $G(g) = g\circ -$ and the following diagram
+\[\hspace*{-1em}\begin{tikzcd}[column sep = scriptsize]
+{\hom_R(L' \otimes_R M,N)} \arrow[rr, "{-\,\circ\, Ff}"] \arrow[dd, "{\tau_{L',\,N}}"'] &  & {\hom_R(L\otimes_R M,N)} \arrow[rr, "{g\,\circ\,-}"] \arrow[dd, "{\tau_{L,\,N}}" description] &  & {\hom_R(L\otimes M,N')} \arrow[dd, "{\tau_{L,N'}}"] \\
+                                                                                     &  &                                                                                             &  &                                                     \\
+{\hom_R(L',\hom_R(M,N))} \arrow[rr, "{-\,\circ\, f}"']                               &  & {\hom_R(L,\hom_R(M,N))} \arrow[rr, "{Gg\,\circ\,-}"']                                       &  & {\hom_R(L,\hom_R(M,N'))}                           
+\end{tikzcd}\]
+For a $\phi' \in \hom_R(L' \otimes_R M,N)$, we look at its image in $\hom_R(L,\hom_R(M,N))$ along the boundary of the first square
+\[\tau_{L,\,N}(\phi'\circ Ff)(x)(-) = \phi'\circ(f\otimes 1)(x\otimes -) = \phi'(f(x)\otimes -)\]
+\[(\tau_{L',\,N}(\phi')\circ f)(x)(-) = \tau_{L',\,N}(\phi')(f(x))(-) = \phi'(f(x)\otimes -)\]
+Therefore the first square commutes.\\[1em]
+Now, for a $\phi \in \hom_R(L \otimes_R M,N)$, we look at its image in $\hom_R(L,\hom_R(M,N'))$ along the boundary of the second square
+\[\tau_{L,\,N'}(g\circ \phi)(x)(-) = g\circ\phi(x\otimes -)\]
+\[Gg \circ \tau_{L,\,N}(\phi)(x)(-) = Gg(\phi(x\otimes 1)) = g\circ \phi(x\otimes -)\]
+Hence the second square commutes.\\[1em]
+Thus proving that $(F,G)$ form an adjoint pair, that is, $F\dashv G$.
+\item \textbf{"Set-Theoretic Tensor-Hom Adjunction" a.k.a. Currying}. Consider a set $Y$. Then we have two functors
+\[- \times Y:\ncat{Set} \to \ncat{Set} \quad \text{and} \quad \mathrm{Hom}_{\ncat{Set}}(Y,-):\ncat{Set} \to \ncat{Set}\]
+These two functors define an adjoint pair, that is we have bijections
+\[\mathrm{Hom}_{\ncat{Set}}(X\times Y,Z) \cong \mathrm{Hom}_{\ncat{Set}}(X,\mathrm{Hom}_{\ncat{Set}}(Y,Z))\]
+natural in $X$ and $Y$.\\[1em]
+This is often to convert a function that takes multiple arguments (the left hand side) into a sequence of functions that each take a single argument (the right hand side). This adjunction is proved similar to the above example.\\[1em]
+Recall that we sometimes denote the set of functions from sets $X \to Y$ by $Y^X$. Therefore currying tells us that \[Z^{X\times Y} \cong (Z^Y)^X.\]
+
+\item \textbf{"Topological (Homotopy-Theoretic) Tensor-Hom Adjunction"}. We will first set things up; the category under consideration is $\ncat{Top}_*$ and the base point of a pointed space is implicit so we'll call them $X$ instead of $(X,x_0)$.\\[1em]
+Given two pointed spaces $X$ and $Y$, $\mathrm{Hom}_{\ncat{Top}_*}(X,Y)$, the pointed set of basepoint-preserving continuous maps, can be made into a pointed topological space by giving it, what we call, the \emph{compact-open topology}; the resulting topological space is denoted as $\mathrm{Map}_*(X,Y)$.\\[1em]
+Given two pointed spaces $X$ and $Y$, we can consider their \emph{smash product} $X \wedge Y$.\\
+\\
+Given a pointed locally compact topological space $K$, we can consider the functors
+\[- \wedge K:\ncat{Top}_* \to \ncat{Top}_* \quad \text{and} \quad \mathrm{Map}_*(K,-):\ncat{Top}_* \to \ncat{Top}_*\]
+These two functors define an adjoint pair, that is we have bijections
+\[\mathrm{Hom}_{\ncat{Top}_*}(X\wedge K,Y) \cong \mathrm{Hom}_{\ncat{Top}_*}(X,\mathrm{Map}_*(K,Y))\]
+natural in $X$ and $Y$. This adjunction is proved similar to the above example.\\
+\\
+This bijection is compatible with homotopy, and therefore descends to a bijection in $\ncat{HTop}_*$ where we indicate the set of morphisms as $[-.-]_*$. So we have a bijection, natural in $X$ and $Y$
+\[[X\wedge K,Y]_* \cong [X,\mathrm{Map}_*(K,Y)]_*\]
+In the special case when $K = S^1$, then functor $-\wedge S^1$ is called the \emph{(reduced) suspension functor} and denoted $\Sigma$, and the functor $\mathrm{Map}_*(S^1,-)$ is called the \emph{loop space functor} and denoted $\Omega$, which gives us the \emph{suspension-loop adjunction}
+\[[\Sigma X,Y]_* \cong [X,\Omega Y]_*\]
+\end{itemize}
+\end{example}
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob 8.1}
+Pick some (or all) examples given in Examples \ref{freeforget}, \ref{reflect} and \ref{notfreeforget} (1), and work out the details. That is, prove that the the given pairs are indeed adjoints.%, and also work out the unit and counit.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}[Dorroh Extension]\label{prob 8.2}
+Let $R$ be a rng, and we define $\widetilde{R} = \zz \times R$ as an abelian group (pointwise addition) and we define the multiplication on it as follows
+\[(n,r)\cdot (n',r') \coloneqq (nn',nr' + n'r + rr')\]
+(we sometimes write $(n,r)$ as $n\oplus r$ which tells you why multiplication is defined this way, but note that rings have no reliable notion of direct sum).
+\begin{itemize}
+\item[(a)] Prove that $\widetilde{R}$ is a ring with multiplicative identity given by $(1,0)$.
+\item[(b)] Prove that there is a rng homomorphism $u:R \to \widetilde{R}$ such that $(\widetilde{R},u)$ has the following universal property: For any rng homomorphism $\phi:R \to S$, where $S$ is a \textbf{ring}, there exists a unique \textbf{ring} homomorphism $\widetilde{\phi}:\widetilde{R} \to S$ such that
+$\widetilde{\phi}\circ u = \phi$ as rng homomorphisms. That is, the following diagram exists and commutes.
+\[\begin{tikzcd}
+R \arrow[r, "\phi"] \arrow[d, "u"']                           & S \\[1em]
+\widetilde{R} \arrow[ru, "\exists!\widetilde{\phi}"', dashed] &  
+\end{tikzcd}\]
+\item[(c)] Prove that the association $R \mapsto \widetilde{R}$ is functorial and the above universal property describes the adjunction $\widetilde{(-)}\dashv U$ where $U:\ncat{Ring} \to \ncat{Rng}$ is the forgetful functor. 
+\item[(d)] Given a rng $R$, an $R$-module $M$ is defined in an obvious way: it satisfies all the axioms that a module over a ring does except the one involving the multiplicative identity of the ring, for obvious reasons.\\[1em]
+Let $M$ be an $R$-module, where $R$ is a rng. Consider the following action of $\widetilde{R}$ on $M$
+\[(n,r)\cdot m \coloneqq n\cdot m + r\cdot m\]
+where $n\cdot m = \underbrace{m+ \cdots + m}_{\text{$n$ times}}$, and $r\cdot m$ is the usual action of $R$ on $M$.\\[0.5em]
+Prove that this action defines an $\widetilde{R}$-module structure on $M$. 
+\item[(d)] Continuing from (c), let $\widetilde{M}$ be the abelian group $M$ equipped with the $\widetilde{R}$-module structure. Prove that the association $M \mapsto \widetilde{M}$ is functorial, and describes an equivalence between the categories of $R$-modules and $\widetilde{R}$-modules.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 8.3}
+Prove that none of the following functors
+\[\ncat{Field} \overset{U}{\longrightarrow} \ncat{Ring},\quad \ncat{Field} \overset{U}{\longrightarrow} \ncat{Ab},\quad \ncat{Field} \overset{(-)^\times}{\longrightarrow} \ncat{Ab},\quad \ncat{Field} \overset{U}{\longrightarrow} \ncat{Set}\]
+that forget algebraic structure on fields admit left or right adjoints.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}[Group Completion, or Grothendieck Group]\label{prob 8.4}
+Recall that an abelian semigroup $(S,+)$ is a set $S$ equipped with an associative binary product $+$ which is commutative. A homomorphism of semigroups is one that commutes with the binary products, just like group homomorphisms.\\[1em]
+Given a semigroup $S$, define
+\[K(S) \coloneqq S \times S/\!\!\sim\]
+where $(a,b) \sim (c,d)$ if and only if there exists an $x\in S$ such that $a+d+x = b+c+x$. One thinks of the equivalence class $[(a,b)] \in K(S)$ as "$a-b$".
+\begin{itemize}
+\item[(a)] Prove that $K(S)$ is an abelian group with the group operation $+_K$ described as follows
+\[[(a,b)] +_K [(c,d)] \coloneqq [(a+c,b+d)];\] 
+that is, "$(a-b) +_K (c-d) = (a+c) - (b+d)$".
+\item[(b)] Prove that there is a abelian semigroup homomorphism $\iota:S \to K(S)$ such that $(K(S),\iota)$ has the following universal property.\\[0.5em]
+For any abelian semigroup homomorphism $\phi:S \to A$, where $A$ is an abelian group, there exists a unique abelian group homomorphism $\widetilde{\phi}:K(S) \to A$ such that
+$\widetilde{\phi}\circ \iota = \phi$ as abelian semigroup homomorphisms. That is, the following diagram exists and commutes.
+\[\begin{tikzcd}
+S \arrow[r, "\phi"] \arrow[d, "\iota"']                           & A \\[1em]
+K(S) \arrow[ru, "\exists!\widetilde{\phi}"', dashed] &  
+\end{tikzcd}\]
+$(K(S),\iota)$ is called the \emph{group completion} (or \emph{groupification}) of $S$.
+\item[(c)] Let $A$ be an abelian group, prove that $(A,\id_A)$ satisfies the universal property that $(K(A),\iota)$ does above. We interpret that as saying "$A$ is its own group completion (or groupification)" (as it should be).
+\item[(d)] Let $\nn = \set{1,2,3,\ldots}$, then $(\nn,+)$ is a semigroup. Prove that $K(\nn) \cong \zz$. This is one way how we construct the integers, by defining it to be $K(\nn)$.
+\item[(e)] Prove that the association $S \mapsto K(S)$ is functorial and the above universal property describes the adjunction $K(-)\dashv I$ where $I:\ncat{Ab} \hookrightarrow \ncat{AbSemiGrp}$ is the inclusion of $\ncat{Ab}$ as a full subcategory.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 8.4a}
+Recall that an abelian monoid $(M,+,0)$ is a set $M$ equipped with an associative binary product which is commutative and a neutral element $0$. A homomorphism of monoid is one that commutes with the binary products, just like group homomorphisms.\\[0.5em]
+Since $M$ is, in particular, a semigroup, we can consider, as in Problem \ref{prob 8.4}, the abelian group $K(M)$. In this case, the neutral element can just be treated as the class $[(m,0)]$.\\[0.5em]
+$(K(M),\iota)$ satisfies a similar commutative diagram as the one given in Problem \ref{prob 8.4}(b), and is called the\emph{group completion} (or \emph{groupification}) of $M$. Furthermore $K(-)$ is a reflector of $I:\ncat{Ab} \hookrightarrow \ncat{AbMon}$, similar to what we saw in Problem \ref{prob 8.4}(e).\\[1em]
+Let $(M,+,0)$ be an abelian monoid. Call an element $h \in M$ \emph{high} if for all $x \in M$, there exists a $y \in M$ such that $h = x + y$. Let $H(M)$ be the set of all high elements of $M$.
+\begin{itemize}
+\item[(a)] Prove that if $M = \nn_0 = \set{0,1,2,\ldots}$, then $H(M) = \emptyset$.
+\item[(b)] Prove that if $H(M) \neq \emptyset$, then $H(M)$ is an abelian group  under the same binary operation $+$ as $M$ \emph{but it's netural element is not necessarily the same neutral element as $M$}.\\[0.5em]
+In this case, also describe a map $j:M \to H(M)$ of abelian monoids.
+\item[(c)] Prove that $(H(M),j)$ has the following universal property.\\[0.5em]
+For any abelian monoid homomorphism $\phi:M \to A$, where $A$ is an abelian group, there exists a unique abelian group homomorphism $\widehat{\phi}:H(M) \to A$ such that
+$\widehat{\phi}\circ j = \phi$ as abelian monoid homomorphisms. That is, the following diagram exists and commutes.
+\[\begin{tikzcd}
+M \arrow[r, "\phi"] \arrow[d, "j"']                           & A \\[1em]
+H(M) \arrow[ru, "\exists!\widehat{\phi}"', dashed] &  
+\end{tikzcd}\]
+%Suppose $\phi:M \to N$ be a morphism of monoids, where $M$ and $N$ are abelian monoids such that $H(M),\, H(N) \neq \emptyset$. Produce a morphism $\widehat{\phi}:H(M) \to H(N)$ of abelian groups such that the following diagram commutes
+%\[\begin{tikzcd}[row sep = large]
+%M \arrow[r, "\phi"] \arrow[d, "j_M"'] & N \arrow[d, "j_N"] \\
+%H(M) \arrow[r, "\widehat{\phi}"']     & H(N)              
+%\end{tikzcd}\]
+%where $j_M:M \to H(M)$ and $j_N:N \to H(N)$ are the $j$ you described in (b).
+\item[(d)] If $H(M) \neq \emptyset$, prove that there exists an isomorphism of abelian groups $\phi:H(M) \to K(M)$ such that $\phi\circ j = \iota$, where $\iota$ is the map you described in Problem \ref{prob 8.4}(b) for any (abelian) semigroup.
+\end{itemize}
+\begin{remark}
+This is saying that if $H(M) \neq \emptyset$, then $H(M)$ itself is the group completion of $M$, and $H(-)$ extends to a functor which is left adjoint to $I:\ncat{Ab} \hookrightarrow \ncat{AbMon}$. In fact, the final part is also telling you that $H(-)$ and  $K(-)$ are naturally isomorphic.\\[0.5em]
+But this is not a practical way to construct group completion of a monoid $M$, as $H(M)$ is in most cases empty because we're essentially asking for inverses from within $M$.\\[0.5em]
+This problem, Problem \ref{prob 8.4a}, was taken from \href{https://mathoverflow.net/a/13988/117283}{\color{darkblue}this \emph{MathOverflow answer}}.
+%Here's an example of an abelian monoid $M$ where $H(M)$ is trivial. Let $M = \cat{P}(X)$, the power set of set $X$, then it's a commutative monoid with the operation given by intersection and the neutral element being $X$ itself (resp. with the operation given by union and the neutral element being $\emptyset$). Then $H(\cat{P}(X)) = \set{\emptyset}$ (resp. $H(\cat{P}(X)) = \set{X}$) which is the trivial group with respect to the binary operation we have. 
+\end{remark}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 8.5}
+Look at Definition \ref{adjdef}, prove that asking for the commutativity of the two diagrams there is equivalent to asking for commutativity of the single square below.
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+{\mathrm{Hom}_{\cat{D}}(F(X),Y)} \arrow[r, "\tau_{X,\,Y}"]   \arrow[d, "g\circ -\circ F(f)"']                       & {\mathrm{Hom}_{\cat{C}}(X,G(Y))} \arrow[d, "G(g)\circ -\circ f"]                      \\
+{\mathrm{Hom}_{\cat{D}}(F(C),D)} \arrow[r, "\tau_{C,\,D}"'] & {\mathrm{Hom}_{\cat{C}}(C,G(D))} 
+\end{tikzcd}\]
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 8.6}
+Given functors as follows
+\[\begin{tikzcd}
+\cat{C} \arrow[r, "F", shift left] & \cat{D} \arrow[r, "H", shift left] \arrow[l, "G", shift left] & \cat{E} \arrow[l, "K", shift left]
+\end{tikzcd}\]
+such that $F\dashv G$ and $H\dashv K$, prove that $HF \dashv GK$.
+\end{problem}

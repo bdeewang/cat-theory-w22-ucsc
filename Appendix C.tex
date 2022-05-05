@@ -1,0 +1,337 @@
+\vspace*{1em}
+
+\begin{discussion}
+We know how useful the notion of kernels, images, cokernels are since we first learned linear algebra. More generally, the category of modules possesses really nice properties and notions. We want to axiomatise this so that we may recognise other categories that behave the way a category of modules does so that we can commence a similar exercise as the one we carry out with modules. This is the notion of an \emph{abelian category}, for which we need to first define \emph{additive categories}.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}
+A category $\cat{C}$ is said to be \emph{additive} if it satisfies the following properties.
+\begin{itemize}
+\item For each object $A,\,B$ in $\cat{C}$, the set $\mathrm{Hom}_{\cat{C}}(A,B)$ is an abelian group, such that composition of morphisms distributes over addition, or equivalently the composition is bilinear.
+\item $\cat{C}$ has a zero object, denoted $0$. That is, an object that is simultaneously both an initial and terminal object. The $0$-morphism from $A$ to $B$ is the unique morphism in $\mathrm{Hom}_{\cat{C}}(A,B)$ given as $A \to 0 \to B$
+\item It has products of a pair of objects. That is, $A \times B$ makes sense for any pair of objects $A,\,B$ in $\cat{C}$, and therefore all finite products exist inductively.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{definition}
+Let $\cat{C}$ and $\cat{D}$ be additive categories, then a functor $F:\cat{C} \to \cat{D}$ is called \emph{additive} if the map
+\[\mathrm{Hom}_{\cat{C}}(A,B) \to \mathrm{Hom}_{\cat{D}}(F(A),F(B)):f \mapsto F(f)\]
+is a homomorphism of abelian groups for all pairs of objects $A,\,B$ in $\cat{C}$.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}
+The prototypical example is the category of $R$-modules $\ncat{Mod}_R$ which is clearly an additive category. We of course have even more structure, we can talk about kernels, images, the First Isomorphism theorem, for example, which we now build towards.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{definition}
+Let $\cat{C}$ be a category with a $0$-object (and thus $0$-morphisms). A \emph{kernel of a morphism $f: A \to B$}, if it exists, is the equaliser (recall from Example \ref{splimex} (ii)) of the diagram
+\[\begin{tikzcd}
+A \arrow[r, "f", shift left] \arrow[r, "0"', shift right] & B
+\end{tikzcd}\]
+That is, the kernel is a pair $(K,\,\iota)$, denoted $\ker f$, where $\iota:K \to A$ is a morphism with $f\circ\iota = 0$, which has the following universal property: for any pair $(L,\,j)$ where $j:L \to A$ is a morphism with $f\circ j = 0$, there exists a unique $g:L \to K$ such that $\iota\circ g = j$.\\[1em]
+Dually, a \emph{cokernel of $f$}, if it exists, is the coequaliser of the diagram above, denoted  $\operatorname{coker} f$.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{definition}
+An additive category $\cat{C}$ is said to be \emph{abelian} if it satisfies the following properties.
+\begin{itemize}
+\item Every morphism has a kernel and cokernel.
+\item Every monomorphism is the kernel of its cokernel.
+\item Every epimorphism is the cokernel of its kernel.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}
+The prototypical and eponymous example is the category of abelian groups $\ncat{Ab}$, and in general the category of $R$-modules $\ncat{Mod}_R$. A more general example is the category of sheaves over a space where sheaves take values in an abelian category.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{lemma}
+Let $f:A \to B$ be a morphism in an abelian category $\cat{C}$. Then $f$ is an isomorphism if and only if $f$ is a monomorphism and an epimorphism.
+\end{lemma}
+\begin{proof}
+Any isomorphism is by definition a split monomorphism and epimorphism, and is therefore a monomorphism and an epimorphism, in particular.\\
+\\
+Now, suppose that $f:A \to B$ is both an epimorphism and a monomorphism. Since $f:A \to B$ is, in particular, an epimorphism, we have $f = \cok(\ker f)$. By Problem \ref{prob C.5} (a) we have $\ker f = 0$, since $f$ is also a monomorphism. That is, $\cok(0 \to A) = (B,f)$.\\[0.5em]%; precisely put, we have the following coequaliser diagram. %\[\begin{tikzcd} %0 \arrow[r, "0", shift left] \arrow[r, "0"', shift right] & A \arrow[r, "f"] & B %\end{tikzcd}\]
+But as noted in Problem \ref{prob C.5} (b), we also have $\cok (0 \to A) = (A,1_A)$. Therefore, as a colimit is unique up to unique isomorphism as a consequence of its universal property, there exists an isomorphism $\phi:A \to B$ such that $1_A\circ\phi = f$. Hence $f$ is an isomorphism.
+\end{proof}
+
+\vspace*{0.1in}
+
+\begin{proposition}[First Isomorphism theorem]\label{fit}
+Let $f : A \to B$ be a morphism in an additive category. Suppose that $\ker f = (K,i)$ and $\cok f = (C,p)$. Moreover, suppose that $\cok(\ker f) = \cok i =  (I, \pi)$ and $\ker(\cok f) = \ker p = (I',\kappa)$.\\[0.5em]
+Then there exists a unique morphism $\phi: I \to I'$ in $\cat{C}$ such that $f = \kappa \circ \phi \circ \pi$.
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+K \arrow[r, "i"] & A \arrow[r, "f"] \arrow[d, "\pi"'] & B \arrow[r, "p"]        & C \\
+                 & I \arrow[r, "\phi"', dashed]          & I' \arrow[u, "\kappa"'] &  
+\end{tikzcd}\]
+Furthermore, $\phi$ is an isomorphism if and only if every monomorphism is the kernel of its cokernel and every epimorphism is the cokernel of its kernel.
+\end{proposition}
+\begin{proof}
+We first remark that $\pi$ and $\kappa$ are an epimorphism and a monomorphism respectively by Problem \ref{prob C.4}. We first show the existence of $\phi$.\\[0.5em]
+Since $\cok i = (I, \pi)$ and $f\circ i = 0$, then by the universal property of the cokernel, there exists a unique morphism $g: I \to B$ such that $g \circ \pi = f$.
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+K \arrow[r, "i"] & A \arrow[r, "f"] \arrow[d, "\pi"'] & B \arrow[r, "p"]        & C \\
+                 & I \arrow[ru, "g"', dashed]          & I' \arrow[u, "\kappa"'] &  
+\end{tikzcd}\]
+Moreover, since $p\circ g \circ \pi = p\circ f = 0$ and $\pi$ is an epimorphism, we obtain $p \circ g = 0$. Thus, since $\ker p = (I', \kappa)$, then by the universal property of the kernel, there exists a unique morphism $\phi: I \to I'$ such that $\kappa \circ \phi = g$.
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+K \arrow[r, "i"] & A \arrow[r, "f"] \arrow[d, "\pi"'] & B \arrow[r, "p"]        & C \\
+                 & I \arrow[ru, "g"' description, dashed]  \arrow[r, "\phi"', dashed]         & I' \arrow[u, "\kappa"'] &  
+\end{tikzcd}\]
+Altogether, we have
+\[\kappa\circ\phi\circ \pi = g\circ \pi = f\]
+Assume that also $\psi : I \to I'$ is any other morphism such that $\kappa \circ \psi \circ \pi = f$. Then \[\kappa \circ \psi \circ \pi = f = \kappa \circ \phi \circ \pi.\]
+Since $\pi$ is an epimorphism and $\kappa$ a monomorphism, we obtain $\psi = \phi$. Therefore $\phi$ is the unique such morphism.\\
+\\
+$(\Leftarrow)$ You can find a proof for this in [5, Chapter VIII]. %https://math.stackexchange.com/a/3268126/395669
+\\
+\\
+$(\Rightarrow)$ Suppose $\phi$ is an isomorphism, we have 
+\[\cok(\ker f) \overset{\sim}{\longrightarrow} \ker(\cok f)\]
+If $f$ is a monomorphism, by Problem \ref{prob C.5} (b), the source is $f$, giving us $f$ is the kernel of its cokernel. On the other hand, if $f$ is an epimorphism, again by Problem \ref{prob C.5} (b), the target is $f$, giving us $f$ is the cokernel of its kernel.
+\end{proof}
+
+\vspace*{0.1in}
+
+\begin{remark}
+In an additive category, or a category with a $0$-object, given a morphism $f:A \to B$, we define the \emph{image of $f$} as $\im f\coloneqq \ker(\cok f)$ and the \emph{coimage of $f$} as $\operatorname{coim}f \coloneqq \cok(\ker f)$.\\[1em]
+Let's investigate these objects in the category of abelian groups $\ncat{Ab}$. Consider a group homomorphism $f:A \to B$, then the kernel and image is what we know them to be. Turns out the cokernel is $A/\im f$. Precisely put, \[\ker f = (\ker f,\,\iota:\ker f \hookrightarrow A)\quad \text{and} \quad \cok f = (A/\im f,\, \pi: A \twoheadrightarrow A/\im f)\]
+Then, by our definition, $\im f \coloneqq \ker \pi = \im f$ and $\operatorname{coim}f \coloneqq \cok \iota = A/\ker f$. If we were to ask for an isomorphism 
+\[A/\ker f \cong \im f\]
+we would be asking for the First Isomorphism theorem to hold.\\
+\\
+Thus, Proposition \ref{fit} tells us that one can equivalently define an abelian category to be an additive category where each morphism has a kernel and cokernel and the "First Isomorphism theorem holds". The proposition also tells us that every morphism $f:A \to B$ in an abelian category factorises as
+\[A \to \im f \to B\]
+where the first arrow is an epimorphism, and the second arrow a monomorphism.
+\end{remark}
+
+%\vspace*{0.1in}
+
+\begin{definition}
+We say a sequence
+\[\begin{tikzcd}
+\cdots \arrow[r] & A \arrow[r,"f"] & B \arrow[r,"g"] & C \arrow[r] & \cdots
+\end{tikzcd}\]
+\begin{itemize}
+\item is a \emph{complex} at $B$ if $g \circ f = 0$; and
+\item is \emph{exact} at B if $\ker g = \im f$. More specifically, $g$ has a kernel that is an image of $f$.
+\end{itemize}
+A sequence is a \emph{complex} (resp. \emph{exact}) if it is a complex (resp. exact) at each term.\\
+\\
+A \emph{short exact sequence} is a five-term exact sequence of the form
+\[\begin{tikzcd}
+0 \arrow[r] & A' \arrow[r,"f"] & A \arrow[r,"g"] & A'' \arrow[r] & 0
+\end{tikzcd}\]
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+Several results about exact sequences, say in the category $\ncat{Mod}_R$, are proved by chasing elements, as you will see in Problems \ref{prob C.7} and \ref{prob C.8}. One would like to be able to do the same in any abelian category, since the objects in an abstract abelian category are not guaranteed to be sets. But this can be justified by the\\[0.5em] \emph{Freyd-Mitchell Embedding Theorem. If $\cat{C}$ is a locally small abelian category, then there is a ring $R$, which could be non-commutative, and an exact (see Definition \ref{exactfunc}), fully faithful functor $\cat{C} \to \ncat{Mod}_A$, which embeds $\cat{C}$ as a full subcategory.}\\
+\\
+What this means is that to prove something about a diagram in some abelian category, we may assume that it is a diagram of modules over some ring, and we may then "diagram-chase". Moreover, any fact about kernels, cokernels, and so on that holds in $\ncat{Mod}_R$ holds in any abelian category.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}\label{exactfunc}
+Let $F:\cat{C} \to \cat{D}$ be an additive functor between abelian categories, and consider a short exact sequence in $\cat{C}$
+\[\begin{tikzcd}
+0 \arrow[r] & A' \arrow[r,"f"] & A \arrow[r,"g"] & A'' \arrow[r] & 0
+\end{tikzcd}\]
+Then we say
+\begin{itemize}
+\item $F$ is \emph{right-exact} if
+\[\begin{tikzcd}
+F(A) \arrow[r,"f"] & F(A') \arrow[r,"g"] & F(A'') \arrow[r] & 0
+\end{tikzcd}\]
+is exact
+\item $F$ is \emph{left-exact} if
+\[\begin{tikzcd}
+0 \arrow[r] & F(A') \arrow[r,"f"] & F(A) \arrow[r,"g"] & F(A'')
+\end{tikzcd}\]
+is exact
+\item $F$ is \emph{exact} if $F$ is both left- and right-exact.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}\label{exactexample}
+Let $R$ be a ring, and consider the category $\ncat{Mod}_R$ and fix an $R$-module $M$. 
+\begin{itemize}
+\item $- \otimes_R M$ is an additive right-exact functor $\ncat{Mod}_R \to \ncat{Mod}_R$.
+\item $\mathrm{Hom}_R(M,-)$ is an additive left-exact functor $\ncat{Mod}_R \to \ncat{Mod}_R$.
+\item $\mathrm{Hom}_R(-,M)$ is an additive (contravariant) left-exact functor $\ncat{Mod}_R^{\text{op}} \to \ncat{Mod}_R$.
+\end{itemize}
+More generally, if $\cat{C}$ be any abelian category, and $C$ is an object of $\cat{C}$
+\begin{itemize}
+\item $\mathrm{Hom}_{\cat{C}}(C,-)$ is an additive left-exact functor $\cat{C} \to \ncat{Ab}$.
+\item $\mathrm{Hom}_{\cat{C}}(-,C)$ is an additive (contravariant) left-exact functor $\cat{C}^{\text{op}} \to \ncat{Ab}$.
+\end{itemize}
+\end{example}
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob C.1}
+In an additive category, $\mathrm{Hom}_{\cat{C}}(A,B)$ is an abelian group for any pair of objects $A,\,B$ in $\cat{C}$. Prove that the neutral element of this group is the $0$-morphism.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob C.2}
+Let $\set{A_i}_{i\in I}$ be a collection of finite objects in an additive category $\cat{C}$; we know their product exists. Let $(P = \prod_{i\in I}A_i,\, (\pi_i: P \to A_i)_{i\in I})$ be the product.\\[0.5em]
+Prove that there exist unique morphisms $\iota_j: A_j \to P$ in $\cat{C}$, for each $j \in J$, such that
+\[\pi_i\circ \iota_j = \begin{cases} 0 & \text{if } i \neq j\\[0.5em] 1_{A_i}  & \text{if } i = j \end{cases}\qquad \text{for any }i,j\in J\]
+and
+\[\sum_{j\in I}\iota_j\circ \pi_J = 1_P\]
+Moreover, prove that $(P,(\iota_j)_{j\in I})$ is a coproduct of $\set{A_i}_{i\in I}$ in $\cat{C}$.\\[1em]
+$(P,(\pi_j)_{j\in I},(\iota_j)_{j\in I})$ such that above two relations above are satisfied is called the \emph{biproduct} or \emph{direct sum} and denoted $\oplus_{i\in I}A_i$ with the maps left implicit.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.3}
+Let $F: \cat{C} \to \cat{D}$ be a functor between additive categories. Prove that
+\begin{itemize}
+\item[(a)] if $F$ is additive, then $F(0_{\cat{C}}) \cong 0_{\cat{D}}$, by showing that an object $Z$ is a zero object if and only if $1_Z = Z \to 0 \to Z$.
+\item[(b)] if $F$ is additive, $F$ preserves products, that is $F(A \times B) \cong F(A) \times F(B)$.
+\item[(c)] if $F$ is an equivalence, then $F$ is additive.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.4}
+If $i: A \to B$ is a monomorphism, then we say that $A$ is a \emph{subobject} of $B$, where the map $i$ is implicit; furthermore, we write $B/A \coloneqq \cok i$. Dually, if $p:A \to B$ is an epimorphism, then we say that $B$ is a \emph{quotient object} of $A$, where $p$ is implicit.\\
+\\
+Let $\cat{C}$ be a category with a $0$-object, and consider a morphism $f:A \to B$. Assume $(K,\iota)$ and $(C,\pi)$, a kernel and cokernel of $f$ respectively, exist, prove that $\iota$ is a monomorphism and $\pi$ is an epimorphism. That is, $K$ is a subobject of $A$ and $C$ is a quotient object of $B$.
+\end{problem}
+
+%\vspace*{0.1in}
+
+\begin{problem}\label{prob C.5}
+Let $\cat{C}$ be an abelian category.
+\begin{itemize}
+\item[(a)] Prove that $i:A \to B$ is a monomorphism if and only if $\ker i = (0,\,0 \to A)$. Formulate and prove the dual statement.
+\item[(b)] Consider the morphism $0 \to A$, prove that its cokernel is $(A,\,1_A)$. Formulate and prove the dual statement.
+\end{itemize}
+This problem then tells us, in particular, that if $i$ and $p$ is a monomorphism and epimorphism respectively, then
+\[\cok(\ker i) = i\quad \text{and} \quad \ker(\cok p) = p\]
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.6}
+Let $\cat{C}$ be an abelian category, and suppose you have the short exact sequence
+\[\begin{tikzcd}
+0 \arrow[r] & A' \arrow[r,"f"] & A \arrow[r,"g"] & A'' \arrow[r] & 0
+\end{tikzcd}\]
+Prove that
+\begin{itemize}
+\item[(a)] $f$ is a monomorphism and $g$ is an epimorphism.
+\item[(b)] $f$ (resp. $g$) is an isomorphism if and only $A'' = 0$ (resp. $A' = 0$).
+\item[(c)] $A = 0$ if and only if $A' = A'' = 0$.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}[Snake Lemma]\label{prob C.7}
+Consider the following diagram in $\ncat{Mod}_R$, where $R$ is a ring,
+\[\begin{tikzcd}
+  & M'\arrow[d,"\alpha" description] \rar & M \rar\arrow[d,"\beta" description] & M'' \rar\arrow[d,"\gamma" description] & 0 \\[1em]
+  0 \rar & N' \rar & N \rar & N'' &
+\end{tikzcd}\]
+where the rows are exact and the squares commute. Show that the following exact sequence in colour exists.
+\[\begin{tikzcd}[row sep=huge]
+  & {\color{darkgreen}\ker\alpha} \rar[darkgreen] \arrow[d,hook] & {\color{darkgreen}\ker\beta} \rar[darkgreen] \arrow[d,hook] & {\color{darkgreen}\ker\gamma} \arrow[d,hook] \ar[out=0, in=180, darkgreen]{dddll} & \\
+  & M'\arrow[d,"\alpha" description] \rar & M \rar\arrow[d,"\beta" description] & M'' \rar\arrow[d,"\gamma" description] & 0\\
+  0 \rar & N' \rar \arrow[d,two heads] & N \rar \arrow[d,two heads] & N'' \arrow[d,two heads] & \\
+   & {\color{darkgreen}\cok \alpha} \rar[darkgreen] & {\color{darkgreen}\cok \beta} \rar[darkgreen] & {\color{darkgreen}\cok \gamma} &
+\end{tikzcd}\]
+here $\hookrightarrow$ denotes the canonical monomorphism, and $\twoheadrightarrow$ denotes the canonical epimorphism.\\[1em]
+The connecting morphism $\ker \gamma \to \cok \alpha$ in the diagram is titular figurative "snake".
+%Snake Lemma
+\end{problem}
+
+%\vspace*{0.1in}
+
+\begin{problem}[Four Lemma]\label{prob C.8a}
+Consider the following diagram in $\ncat{Mod}_R$, where $R$ is a ring,
+\[\begin{tikzcd}
+  A\arrow[d,"\alpha" description] \rar & B \rar\arrow[d,"\beta" description] & C \rar\arrow[d,"\gamma" description] & D\arrow[d,"\delta" description] \\[1em]
+  A' \rar & B' \rar & C' \rar & D'
+\end{tikzcd}\]
+where the rows are exact and the squares commute. Show that
+\begin{itemize}
+\item[(a)] if $\alpha$ is surjective, and $\beta$ and $\delta$ are injective, then $\gamma$ is injective.
+\item[(b)] if $\delta$ is injective, and $\alpha$ and $\gamma$ are surjective, then $\beta$ is surjective.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}[Five Lemma]\label{prob C.8a}
+Consider the following diagram in $\ncat{Mod}_R$, where $R$ is a ring,
+\[\begin{tikzcd}
+  A\arrow[d,"\alpha" description] \rar & B \rar\arrow[d,"\beta" description] & C \rar\arrow[d,"\gamma" description] & D\rar\arrow[d,"\delta" description] & E\arrow[d,"\epsilon" description] \\[1em]
+  A' \rar & B' \rar & C' \rar & D' \rar & E'
+\end{tikzcd}\]
+where the rows are exact and the squares commute. Show that if $\alpha,\,\beta,\,\delta$ and $\epsilon$ are isomorphisms, then $\gamma$ is also an isomorphism.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.9}
+Formulate the notions of (left-/right-) exactness for a contravariant additive functor between abelian categories.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.10}
+Prove that the examples in Example \ref{exactexample} are indeed what we claim them to be.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob C.11}\hfill
+\begin{itemize}
+\item[(a)] Consider a pair of additive functors $F:\cat{C} \rightleftarrows \cat{D}:G$ between abelian categories such that $F \dashv G$. Prove that $F$ is right-exact and $G$ is left-exact.
+\item[(b)] Consider the category $\ncat{Ab}$, then we have seen the adjunction $-\otimes_\zz A \dashv \mathrm{Hom}_{\zz}(A,-)$. Therefore, this immediately tells us that our assertions in Example \ref{exactexample} are correct. Let $A = \qq$, prove that $-\otimes_\zz \qq$ is exact (that is, it is also left exact), while $\mathrm{Hom}_{\zz}(\qq,-)$ is not (that is, it is not right exact).
+\end{itemize}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

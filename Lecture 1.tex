@@ -1,0 +1,158 @@
+\vspace*{1em}
+
+\begin{definition}
+A category $\cat{C}$ consists of
+\begin{itemize}
+\item a collection of \emph{objects}, denoted $\mathrm{obj}(\cat{C})$; and
+\item a collection of \emph{morphisms} (also called \emph{arrows} or \emph{maps})
+\end{itemize}
+such that
+\begin{itemize}
+\item Each morphism has specified \emph{source} (or \emph{domain}) and \emph{target} (or \emph{domain}) objects. For a morphism $f$ we will sometimes denote the source as $s(f)$ and target as $t(f)$. The notation \[f:X \to Y\] tells us that $f$ is a morphism between the source $s(f) = X$ and target $t(f) = Y$.\\[0.5em]
+The collection of morphisms from $X$ to $Y$ is denoted $\mathrm{Hom}_{\cat{C}}(X,Y)$ or $\mathrm{Mor}_{\cat{C}}(X,Y)$ or $\cat{C}(X,Y)$. {\bf We will assume that these are sets; that is, all our categories will be \emph{locally small}}.
+\item For each object $X$, there exists an \emph{identity morphism} $1_X: X \to X$.
+\item For any pair of morphisms $f,\,g$ with $t(f) = s(g)$, there exists a morphism, the \emph{composite morphism} $gf$ with $s(gf) = s(f)$ and $t(gf) = t(g)$.\\[0.5em] That is, there's a binary operation
+\[\mathrm{Hom}_{\cat{C}}(X,Y) \times \mathrm{Hom}_{\cat{C}}(Y,Z) \to \mathrm{Hom}_{\cat{C}}(X,Z),\ \ (f,g) \mapsto gf\]
+\end{itemize}
+This data is subject to the following axioms:
+\begin{itemize}
+\item For any morphism $f:X \to Y$, we have \[1_Yf = f\quad \text{and} \quad f1_X = f\]
+\item For composable morphisms $f,\,g$ and $h$, we have
+\[(fg)h = f(gh)\]
+\end{itemize}
+\end{definition}
+
+\vspace{0.1in}
+
+\begin{example}\label{catex1}
+Concrete examples.
+  \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    {\bf Name} & {\bf Objects} & {\bf Morphisms}\\
+    \hline
+    $\ncat{Set}$ & Sets & Functions\\
+    \hline
+    $\ncat{Grp}$ & Groups & Group homomorphisms\\
+    \hline
+    $\ncat{Top}$ & Topological Spaces & Continuous Functions\\
+    \hline
+    $\ncat{Top}_{\ncat{Open}}$ & Topological Spaces & Open Functions\\
+    \hline
+    $\ncat{Rng}$ & Rings & Ring Homomorphisms\\
+    \hline
+    $\ncat{Ring}$ & Unital Rings & Unital Ring Homomorphisms\\
+    \hline
+    \end{tabular}}
+    \end{center}
+
+    \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    {\bf Name} & {\bf Objects} & {\bf Morphisms}\\
+    \hline
+    $\ncat{Mod}_A$ & $A$-modules & Module homomorphisms\\
+    \hline
+    \makecell{$\ncat{Ab} = \ncat{Mod}_\zz$} & Abelian Groups & Group homomorphisms\\
+    \hline
+    \makecell{$\ncat{Vec}_k = \ncat{Mod}_k$\\[0.1em] {\footnotesize ($k$ a field)}} & Vector spaces & Linear transformations\\
+    \hline
+    $G\text{-}\ncat{Set}$ & $G$-sets & $G$-equivariant maps\\
+    \hline
+    $\ncat{Set}_*$ & \makecell{Pointed Sets\\ $(X,x_0)$ where $x_0 \in X$\\ is called the basepoint} & \makecell{Basepoint preserving functions;\\ that is, functions $f:X \to Y$\\ such that $f(x_0) = y_0$}\\
+    \hline
+    $\ncat{Top}_*$ & \makecell{Pointed Topological Spaces} & \makecell{Basepoint preserving continuous functions}\\
+    \hline
+    $\ncat{SmMan}$ & Smooth Manifolds & Smooth Maps\\
+    \hline
+    $\ncat{Meas}$ & Measurable Spaces & Measurable Functions\\
+    \hline
+    \end{tabular}}
+    \end{center}
+\end{example}
+
+\vspace{0.1in}
+
+\begin{example}\label{catex2}
+Where morphisms are not maps but equivalence classes of maps.
+  \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    {\bf Name} & {\bf Objects} & {\bf Morphisms}\\
+    \hline
+    $\ncat{HTop}$ & Topological Spaces & Homotopy classes of continuous functions\\
+    \hline
+    $\ncat{Measure}$ & Measurable Spaces & \makecell{Equivalence classes of measurable functions\\ where the set where they differ has measure zero}\\
+    \hline
+    \end{tabular}}
+    \end{center}
+  \end{example}
+
+  \vspace{0.1in}
+  
+  \begin{example}\label{ex3} Where morphisms are not maps, or objects are not sets.
+    \begin{center}
+      {\renewcommand{\arraystretch}{2}%
+      \begin{tabular}{|c|c|c|}
+      \hline
+      {\bf Name} & {\bf Objects} & {\bf Morphisms}\\
+      \hline
+      \makecell{$\ncat{Mat}_A$\\[0.1em] ($A$ a ring)} & Positive Integers & \makecell{$\mathrm{Hom}(n,m)\coloneqq \mathrm{Mat}_{m \times n}(A)$.\\ Composition is given by matrix multiplication,\\ and the identity morphism is the identity matrix.}\\
+      \hline
+      \makecell{$(\ncat{P},\leq)$\\ a poset} & Elements of $\ncat{P}$ & \makecell{$\mathrm{Hom}_{\ncat{P}}(x,y) = \begin{cases} \set{x \to y} & \text{if }x \leq y\\ \emptyset & \text{otherwise} \end{cases}$\\ Composition is given by transitivity of the relation,\\ and the identity morphism is given by reflexivity.}\\
+      \hline
+      \makecell{$\ncat{B}G$\\ $G$ a group} & \makecell{$\bullet$\\ unique (dummy) object} & \makecell{$\mathrm{Hom}_{\ncat{B}G}(\bullet,\bullet) \coloneqq G$\\ Composition is given by the group multiplication,\\ and the identity morphism is given by\\ the group identity element.}\\
+      \hline
+      \end{tabular}}
+      \end{center}
+    \end{example}
+
+%\xu{dummy comment}
+
+%\vspace*{0.2in}
+
+\subsection{Problems}
+\vspace{0.1in}
+
+\begin{problem}\label{prob 1.1}
+Come up with an example different from the ones given above.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 1.2}
+Verify that the example in Example \ref{ex3} are indeed categories.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}[Slice Categories]\label{prob 1.3}
+Let $\cat{C}$ be a category and fix an object $X$, we define the \emph{slice category of $\cat{C}$ under $X$} denoted $X/\cat{C}$ as follows
+\begin{itemize}
+\item Objects of $X/\cat{C}$ are morphisms $a_Y:X \to Y$ with source $X$, we usually depict them as
+\[\begin{tikzcd}
+X \arrow[d]\\
+Y          
+\end{tikzcd}\]
+\item Morphism between $a_Y: X \to Y$ and $a_Z: X \to Z$ is defined to be a morphism $f: Y \to Z$ (in $\cat{C}$) such that the diagram
+\[\begin{tikzcd}
+                   & X \arrow[ld, "a_Y"'] \arrow[rd, "a_Z"] &   \\[0.5em]
+Y \arrow[rr, "f"'] &                                        & Z
+\end{tikzcd}\]
+commutes; that is, $a_Z = fa_Y$.
+\end{itemize}
+Verify $X/\cat{C}$ is indeed a category. Can you describe what would be the \emph{slice category of $\cat{C}$ over $X$}, denoted as $\cat{C}/X$.
+
+\vspace*{0.1in}
+
+\begin{remark}
+$\ncat{Set}_*$ can be realised as $*/\ncat{Set}$, where $*$ denotes a singleton.
+\end{remark}
+\end{problem}
+%
+%\vspace*{0.2in}
+%
+%\printendnotes 

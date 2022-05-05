@@ -1,0 +1,254 @@
+\vspace*{1em}
+
+\begin{definition}\label{grpobj}
+Given a category $\cat{C}$ with products, in particular a terminal object $\mathrm{pt}$, a \emph{group object} $G$ in $\cat{C}$ is an object equipped with three morphisms
+\begin{center}
+\begin{tabular}{c c}
+\emph{multiplication} & $m_G: G \times G \to G$\\[0.5em]
+\makecell{\emph{identity element}\\ \small(not the identity map)} & $e_G: \mathrm{pt} \to G$\\[0.5em]
+\emph{inverse} & $i_G: G \to G$
+\end{tabular}
+\end{center}
+such that following diagrams commute.
+\begin{itemize}
+\item \emph{the identity is a left and right identity}
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+\mathrm{pt} \times G \arrow[d, "\sim"', sloped] \arrow[r, "e_G\, \times\, 1_G"] & G\times G \arrow[d, "m_G"] \\
+G \arrow[r, "1_G"']                                                 & G                       
+\end{tikzcd}
+\qquad \text{and} \qquad
+\begin{tikzcd}[row sep=huge, column sep = huge]
+G \times \mathrm{pt} \arrow[d, "\sim"', sloped] \arrow[r, "1_G\, \times\, e_G"] & G\times G \arrow[d, "m_G"] \\
+G \arrow[r, "1_G"']                                                 & G                       
+\end{tikzcd}\]
+\item \emph{multiplication is associative}
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+G \times G \times G \arrow[d, "1_G\, \times\, m_G"'] \arrow[r, "m_G\, \times\, 1_G"] & G\times G \arrow[d, "m_G"] \\
+G\times G \arrow[r, "m_G"']                                                 & G                       
+\end{tikzcd}\]
+\item \emph{the inverse is a left and right inverse}
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+G \arrow[d] \arrow[r, "{(i_G\,,\,1_G)}"] & G\times G \arrow[d, "m_G"] \\
+\mathrm{pt} \arrow[r, "e_G"']                                                 & G                       
+\end{tikzcd}
+\qquad \text{and} \qquad
+\begin{tikzcd}[row sep=huge, column sep = huge]
+G \arrow[d] \arrow[r, "{(1_G\,,\,i_G)}"] & G\times G \arrow[d, "m_G"] \\
+\mathrm{pt} \arrow[r, "e_G"']                                                 & G                       
+\end{tikzcd}\]
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}
+It follows immediately from the definition that when $\cat{C} = \ncat{Set}$, the group objects are precisely groups. In fact, the definition of a group object is clearly modelled on the group axioms.\\[0.5em]
+The group objects in $\cat{C} = \ncat{Grp}$ are abelian groups, this is because we require the inverse to be a group homomorphism. The group objects in $\cat{C} = \ncat{Top}$ are topological groups and in $\cat{C} = \ncat{SmMan}$ are Lie groups. For any space $Y$, the loop space $\Omega Y$, see Example \ref{notfreeforget}, is a group object in $\ncat{HTop}_*$.\\[0.5em]
+The group objects in the category of schemes are called group schemes.
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{proposition}
+To give a group object structure on an object $G$ of $\cat{C}$ is equivalent to saying that, using Theorem \ref{yoneda} (Yoneda Lemma), the functor
+\[h_G = \mathrm{Hom}_{\cat{C}}(-,G):\cat{C}^{\text{op}} \to \ncat{Set}\]
+factors through $\ncat{Grp}$, where $U$ is the forgetful functor
+\[\begin{tikzcd}[row sep=large, column sep=small]
+\cat{C}^{\text{op}} \arrow[rd, "G(-)"'] \arrow[rr, "h_G"] &                             & \ncat{Set} \\
+                                              & \ncat{Grp} \arrow[ru, "U"'] &           
+\end{tikzcd}\]
+That is, $G(-)$ is just the functor which associates any object $X$ of $\cat{C}$ to the group whose underlying set is $\mathrm{Hom}_{\cat{C}}(X,G)$.
+\end{proposition}
+
+\vspace*{0.1in}
+
+\begin{definition}
+If $G$ and $H$ are group objects in $\cat{C}$, we define a homomorphism of group objects as a morphism $G \to H$ in $\cat{C}$, such that for each object $U$ of $\cat{C}$ the induced function $G(U) \to H(U)$ is a group homomorphism.\\[0.5em]
+Equivalently, using Theorem \ref{yoneda} (Yoneda Lemma), a homomorphism is a morphism $\phi : G \to H$ such that the following diagram commutes
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+G \times G \arrow[d, "\phi\,\times\,\phi"'] \arrow[r, "m_G"] & G \arrow[d, "\phi"] \\
+H \times H \arrow[r, "m_H"']                                                 & H                       
+\end{tikzcd}\]
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+The identity is clearly a homomorphism from a group object to itself. Furthermore, the composite of homomorphisms of group objects is still a homomorphism; thus, group objects in a category $\cat{C}$ forms a subcategory, which we denote by $\ncat{Grp}(\cat{C})$. So, we have, for example $\ncat{Grp} \simeq \ncat{Grp}(\ncat{Set})$ and $\ncat{Ab} = \ncat{Grp}(\ncat{Grp})$.\\[0.5em]
+Furthermore, we have Theorem \ref{yoneda} (Yoneda Lemma) embedding
+\[\ncat{Grp}(\cat{C}) \hookrightarrow \ncat{Grp}^{\cat{C}^{\text{op}}} = [\cat{C}^{\text{op}},\ncat{Grp}]\]
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}
+For a category $\cat{C}$ with coproducts, a group object in $\cat{C}^{\text{op}}$ is called a \emph{cogroup object}. The subcategory of cogroup objects of $\cat{C}$ is identified with $\ncat{Grp}(\cat{C}^{\text{op}})^{\text{op}}$. Working out the diagrams involved in the definition of a cogroup object, as in Definition \ref{grpobj}, is left as Problem \ref{prob B.4}. Equivalently, the functor
+\[h^G = \mathrm{Hom}_{\cat{C}}(G,-):\cat{C} \to \ncat{Set}\]
+factors through $\ncat{Grp}$
+\[\begin{tikzcd}[row sep=large, column sep=small]
+\cat{C} \arrow[rd] \arrow[rr, "h^G"] &                             & \ncat{Set} \\
+                                              & \ncat{Grp} \arrow[ru, "U"'] &           
+\end{tikzcd}\]
+\end{definition}
+
+%\vspace*{0.1in}
+
+\begin{example}
+For any space $X$, the suspension $\Sigma X$, see Example \ref{notfreeforget}, is a cogroup object in $\ncat{HTop}_*$. Specifically, the $n$-spheres $S^n$ are cogroup objects in $\ncat{HTop}_*$. The cogroup objects in $\cat{C} = \ncat{Grp}$ are free groups. The cogroup objects in $\cat{C} = \ncat{CRing}$ are commutative Hopf algebras.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+We have discussed the notion of a group object, and by Theorem \ref{yoneda} (Yoneda Lemma), the group objects can be considered a full subcategory of $\ncat{Grp}$-valued functors. The next natural thing to consider will be objects with an action of a group object. Because of Theorem \ref{yoneda} (Yoneda Lemma), we can, in general, talk about an action of a $\ncat{Grp}$-valued functor on a $\ncat{Set}$-valued functor and this definition will restrict to objects. Here's how we do this.\\[1em]
+A \emph{left action} $\alpha$ of a functor $G: \cat{C}^{\text{op}} \to \ncat{Grp}$ on a functor $F: \cat{C}^{\text{op}} \to \ncat{Set}$ is a natural transformation 
+\[\alpha:G \times F \to F,\] such that for any object $U$ of $\cat{C}$, the induced function \[\alpha_U:G(U) \times F(U) \to F(U)\] is an action of the group $G(U)$ on the set $F(U)$.\\[1em]
+Then, a left action of a group object $G$ on an object $X$ is defined to be a left action of the functor $h_G$ on the functor $h_X$. This is a bit high-brow, we reduce this definition down in terms of diagrams. 
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}\label{grpaction}
+Given a category $\cat{C}$ with a group object $(G,m_G,e_G,i_G)$ and terminal object $\mathrm{pt}$, a \emph{left action of $G$ on an object $X$} is a morphism
+\[\alpha_X: G \times X \to X\]
+such that following diagrams commute.
+\begin{itemize}
+\item \emph{the identity of $G$ acts like the identity on $X$:}
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+\mathrm{pt} \times X \arrow[d, "\sim"', sloped] \arrow[r, "e_G\, \times\, 1_X"] & G\times X \arrow[d, "\alpha_X"] \\
+X \arrow[r, "1_G"']                                                 & X                       
+\end{tikzcd}\]
+\item \emph{the action is associative with respect to the multiplication on $G$}
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+G \times G \times X \arrow[d, "1_G\, \times\, \alpha_X"'] \arrow[r, "m_G\, \times\, 1_X"] & G\times X \arrow[d, "\alpha_X"] \\
+G\times X \arrow[r, "\alpha_X"']                                                 & X                       
+\end{tikzcd}\]
+\end{itemize}
+Let $X$ and $Y$ be objects of $\cat{C}$ with an action of $G$, a morphism $f : X \to Y$ is called $G$-equivariant if for all objects $U$ of $\cat{C}$ the induced function $h_X(U) \to h_Y(U)$ is $G(U)$-equivariant.\\[0.5em]
+Equivalently, using Theorem \ref{yoneda} (Yoneda Lemma), $f$ is $G$-equivariant if the following diagram commutes
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+G \times X \arrow[d, "1_G\,\times\,f"'] \arrow[r, "\alpha_X"] & X \arrow[d, "f"] \\
+G \times Y \arrow[r, "\alpha_Y"'] & Y
+\end{tikzcd}\]
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{discussion}
+Suppose you're given an action of a group $G$ on a set $X$, note that this is equivalent to saying there's a group homomorphism
+\[G \to \mathrm{Sym}(X) = \mathrm{Aut}_{\ncat{Set}}(X),\ g \mapsto (x\mapsto g\cdot x)\]
+So, one may ask if there's a similar way to express that an object $X$ in a category $\cat{C}$ has an action of a group object $G$ in $\cat{C}$. One can talk naively about $\mathrm{Aut}_{\cat{C}}(X)$ and it will be a group under composition but it's not necessarily an object in $\cat{C}$ much less a group object in $\cat{C}$, so it's not clear what a "group homomorphism" means between $G$ and $\mathrm{Aut}_{\cat{C}}(X)$.\\[0.5em]
+So instead of wondering how we can interpret $\mathrm{Aut}_{\cat{C}}(X)$ as a group object, we expand our vision a bit and give a generalisation of this as a $\ncat{Grp}$-valued functor
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{discussion}\label{autgrp}
+For a category $\cat{C}$ with products and a terminal object $\mathrm{pt}$, fix an object $X$. For an object $U$ in $\cat{C}$ we consider the canonical projection $p_U:U \times X \to U$ which is an object of the slice category $\cat{C}/U$. Write
+\[\mathrm{Aut}_U(U \times X) \coloneqq \mathrm{Aut}_{\cat{C}/U}(p_U) = \setp{f \in \mathrm{Aut}_{\cat{C}}(U \times X)}{p_U\circ f = p_U}\]
+These are the automorphisms of $U \times X$ compatible with the projection $p_U$.\\[1em]
+This gives a functor (Problem \ref{prob B.6})
+\[\underline{\mathrm{Aut}}_{\cat{C}}(X):\cat{C}^{\text{op}} \to \ncat{Grp},\ U \mapsto \mathrm{Aut}_U(U \times X)\]
+The group $\underline{\mathrm{Aut}}_{\cat{C}}(X)(\mathrm{pt})$ is canonically isomorphic to $\mathrm{Aut}_{\cat{C}}(X)$.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{proposition}
+Let $G$ be a group object in $\cat{C}$, To give an action of $G$ on $X$ is equivalent to giving a natural transformation \[G(-) \Rightarrow \underline{\mathrm{Aut}}_{\cat{C}}(X)\] of functors $\cat{C}^{\text{op}} \to \ncat{Grp}$.\\[0.5em]
+In particular, we have group homomorphisms $G(U) \to \underline{\mathrm{Aut}}_{\cat{C}}(X)(U)$, for each object $U$.\\[0.5em] Specifically, for $U = \mathrm{pt}$ we obtain a group homomorphism \[G(\mathrm{pt}) \to \mathrm{Aut}_{\cat{C}}(X).\]
+\end{proposition}
+
+%\vspace*{0.1in}
+
+\begin{remark}
+When $\cat{C} = \ncat{Set}$, the functor $\underline{\mathrm{Aut}}_{\ncat{Set}}(X)$ is represented (Problem \ref{prob B.7}) for any set $X$ by $\mathrm{Sym}(X) = \setp{f:X \to X}{f \text{ is a bijection}}$.\\[0.5em]
+Therefore, by Theorem \ref{yoneda} (Yoneda Lemma), asking for a natural transformation $G(-) \Rightarrow \underline{\mathrm{Aut}}_{\ncat{Set}}(X)$ of functors $\ncat{Set}^{\text{op}} \to \ncat{Grp}$ is the same as asking for a group homomorphism $G \to \mathrm{Sym}(X)$, which was our motivating example.
+\end{remark}
+
+\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob B`.1}
+Define the notion of commutative (abelian) group object, and ring object in a category $\cat{C}$. You can try generalising other algebraic notions into this categorical framework, e.g. inner automorphisms of a group, a module over a ring object etc.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.2}
+Suppose that $\cat{C}$ and $\cat{D}$ are categories with products, and suppose that $F: \cat{C} \to \cat{D}$ is a functor that preserves finite products. 
+\begin{itemize}
+\item[(a)] Prove that $F$ restrict to a functor $\ncat{Grp}(\cat{C}) \to \ncat{Grp}(\cat{D})$, that is, prove that given a group object $G$ in $\cat{C}$, $F(G)$ is a group object in $\cat{D}$.
+\item[(b)] Conclude that the fundamental group of a topological group is abelian.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.3}
+Given a homomorphism $\phi:G \to H$ of group objects $G$ and $H$ in $\cat{C}$ with terminal object $\mathrm{pt}$, prove that we have the following commutative diagrams
+\[\begin{tikzcd}[row sep=huge, column sep = huge]
+\mathrm{pt} \arrow[d, "e_H"'] \arrow[r, "e_G"] & G \arrow[d, "\phi"] \\
+H \arrow[r, "1_H"']                                                 & H                       
+\end{tikzcd}
+\qquad \text{and} \qquad
+\begin{tikzcd}[row sep=huge, column sep = huge]
+G \arrow[d, "\phi"'] \arrow[r, "i_G"] & G \arrow[d, "\phi"] \\
+H \arrow[r, "i_H"']                                                 & H                       
+\end{tikzcd}\]
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.4}
+Given a category $\cat{C}$ with coproducts, in particular an initial object $\mathrm{O}$, a \emph{cogroup object} $K$ in $\cat{C}$ is an object equipped with three morphisms
+\begin{center}
+\begin{tabular}{c c}
+\emph{comultiplication} & $\mu_K: K \to K \amalg K$\\[0.5em]
+\emph{coidentity element} & $\eta_K: K \to \mathrm{O}$\\[0.5em]
+\emph{coinverse} & $\iota_K: K \to K$
+\end{tabular}
+\end{center}
+satisfying commutative diagrams dual to those of a group object. Write down the commutative diagrams we should have.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.4a}
+Pick your favourite categories and work out what the group and cogroup objects are in them.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.5}\hfill
+\begin{itemize}
+\item[(a)] Construct a functor $\mathrm{GL}_n:\ncat{CRing} \to \ncat{Grp}$  that associates to each commutative unital ring $A$, the group, $\mathrm{GL}_n(A)$, of invertible matrices with entries in $A$, i.e. the group of matrices with a non-zero determinant. 
+\item[(b)] Prove that the functor $\mathrm{GL}_n$ is representable, i.e., there exists a (commutative and unital) ring $B_{(n)}$ such that we have a natural isomorphism 
+\[\mathrm{Hom}_{\ncat{CRing}}(B,-) \overset{\sim}{\Longrightarrow} \mathrm{GL}_n\] 
+You may find it easier to first work this out for $n = 2$. We've already seen $n=1$, we usually denote the functor $\mathrm{GL}_1 = \mathbb{G}_m$, and it's precisely the unit group functor and is represented by the ring $\zz[t^{\pm}]$.\\[0.5em]
+This shows that $B$ is a cogroup object in $\ncat{CRing}$. In fact, this also shows that $\mathrm{Spec}\,B$ is a group object in the category of (affine) schemes.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.6}
+Prove that the association $\underline{\mathrm{Aut}}_{\cat{C}}(X)$ defined in Definition \ref{autgrp} is indeed a functor.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.7}
+Prove that the functor $\underline{\mathrm{Aut}}_{\ncat{Set}}(X)$ is represented by $\mathrm{Sym}(X)$.
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob B.8}\hfill
+\begin{itemize}
+\item[(a)] Given a cogroup object $K$ in a category $\cat{C}$ with coproducts, describe what it means for an object $X$ to have a \emph{right co-action of $K$} by dualising Definition \ref{grpaction}.
+\item[(b)] Prove that the coproduct of two rings $A$ and $B$ in $\ncat{CRing}$ is $A \otimes_\zz B$.
+\item[(c)] Prove that saying that a ring $A$ is equipped with a co-action of the cogroup $\zz[t^{\pm}]$ is equivalent to saying that $A$ has an integer-valued grading.
+\end{itemize}
+\end{problem}

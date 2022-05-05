@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+ 
+\usepackage[top=0.75in, bottom=1.25in, left=1in, right=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{fancyref}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{afterpage}
+%\usepackage{extarrows}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+\usepackage{array}
+\usepackage{mathrsfs}
+\usepackage{titlesec}
+%\usepackage{relsize}
+\usepackage{mdframed}
+\usepackage[overload]{empheq}
+%\usepackage[notref,notcite]{showkeys}
+\usepackage{xcolor}
+\definecolor{firebrick}{RGB}{178,34,34}
+\definecolor{teal}{RGB}{0,128,128}
+\definecolor{indigo}{RGB}{75,0,130}
+\definecolor{darkgreen}{rgb}{0.0,0.3,0.0}
+\definecolor{darkblue}{rgb}{0.0,0.0,.7}
+\definecolor{darkred}{rgb}{0.6,0.0,0.0}
+\definecolor{lightgrey}{RGB}{212, 212, 212}
+%\usepackage{eulervm}
+%\usepackage{mnsymbol}
+\usepackage{scalerel}
+\usepackage{stmaryrd}
+\setcounter{MaxMatrixCols}{20}
+%\usepackage{bbm}
+\usepackage{mathpazo}
+\usepackage{longtable}
+%\usepackage{newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage[cal = dutchcal, scr = boondox]{mathalpha}
+\usepackage{makecell}
+%\usepackage[whole]{bxcjkjatype}
+%\usepackage{endnotes}
+\usepackage[toc]{appendix}
+\usepackage{quiver}
+\usepackage{enotez}
+\usepackage{cleveref}
+
+\newenvironment{delayedproof}[1]
+ {\begin{proof}[\raisedtarget{#1}Proof of \Cref{#1}]}
+ {\end{proof}}
+\newcommand{\raisedtarget}[1]{%
+  \raisebox{\fontcharht\font`P}[0pt][0pt]{\hypertarget{#1}{}}%
+}
+\newcommand{\proofref}[1]{\hyperlink{#1}{proof}}
+
+\let\footnote=\endnote
+%\setenotez{
+%  reset = true ,
+%  list-heading = \section*{#1}
+%}
+ 
+\renewcommand{\cellalign}{cc}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
+  
+\DeclareMathAlphabet{\mathbx}{U}{BOONDOX-ds}{m}{n}
+\SetMathAlphabet{\mathbx}{bold}{U}{BOONDOX-ds}{b}{n}
+\DeclareMathAlphabet{\mathbbx} {U}{BOONDOX-ds}{b}{n}
+  
+\tikzset{
+    labl/.style={anchor=north, rotate=90, inner sep=.5mm}
+}
+
+\def\shortyear#1{\expandafter\shortyearhelper#1}
+\def\shortyearhelper#1#2#3#4{#3#4}
+
+\newdateformat{shortmonth}{%
+  \shortmonthname[\THEMONTH]}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\cfoot{{\footnotesize {\color{black} \thepage}}}
+\lfoot{{\footnotesize {\color{gray} BRS | Winter 2022}}}
+%\lfoot{{\footnotesize {\color{gray} Bhamidipati, \shortmonth\today\ '\shortyear{\the\year}}}}
+\rfoot{{\footnotesize {\color{gray} Category Theory Seminar}}}
+
+%Here are some user-defined notations
+\newcommand{\zz}{\mathbb Z}   %blackboard bold Z
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ff}{\mathbb F}   %blackboard bold F
+\newcommand{\rr}{\mathbb R}   %blackboard bold R
+\newcommand{\nn}{\mathbb N}   %blackboard bold N
+\newcommand{\cc}{\mathbb C}   %blackboard bold C
+\newcommand{\oo}{\mathcal O}   %calligraphic O
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\one}{\mathbx{1}}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\catcal}[1]{\mathscr{#1}}   %calligraphic category
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+%\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\norm}{\operatorname{N}}
+\newcommand{\modar}[1]{\text{ mod }{#1}}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\setp}[2]{\left\{#1\ :\ #2\right\}}
+%\newcommand{\card}[1]{\operatorname{card}{\left(#1\right)}}
+\newcommand{\cat}[1]{\mathscr{#1}}
+\newcommand{\ncat}[1]{\mathsf{#1}}
+\newcommand{\gal}{\operatorname{Gal}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\cok}{\operatorname{coker}}
+\newcommand{\coim}{\operatorname{coim}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\lcm}{\operatorname{LCM}}
+\newcommand{\kiss}{\,\heartsuit\,}
+\renewcommand{\hom}{\operatorname{Hom}}
+%\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\gcd}{\operatorname{GCD}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+%\newcommand{\ephi}{\varphi}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+%\renewcommand{\unlhd}{\trianglelefteqslant}
+%\renewcommand{\unrhd}{\trianglerighteqslant}
+\newcommand\tinydashv{\vcenter{\hbox{\scalebox{0.8}{$\dashv$}}}}
+\newcommand\card{\scalebox{1.5}{\raisebox{-0.55ex}{\#}}}
+\newcommand{\refp}[1]{\textnormal{(\ref{#1})}}
+\newcommand{\ls}[2]{\bigg(\dfrac{#1}{#2}\bigg)}
+\newcommand{\mfrak}[1]{\mathbold{\mathfrak{#1}}}
+\newcommand{\rlarrows}[1]{\mathrel{\substack{\xrightarrow{#1} \\[-.5ex] \xleftarrow{#1}}}}
+\newcommand{\rlrarrows}[1]{\mathrel{\substack{\xrightarrow{#1} \\[-.5ex] \xleftarrow{#1} \\[-.5ex] \xrightarrow{#1}}}}
+\newcommand{\longdiv}{\smash{\mkern-0.43mu\vstretch{1.31}{\hstretch{.7}{)}}\mkern-5.2mu\vstretch{1.31}{\hstretch{.7}{)}}}}
+\newcommand{\xu}[1]{{\color{firebrick}#1 - Xu}}
+        
+\renewcommand\#{\protect\scalebox{0.8}{\protect\raisebox{0.4ex}{\char"0023}}}
+
+\tikzset{%
+    symbol/.style={%
+        draw=none,
+        every to/.append style={%
+            edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+    }
+}
+
+%\setcounter{secnumdepth}{-2}
+\titlelabel{\thetitle.\ \ }
+%\renewcommand*{\thesection}{\arabic{section}.}
+%\renewcommand*{\thesubsection}{\arabic{subsection}.}
+
+%Here are some user-defined symbols
+\DeclareRobustCommand\notimplies
+     {\;\not\!\!\!\implies}
+\DeclareRobustCommand\longhookrightarrow
+     {\lhook\joinrel\longrightarrow}
+\DeclareRobustCommand\longhookleftarrow
+     {\longleftarrow\joinrel\rhook}
+\DeclareRobustCommand\longtwoheadrightarrow
+     {\relbar\joinrel\twoheadrightarrow}
+\DeclareRobustCommand\longtwoheadleftarrow
+     {\twoheadleftarrow\joinrel\relbar}
+\DeclareRobustCommand\Langle
+     {\langle\!\langle}
+\DeclareRobustCommand\Rangle
+     {\rangle\!\rangle}
+     
+%\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{discussion}[theorem]{Discussion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{attempt-definition}[theorem]{Attempting Definition}
+
+\newtheorem{problem}{Problem}[section]
+
+\newmdenv[linecolor=black
+          ,topline=false
+          ,bottomline=false
+          ,rightline=false
+          ,leftline=true
+          ,leftmargin=0.1cm
+          ,linewidth=0.02cm
+          ,skipabove=0cm
+          ,innerbottommargin=0.05cm
+          ,skipbelow=0.05cm
+          ]{subproof}
+
+\setlength{\parindent}{0cm}
+     
+\allowdisplaybreaks

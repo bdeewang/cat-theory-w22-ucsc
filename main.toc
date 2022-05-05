@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Lecture 1 (1/07) by Deewang}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problems}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Lecture 2 (1/14) by Vaibhav}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problems}{12}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Lecture 3 (1/21) by Deewang}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problems}{21}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Lecture 4 (1/28) by Vaibhav}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Problems}{29}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Lecture 5 (2/04) by David}{31}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Problems}{34}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Lecture 6 (2/11) by David}{36}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Problems}{44}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Lecture 7 (2/18) by Vaibhav}{48}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Problems}{51}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Lecture 8 (2/25) by Deewang}{54}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Problems}{63}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Lecture 9 (3/04) by Deewang}{67}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Problems}{71}{subsection.9.1}%
+\contentsline {section}{\numberline {A}(Strict) $\mathbold {2}$-categories}{73}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Problems}{78}{subsection.A.1}%
+\contentsline {section}{\numberline {B}Group Objects}{79}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Problems}{83}{subsection.B.1}%
+\contentsline {section}{\numberline {C}Abelian Categories}{85}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Problems}{89}{subsection.C.1}%

@@ -1,0 +1,347 @@
+\vspace*{1em}
+
+\begin{example}\label{gsetasfunc}
+For a group $G$, consider the category $\ncat{B}G$ and any other category $\cat{C}$. A functor
+\[X:\ncat{B}G \to \cat{C}\]
+specifies an object $X$ in $\cat{C}$ (the image of the unique object in $\ncat{B}G$) and an automorphism $g_X: X \to X$ for each $g \in G$ (the image of the isomorphisms $g \in G$ in $\ncat{B}G$). That is, the functor affords a morphism
+\[G \to \mathrm{Aut}_{\cat{C}}(X).\]
+This is subject to the following two properties
+\begin{itemize}
+\item $(gh)_X = g_Xh_X$
+\item $e_X = 1_X$
+\end{itemize} 
+That is, the functor $X:\ncat{B}G \to \cat{C}$ defines an \emph{action} of the group $G$ on the object $X$ in $\cat{C}$.
+\begin{itemize}[leftmargin=*]
+\item When $\cat{C} = \ncat{Set},\ X$ is called a $G$-set.
+\item When $\cat{C} = \ncat{Vec}_k,\ X$ is called a $G$-representation.
+\item When $\cat{C} = \ncat{Top},\ X$ is called a $G$-space.
+\end{itemize}
+This notion is also given the name \emph{left action}, in which case a \emph{right action} is a functor $X:\ncat{B}G^{\text{op}} \to \cat{C}$.\\
+\\
+How would one express the notion of a $G$-equivariant map in this language? It will have to be some notion of \emph{morphism of functors} as we've realised objects with a $G$-action as functors.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}\label{dualex}
+For a field $k$, recall that any finite dimensional $k$-vector space $V$ is isomorphic to its dual $V^* = \mathrm{Hom}_{k\text{-line}}(V,k)$. This is proven by constructing an explicit \emph{dual basis}: choose a basis $\set{e_1,\ldots,e_n}$ of $V$, then a basis of $V^*$ is given by $\set{e_1^*,\ldots,e_n^*}$ where
+\[e_i^*(e_j) = \begin{cases} 1 & \text{if $i = j$}\\ 0 & \text{otherwise};\end{cases}\]
+this isomorphism is then given by $e_i \mapsto e_i^*$.\\
+\\
+A related construction is the double dual $V^{**} \coloneqq (V^*)^*$. Since the association of a dual describes a functor $(-)^*:\ncat{fdVec}_k^{\text{op}} \to \ncat{fdVec}_k$, for a finite dimensional vector space $V$, we get $V^** = (V^*)^* \cong V^* \cong V$ where the isomorphism sends $e_i$ to the dual dual basis $e_i^{**}$.\\[0.5em]
+Turns out, there's a cleaner way to give an isomorphism between $V$ and $V^{**}$ without making a choice of basis. For any $v \in V$, the \emph{evaluation map}
+\[\mathrm{ev}_v:V^* \to k,\ \phi \mapsto \phi(v)\]
+is a linear functional on $V^*$, that is, an element of $V^{**}$. The assignment $v \mapsto \mathrm{ev}_v$ defines a \emph{basis-free} \emph{natural} isomorphism $V \cong V^{**}$.
+\end{example}
+
+%\vspace*{0.1in}
+
+What distinguishes the isomorphism between a finite-dimensional vector space and its double dual from the isomorphism between a finite-dimensional vector space and its single dual is that the former assembles into the components of a \emph{natural transformation}, a notion that we describe below.
+
+\vspace*{0.1in}
+
+\begin{definition}\label{natrans}
+Given categories $\cat{C}$ and $\cat{D}$ and functors $F,G: \cat{C} \rightrightarrows \cat{D}$, a \emph{natural transformation} $\alpha: F \Rightarrow G$ consists of
+\begin{itemize}
+\item a morphism $\alpha_X : F(X) \to G(X)$ in $\cat{D}$ for each object $X$ in $\cat{C}$, the collection of which we call the \emph{components} of the natural transformation,
+\end{itemize}
+such that
+\begin{itemize}
+\item for any morphism $f : X \to Y$ in $\cat{C}$, the following square of morphisms in $\cat{D}$
+\[\begin{tikzcd}[row sep=large]
+F(X) \arrow[r, "F(f)"] \arrow[d, "\alpha_X"'] &[0.2em] F(Y) \arrow[d, "\alpha_Y"]\\[0.5em]
+G(X)                    \arrow[r, "G(f)"']                                &                   G(Y)
+\end{tikzcd}\]
+commutes.
+\end{itemize}
+We usually say that the morphisms $\alpha_X : F(X) \to G(X)$ are natural in $X$ to implicitly imply the existence of this commutative square.\\[0.5em]
+A \emph{natural isomorphism} is a natural transformation $\alpha: F \Rightarrow G$ in which every component $\alpha_X$ is an isomorphism in $\cat{D}$.
+\end{definition}
+
+\vspace{0.1in}
+
+\begin{example}
+Some natural transformations between already introduced functors (Example \ref{func}).\\[-2em]
+  \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|c|c|}
+    \hline
+    {\bf Source} & {\bf Target} & {\bf Natural Transformation} & {\bf Components}\\
+    \hline
+    $\ncat{Vec}_k$ & $\ncat{Vec}_k$ & \makecell{$1_{\ncat{Vec}} \Rightarrow (-)^{**}$\\[0.5em] (isomorphism)} & \makecell{$V \to V^{**}:v \mapsto \mathrm{ev}_v$}\\
+    \hline
+    $\ncat{Set}$ & $\ncat{Set}$ & $1_{\ncat{Set}} \Rightarrow \cat{P}_*$ & $A \to \cat{P}(A):a \mapsto \set{a}$\\
+    \hline
+    $\cat{C}$ & $\ncat{Set}$ & \makecell{$h^Y \Rightarrow h^X$\\[0.5em] given a morphism $f:X \to Y$} & $\mathrm{Hom}(Y,T) \to \mathrm{Hom}(X,T):\phi \mapsto \phi f$\\
+    \hline
+    $\cat{C}^{\text{op}}$ & $\ncat{Set}$ & \makecell{$h_X \Rightarrow h_Y$\\[0.5em] given a morphism $f:X \to Y$} & $\mathrm{Hom}(T,X) \to \mathrm{Hom}(T,Y):\psi \mapsto f\psi$\\
+    \hline
+    $\ncat{B}G$ & $\cat{C}$ & \makecell{$X \Rightarrow Y$\\[0.5em] for objects $X,\,Y$ in $\cat{C}$} & \makecell{single component $f: X \to Y$\\ such that $g_Yf = fg_X$ for all $g \in G$\\[0.5em] (a $G$-equivariant map)}\\
+    \hline
+    $\ncat{Top}$ & $\ncat{Set}$ & \makecell{$h^* \Rightarrow U$\\[0.5em] (isomorphism)} & \makecell{$\mathrm{Hom}_{\ncat{Top}}(*,X) \to U(X):f \mapsto f(*)$}\\
+    \hline
+    $\ncat{CRing}$ & $\ncat{Set}$ & \makecell{$h^{\zz[t^{\pm}]} \Rightarrow (-)^\times$\\[0.5em] (isomorphism)} & \makecell{$\mathrm{Hom}_{\ncat{CRing}}(\zz[t^{\pm}],A) \to A^\times: f \mapsto f(t)$}\\
+    \hline
+    $G\text{-}\ncat{Set}$ & $\ncat{Set}$ & \makecell{$h^* \Rightarrow (-)^G$\\[0.5em] (isomorphism)} & $\mathrm{Hom}_{G\text{-}\ncat{Set}}(*,X) \to X^G:f \mapsto f(*)$\\
+    \hline
+    $\ncat{Grp}$ & $\ncat{Grp}$ & \makecell{$1_{\ncat{Grp}} \Rightarrow (-)^{\text{ab}}$} & \makecell{$G \twoheadrightarrow G/[G,G]$\\[0.5em] canonical projection} \\
+    \hline
+    \end{longtable}}
+    \end{center}
+\vspace*{-0.3in}
+\begin{discussion}
+In contrast with the first example, the identity functor and the single dual functor on finite-dimensional vector spaces are not naturally isomorphic. Looking beyond the one technical obstruction, that the identity functor is covariant while the dual functor is contravariant, which is beside the point, the more significant is the essential failure of naturality.\\
+\\
+Given a linear map $T: V \to W$ between finite dimensional vector spaces, we obtain the diagram
+\[\begin{tikzcd}[row sep=large]
+V \arrow[r, "T"] \arrow[d, "\phi_{\mathbf{e}_V}"'] &[0.2em] W \arrow[d, "\phi_{\mathbf{e}_W}"]\\[0.5em]
+V^*                                                    &                   W^* \arrow[l, "T^*"]
+\end{tikzcd}\]
+where $\phi_{\mathbf{e}_V}$ and $\phi_{\mathbf{e}_W}$ are isomorphism described in Example \ref{dualex} respect to the choice of basis $\mathbf{e}_V$ and $\mathbf{e}_W$ of $V$ and $W$ respectively. The only "naturality" condition that can be read from this diagram is
+\[\phi_{\mathbf{e}_V} = T^*\circ \phi_{\mathbf{e}_W}\circ T,\]
+but taking $T = 0$ gives us that $\phi_{\mathbf{e}_V} = 0$ contradicting the fact that $\phi_{\mathbf{e}_V}$ was an isomorphism. A line of enquiry would be to consider what happens if assume $T$ to be an isomorphism, you will then note that one still cannot escape the failure of this notion of naturality.\\
+\\
+Consider the subcategory $\ncat{Euc}$ of Euclidean vector spaces of $\ncat{fdVec}_{\rr}$, that is, the subcategory of inner product spaces. Then it's important to note that there is a natural isomorphism $1_{\ncat{Euc}} \Rightarrow (-)^*$ given by (components are) $V \to V^*: v \mapsto \langle v,-\rangle$.
+\end{discussion}
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}\label{opensetfun}
+We describe two functors $\mathcal{O},\mathcal{C}:\ncat{Top}^{\text{op}} \to \ncat{Set}$\\[-2.5em]
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{c c c}
+	\makecell{$\mathcal{O}:X \mapsto \mathcal{O}(X)$, set of open sets} && $\begin{tikzcd} X \overset{f}{\longrightarrow} Y \arrow[d, maps to,"\mathcal{O}"] \\ \mathcal{O}(Y) \overset{f^{-1}}{\longrightarrow} \mathcal{O}(X) \end{tikzcd}$\\[1em]
+\makecell{$\mathcal{C}:X \mapsto \mathcal{C}(X)$, set of closed sets} && $\begin{tikzcd} X \overset{f}{\longrightarrow} Y \arrow[d, maps to,"\mathcal{C}"] \\ \mathcal{C}(Y) \overset{f^{-1}}{\longrightarrow} \mathcal{C}(X) \end{tikzcd}$
+    \end{longtable}}
+    \end{center}
+\vspace*{-0.3in}
+Then there's a natural isomorphism $\mathcal{O} \Rightarrow \mathcal{C}$ with components as $\mathcal{O}(X) \to \mathcal{C}(X):U \mapsto X\setminus U$.
+\end{example}
+
+\vspace*{0.2in}
+
+\begin{example}
+Recall that a monoid is a set equipped with a binary product for which there exists a netural element (that is, a set that satisfies all the group axioms but the one about existence of inverses). A morphism of monoids is a function that commutes with the binary products, similar to a group homomorphism. We can then consider the category $\ncat{Mon}$ of monoids, where the objects are monoids and morphisms are (monoid) morphisms.\\
+\\
+Given any ring with unity $A$, $A$ is a monoid with respect to multiplication. So is the set of $n \times n$ matrices $M_n(A)$ with respect to multiplication. These assemble to give functors
+\[M_n(-),U: \ncat{Ring} \rightrightarrows \ncat{Mon}\]
+Consider now the determinant map $\det_A:M_n(A) \to U(A)$, this is a monoid morphism since $\det_A(XY) = \det_A(X)\det_A(Y)$. The determinant assembles to give us (that is, $\det_A$ are the components) a natural transformation
+\[\det:M_n(-) \Rightarrow U\]
+\end{example}
+
+\vspace*{0.2in}
+
+\begin{example}
+Consider the category $\ncat{HTop}_*$ and denote
+\[[X,Y]_* \coloneqq \mathrm{Hom}_{\ncat{HTop}_*}((X,x_0),(Y,y_0)) = \setp{f:X \to Y}{f \text{ is continuous, }f(x_0) = y_0}\!\!/\text{homotopy}\]
+leaving the base points implicit.\\
+\\
+We've already seen the functor $\pi_1:\ncat{HTop}_* \to \ncat{Grp}$ where $(X,x_0) \mapsto [S^1,X]_*$, the fundamental group of $X$ at basepoint $x_0$. We can similarly define, for any $n\geq 1$ functors
+\[\pi_n:\ncat{Htop}_* \to \ncat{Grp},\ (X,x_0) \mapsto \pi_n(X,x_0) \coloneqq [S^n,X]_*\]
+$\pi_n(X,x_0)$ are called the \emph{$n^{\text{th}}$ homotopy groups of $X$ at basepoint $x_0$}. It's a fact that for $n>1$, the functor $\pi_n$ takes values in $\ncat{Ab}$.\\
+\\
+There's another functor \[H_n:\ncat{HTop}_* \to \ncat{Ab},\ (X,x_0) \mapsto H_n(X,\zz)\] $H_n(X,\zz)$ are called the \emph{$n^{\text{th}}$ singular homology group of $X$ with coefficients in $\zz$}.\\
+\\
+For any pointed space $X$ (and $n$), there's a group homomorphism
+\[h_n(X):\pi_n(X,x_0) \to H_n(X,\zz)\]
+called the Hurewicz homomorphism, which assemble to give a natural tranformation
+\[h_n:\pi_n \Rightarrow H_n\]
+\end{example}
+
+\vspace{0.1in}
+
+We have talked about categories, functors and natural transformations but we have yet to discuss or introduce the right notion of "sameness" for categories. Naively, one would hope that the following would be that notion, an isomorphism in $\ncat{CAT}$.
+
+\begin{definition}
+Let $\cat{C}$ and $\cat{D}$ be categories, then we say $\cat{C}$ and $\cat{D}$ \emph{isomorphic} to each other if there exist functors \[F:\cat{C} \leftrightarrows \cat{D}:G\] such that $GF = 1_{\cat{C}}$ and $FG = 1_{\cat{D}}$, where $1_{\cat{C}}$ and $1_{\cat{D}}$ are the obvious identity functors. We then write $\cat{C} \cong \cat{D}$.
+\end{definition}
+
+\vspace*{0.1in}
+
+Unfortunately, turns out this notion is too strong and rarely satisfied in practice and even rarely needed in practice. Following is a weaker notion than an isomorphism of categories but is the right notion of "sameness"
+
+\begin{definition}
+Let $\cat{C}$ and $\cat{D}$ be categories, then we say $\cat{C}$ and $\cat{D}$ are \emph{equivalent} to each other if there exist functors \[F:\cat{C} \leftrightarrows \cat{D}:G\] such that there exist natural isomorphisms $\eta: 1_{\cat{C}} \Rightarrow GF$ and $\epsilon: FG \Rightarrow 1_{\cat{D}}$. $G$ is called the (well-defined up to a natural isomorphism) \emph{quasi-inverse} of $F$, and we then write $\cat{C} \simeq \cat{D}$.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Suppose $F$ and $G$ in the definitions above are contravariant, then Problem \ref{prob 2.9} (b) tells us that $FG$ and $GF$ are covariant functors. We say $\cat{C}$ and $\cat{D}$ are \emph{anti-equivalent} (resp. \emph{anti-isomorphic}), or possess a \emph{duality}, if there exist contravariant functors $F:\cat{C} \leftrightarrows \cat{D}:G$ such that there exist natural isomorphisms (resp. equality) $\eta: 1_{\cat{C}} \Rightarrow GF$ and $\epsilon: FG \Rightarrow 1_{\cat{D}}$.
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{example}\label{vectorspace}
+For a field $k$, we consider the categories $\ncat{Mat}_k,\ \ncat{fdVec}_k,\ \ncat{fdVec}^{\text{basis}}_k$. The only category we haven't seen before is $\ncat{fdVec}^{\text{basis}}_k$, the objects of $\ncat{fdVec}^{\text{basis}}_k$ are finite dimensional vector spaces with a chosen basis are morphisms are arbitrary (not necessarily basis-preserving) linear maps. These three categories are relates by a few functors
+\[\begin{tikzcd}
+\ncat{Mat}_k \arrow[r, shift left, "k^{(-)}"] & \ncat{fdVec}^{\text{basis}}_k \arrow[r, shift left, "U"] \arrow[l, shift left, "D"] & \ncat{fdVec}_k \arrow[l, shift left, "C"]
+\end{tikzcd}\]
+where
+\begin{itemize}
+\item the functor $k^{(-)}$ sends a non-negative integer $n$ to the vector space $k^n$ equipped with the standard basis, and an $m\times n$ matrix to itself as it defines a linear map $k^n \to k^m$.
+\item The functor $U$ is the forgetful functor.
+\item The functor $C$ is defined by choosing a basis for each vector space.
+\item The functor $D$ sends a vector space to its dimension, and a linear map between two vector spaces to its matrix representation with respect to the chosen bases.
+\end{itemize}
+The functors define an equivalence of categories
+\[\ncat{Mat}_k \simeq \ncat{fdVec}_k \simeq \ncat{fdVec}^{\text{basis}}_k\]
+One can prove this directly or we can prove it using a very useful characterisation of an equivalence of categories that we now give.
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{definition}
+A functor $F:\cat{C} \to \cat{D}$ is
+\begin{itemize}
+\item \textbf{full} if for objects $X,\,Y$, the map
+\[\mathrm{Hom}_{\cat{C}}(X,Y) \to \mathrm{Hom}_{\cat{D}}(F(X),F(Y))\]
+is surjective.
+\item \textbf{faithful} if for objects $X,\,Y$, the map
+\[\mathrm{Hom}_{\cat{C}}(X,Y) \to \mathrm{Hom}_{\cat{D}}(F(X),F(Y))\]
+is injective.
+\item \textbf{essentially surjective (on objects)} if for every object $W$ in $\cat{D}$, there is some object $X$ in $\cat{C}$ such that $F(X) \cong W$.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Fullness and faithfulness are \emph{local conditions} on morphisms, not \emph{global} as a global condition would apply "everywhere". A full functor need not be surjective on morphisms (one reason is because such a functor may not be essentially surjective), and a faithful functor need not be injective on morphisms.
+%\begin{example}
+%Consider a category $\cat{C}$ with four objects, say $\set{A,B,C,D}$ with morphism sets $\mathrm{Hom}_{\cat{C}}(A,B) = \set{f},\ \mathrm{Hom}_{\cat{C}}(C,D) = \set{g}$ and let the other sets of morphisms be either empty or only contain the identity morphisms. Now, consider another category $\cat{D}$ with two objects, say $\set{X,Y}$ with morphism sets $\mathrm{Hom}_{\cat{D}}(X,Y) = \set{h}$ and let the other sets of morphisms only contain the identity morphisms. We can describe the functor 
+%\begin{align*}
+%F:\cat{C} &\to \cat{D}\\
+%A,\,C &\mapsto X\\
+%B,\,D &\mapsto Y\\
+%f,\,g &\mapsto h
+%\end{align*}
+%Clearly this functor is faithful (even full and essentially surjective) but not injective on morphisms.
+%\end{example}
+\begin{itemize}
+\item A faithful functor that is injective on objects is called an \emph{embedding}, and identifies the domain category as a subcategory of the codomain. In this case, faithfulness implies that the functor is (globally) injective on arrows.
+\item A full and faithful functor, called \emph{fully faithful} for short, that is injective on objects defines a \emph{full embedding} of the domain category into the codomain category. The domain then defines a \emph{full subcategory} of the codomain.
+\end{itemize}
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{theorem}\label{cateq}
+A functor defines an equivalence of categories if and only if it is full, faithful and essentially surjective on objects.
+\end{theorem}
+
+\vspace*{0.2in}
+
+\subsection{Problems}
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.1}\hfill
+\begin{itemize}
+\item Given categories $\cat{C}$ and $\cat{D}$, describe a category (that is, verify the axioms) $[\cat{C},\cat{D}]$ where the objects are functors from $\cat{C}$ to $\cat{D}$ and morphisms natural tranformations. This category is also sometimes denoted as $\cat{D}^\cat{C}$.
+\item Show that a natural isomorphism is precisely an isomorphism in the category $[\cat{C},\cat{D}] = \cat{D}^\cat{C}$.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.1a}
+A follow-up to Problem \ref{prob 2.8}. What is a natural transformation between a parallel pair of functors
+\begin{itemize}
+\item[(a)] between groups, regarded as one-object categories?
+\item[(b)] between posets, regarded as categories?
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.1b}
+One feature of "higher structures", like categories, is that they has several "levels". In particular, a category has two levels: objects and morphisms.\\[0.5em]
+In contrast, a set has only one level: elements. We categorify a set with objects being its elements and the only morphisms being identity maps.\\[0.5em]
+A "correct" notion of maps between such structures will have to respect the levels. So a \emph{functor} (or a \emph{map}/\emph{$0$-morphism}) needs to preserve the levels; a \emph{natural transformation} (or a \emph{$1$-morphism}) between them will have to respect a level shifted up by $1$.
+\begin{itemize}
+\item[(a)] What should be a \emph{functor} from a set to a category? (It has to map elements to objects as they are both at lowest level.)
+\item[(b)] What should be a \emph{natural transformation} between functors from a set to a category? (It has to map elements to morphisms as the latter are in one higher level than the former)
+\item[(c)] What should be a \emph{functor} from a category to a set? (It has to map objects to elements as they are both at lowest level.)
+\item[(d)] What should be a \emph{natural transformation} between functors from a category to a set?
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.2}
+Prove that the notion of an equivalence of categories defines an equivalence relation.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.3}
+Let $F:\cat{C} \to \cat{D}$ be a functor.
+\begin{itemize}
+\item[(a)] Prove that if $F$ is faithful then it need not be injective on morphisms.
+\item[(b)] Prove that if $F$ is faithful and injective on objects (that is, if $F(X) = F(Y)$ then $X = Y$), then it is injective on morphisms.
+\item[(c)] Prove that if $F$ is fully faithful then it need not be injective on objects. But show that it is "injective up to isomorphism", that is if $F(X) \cong F(Y)$ then $X \cong Y$.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.4}
+Prove Theorem \ref{cateq}. More precisely, let $F:\cat{C} \to \cat{D}$ be a functor. 
+\begin{itemize}
+\item[(a)] Suppose $F$ defines an equivalence, prove that $F$ is full, faithful and essentially surjective on objects. Prove faithfulness before fullness.
+\item[(b)] Conversely, suppose that $F$ is full, faithful and essentially surjective on objects. For each object $W$ in $\cat{D}$, choose (axiom of choice is being invoked here) an object $G(W)$ of $\cat{C}$ and an isomorphism $\epsilon_W: F(G(W)) \to W$. Prove that $G$ extends to a functor in such a way that $\epsilon$, with components $\epsilon_W$, is a natural isomorphism $FG \Rightarrow 1_{\cat{D}}$. Then construct a natural isomorphism $\eta:1_{\cat{C}} \Rightarrow GF$, thus proving that $F$ is an equivalence. 
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.5}
+Prove that the categories in Example \ref{vectorspace} are equivalent. 
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.6}
+It's not often that the opposite categories can be identified with familiar categories, it's a rare phenomenon. It's also rare for the categories to be equivalent to their oppposite versions, such categories are called \emph{self-dual}. Here are some simple examples of this rare phenomena.
+\begin{itemize}
+\item[(a)] Prove $(-)^*:\ncat{fdVec}^{\text{op}}_k \to \ncat{fdVec}_k$ defines an anti-equivalence of categories, see Example \ref{func} for how it's defined. Through the anti-equivalence established in Example \ref{vectorspace}, the functor $(-)^*$ translates to the functor $(-)^{\intercal}:\ncat{Mat}_k^{\text{op}} \to \ncat{Mat}_k$ which also then defines an anti-equivalence (anti-isomorphism, in fact) of categories.
+\item[(b)] Prove $(-)^{-1}:\ncat{B}G^{\text{op}} \to \ncat{B}G$ defines an anti-equivalence (anti-isomorphism, in fact) of categories, see Example \ref{func} for how it's defined. 
+\item[(c)] Let $X$ be any set, we can consider the poset $(\mathscr{P}(X),\subseteq)$, where $\mathscr{P}(X)$ is the power set of $X$, with respect to set containment. This then gives a category, as described previously in Example \ref{ex3} on how posets give rise to categories. Prove that the functor
+\[(-)^c:(\mathscr{P}(X),\subseteq)^{\text{op}} \to (\mathscr{P}(X),\subseteq),\ A \mapsto A^c \coloneqq X \setminus A\]
+defines an anti-equivalence (anti-isomorphism, in fact) of categories.
+\item[(d)] You can either take the following two statements for granted, or explore the details yourself. 
+\begin{itemize}
+\item[$\bullet$] the opposite category of unital commutative ring is equivalent to the category of affine schemes.
+\item[$\bullet$] the opposite category of sets is equivalent to the category of complete atomic boolean algebras. When restricted to finite sets, the opposite category of finite sets is equivalent to the category of finite boolean algebras.
+\end{itemize}
+\item[(e)] Consider the category $\Gamma$, called \emph{Segal's category}, described as following.
+\begin{itemize}
+\item[$\bullet$] Objects of $\Gamma$ are finite sets.
+\item[$\bullet$] For finite sets $S$ and $T$
+\[\mathrm{Hom}_{\Gamma}(S,T) \coloneqq \setp{\theta:S \to \mathscr{P}(T)}{\theta(\alpha)\cap\theta(\beta) = \emptyset,\text{ whenever }\alpha\neq \beta}\]
+where $\mathscr{P}(-)$ denotes the power set.
+\item[$\bullet$] The composite of $\theta:S \to \mathscr{P}(T)$ and $\phi:T \to \mathscr{P}(U)$ is the function
+\[\psi:S \to \mathscr{P}(U),\ \alpha \mapsto \bigcup_{\gamma \in \theta(\alpha)}\phi(\gamma)\]
+What do the identity morphisms look like?
+\end{itemize}
+Prove that $\Gamma$ is equivalent to the opposite of the category $\ncat{FinSets}_*$ of finite pointed sets (describe this to yourself).
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 3.7}
+A category $\cat{C}$ is \emph{skeletal} if it contains just one object in each isomorphism class. A \emph{skeleton} $\mathrm{sk}(\cat{C})$ of a category $\cat{C}$ is a full subcategory such that every object of $\cat{C}$ is isomorphic to precisely one object in $\mathrm{sk}(\cat{C})$.
+\begin{itemize}
+\item[(a)] Prove that a skeleton of a category is skeletal.
+\item[(b)] Show that any two skeletons of a category are isomorphic.
+\item[(c)] Show that $\mathrm{sk}(\cat{C})$ of a category $\cat{C}$ is equivalent to $\cat{C}$. Therefore (a) and Problem \ref{prob 3.2} give us that \emph{every} skeleton of $\cat{C}$ is equivalent to $\cat{C}$. This also shows that an equivalence need not be injective on objects.
+\item[(d)] Show that two categories are equivalent if and only if they have isomorphic skeletons.
+\end{itemize}
+Example \ref{vectorspace} and Problem \ref{prob 3.5} exhibit that the skeleton of $\ncat{fdVec}_k$ is the category $\ncat{Mat}_k$.
+\begin{itemize}
+\item[(e)] Let $\ncat{FinSets}_{\text{bij}}$ be the maximal groupoid of the category $\ncat{FinSets}$ of finite sets. Prove that the skeleton of $\ncat{FinSets}_{\text{bij}}$ is the category whose objects are positive integers and with $\mathrm{Hom}(n, n) = \Sigma_n$, the symmetric group on $n$ letters. The sets of morphisms between distinct positive integers are all empty.
+\end{itemize}
+\end{problem}

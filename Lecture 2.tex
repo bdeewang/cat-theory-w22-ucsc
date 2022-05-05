@@ -1,0 +1,471 @@
+\vspace*{1em}
+
+\begin{discussion}[A short historical note] The need for the language of category theory was first realised by Samuel Eilenberg and Saunders MacLane when they discovered a curious connection between purely algebraic and topological objects.
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{c c c}
+    MacLane && Eilenberg\\[-1em]
+	was studying \emph{group extensions}. && was studying \emph{solenoids}.\\
+	\makecell{Given groups $G$ and $H$, a group $E$ is a\\ \emph{group extension of $G$ by $H$} if $H \cong E/G$} && \makecell{A solenoid, loosely, is a collection $(S_i,f_i)_{i\in \zz_{\geq 0}}$\\ where $S_i$ are circles and $f_i:S_{i+1} \to S_i$ is the map\\ that wraps $S_{i+1}$ around $S_i$,\ $n_i$ times $ (n_i \in \zz_{\geq 2})$.}\\
+	\makecell{There's a group $\mathrm{Ext}(G,H)$ that classifies\\ extensions, up to isomorphism.} && \makecell{Given a solenoid $\Sigma \subset S^3$, one studies\\ continuous functions such that $f(S^3 - \Sigma) \subset S^3$.\\ These are classified, up to homotopy,\\ by the homology group $H^1(S^3 - \Sigma,\zz)$.}
+    \end{tabular}}
+    \end{center}
+\vspace*{0.1in}
+Eilenberg and MacLane discovered that the group $H^1(S^3 - \Sigma,\zz)$, that arises topologically, is isomorphic to the group $\mathrm{Ext}(\zz,\Sigma^*)$, which is a purely algebraic object (here $\Sigma^*$ is an appropriately chosen group called the \emph{character group of the solenoid $\Sigma$}). This discovery was detailed in their 1942 paper \href{https://www.jstor.org/stable/1968966}{\color{darkblue}\emph{Group Extensions and Homology}}.\\[1em]
+In language we haven't seen yet, but will soon, $\mathrm{Ext}$ and $H^1$ are \emph{functors} (Definition \ref{funcdefn}) and the above isomorphism is not just an isomorphism of groups but a \emph{natural isomorphism of functors} (Definition \ref{natrans}), as was noted by Eilenberg and MacLane. To make sense of this rigorously they had to create some new language, which they did in their 1945 paper \href{https://www.jstor.org/stable/1990284}{\color{darkblue}\emph{General Theory of Natural Equivalences}}. With that, category theory entered the mathematical landscape.
+\end{discussion}
+
+\vspace*{0.3in}
+
+\begin{definition}
+Given a category $\cat{C}$, we define the notion of a subcategory $\cat{D}$.
+\begin{itemize}
+\item The objects of $\cat{D}$ is a sub-collection of the objects of $\cat{C}$.
+\item The morphisms in $\cat{D}$ are a sub-collection of the morphisms in $\cat{C}$, and includes the identity morphisms for each object of $\cat{D}$.
+\item The morphisms are closed under composition, that is, if $f$ and $g$ are two composable morphisms in $\cat{D}$, then $gf$ is also a morphism in $\cat{D}$.
+\end{itemize}
+\end{definition}
+
+\vspace{0.1in}
+
+\begin{example}
+Subcategories of some familiar categories\\[-2em]
+  \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|c|c|}
+    \hline
+    {\bf Category $\cat{C}$} & {\bf Subcategory $\cat{D}$} & {\bf Objects of $\cat{D}$} & {\bf Morphisms of $\cat{D}$}\\
+    \hline
+    $\ncat{Set}$ & $\ncat{FinSets}$ & Finite Sets & Functions\\
+    \hline
+    $\ncat{Set}$ & $\ncat{InjSet}$ & Sets & Injective Functions\\
+    \hline
+    $\ncat{Grp}$ & $\ncat{Ab}$ & Abelian Groups & (Group) Homomorphisms\\
+    \hline
+    $\ncat{Grp}$ & $\ncat{FinGrp}$ & Finite Groups & Homomorphisms\\
+    \hline
+    $\ncat{Grp}$ & $\ncat{SurjGrp}$ & Groups & \makecell{Surjective\\ Homomorphisms}\\
+    \hline
+    $\ncat{Mod}_A$ & $\ncat{mod}_A$ & \makecell{Finitely Generated Modules} & Homomorphisms\\
+    \hline
+    $\ncat{Ab} = \ncat{Mod}_\zz$ & $\ncat{FinAb} = \ncat{mod}_\zz$ & \makecell{Finitely Generated\\ Abelian Groups} & Homomorphisms\\
+    \hline
+    \makecell{$\ncat{Vec}_k = \ncat{Mod}_k$\\[0.2em] $k$ a field} & $\ncat{fdVec}_k = \ncat{mod}_k$ & \makecell{Finite Dimensional\\ Vector Spaces} & Linear Transformations\\
+    \hline
+    $\ncat{Top}$ & $\ncat{Top}_{\ncat{Open}}$ & Topological Spaces & Open Functions\\
+    \hline
+    $\ncat{Top}$ & $\ncat{CW}$ & CW Complexes & Cellular Maps\\
+    \hline
+    $\ncat{Rng}$ & $\ncat{CRing}$ & \makecell{Commutative Unital\\ Rings} & \makecell{Unital Ring\\ Homomorphisms}\\
+    \hline
+    $\ncat{SmMan}$ & $\ncat{Subm}$ & Smooth Manifolds & Submersions\\
+    \hline
+    $\ncat{B}G$ & $\ncat{B}H$ & \makecell{same object $\bullet$\\ as $\ncat{B}G$} & \makecell{$H \leq G$,\\ a subgroup}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\end{example}
+
+%\vspace{0.1in}
+
+\begin{definition}[Opposite Category]
+Let $\cat{C}$ be any category, then we define $\cat{C}^{\text{op}}$, the \emph{opposite category of $\cat{C}$}.
+\begin{itemize}
+\item $\mathrm{obj}(\cat{C}^{\text{op}}) = \mathrm{obj}(\cat{C})$
+\item For any two objects $X$ and $Y$,
+\[\mathrm{Hom}_{\cat{C}^{\text{op}}}(X,Y) \coloneqq \mathrm{Hom}_{\cat{C}}(Y,X)\]
+Therefore a morphism $f^{\text{op}} \in \mathrm{Hom}_{\cat{C}^{\text{op}}}(X,Y)$ written formally as
+\[f^{\text{op}}: X \to Y\]
+\emph{is a morphism $f: Y \to X$} in $\cat{C}$.\\
+\\
+Equivalently, a morphism $f:Y \to X$ in $\cat{C}$ \emph{corresponds to a morphism $f^{\text{op}}: X \to Y$} in $\cat{C}^{\text{op}}$.
+\end{itemize}
+We relegate proving this indeed gives a category to Problem \ref{prob 2.1}.
+\end{definition}
+
+%\vspace*{0.1in}
+
+\begin{remark}
+Any time we prove or define something, we're really proving or defining two things simultaneously: in $\cat{C}$ and $\cat{C}^{\text{op}}$. This is the principle of duality, and we will encounter this again and again. An example of this phenomenon arises in the next definition (see Problem \ref{prob 2.3}).
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{definition}[Some special types of morphism]
+A morphism $f:X \to Y$ in a category $\cat{C}$ is called 
+\begin{itemize}[itemsep=1em]
+\item an \emph{isomorphism} if there exists a morphism $g: Y \to X$ such that $fg = \id_{Y}$ and $gf = \id_X$.
+\[\begin{tikzcd}
+Y \arrow[rd, "\id_Y"', bend right] \arrow[r, "g"] &[0.2em] X \arrow[d, "f"] &   \\[0.2em]
+                                                   &                   Y
+\end{tikzcd}\qquad
+\begin{tikzcd}
+X \arrow[rd, "\id_X"', bend right] \arrow[r, "f"] &[0.2em] Y \arrow[d, "g"] &   \\[0.2em]
+                                                   &                   X
+\end{tikzcd}\]
+that is, the above diagrams commute. An isomorphisms is also called an \emph{invertible morphism}, with $g$ above being denoted as $f^{-1}$ and called as its \emph{inverse}.\\[0.5em]
+If $f:X \to Y$ is an isomorphism, we write $X \cong Y$.\\
+\begin{example}\hfill\\[-1em]
+\begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{|c|c|}
+    \hline
+    {\bf Categories $\cat{C}$} & {\bf Isomorphisms in $\cat{C}$}\\
+    \hline
+    $\ncat{Set}$ & Bijections\\
+    \hline
+    $\ncat{Grp}$ \& $\ncat{Ab}$ & Group Isomorphisms\\
+    \hline
+    $\ncat{Mod}_A$ & Module Isomorphisms\\
+    \hline
+    $\ncat{Vec}_k$ & Linear Isomorphisms\\
+    \hline
+    $\ncat{Rng}$ & Ring Isomorphisms\\
+    \hline
+    \end{tabular}}
+    \qquad
+    {\renewcommand{\arraystretch}{2}%
+    \begin{tabular}{|c|c|}
+    \hline
+    {\bf Categories $\cat{C}$} & {\bf Isomorphisms in $\cat{C}$}\\
+    \hline
+    $\ncat{Top}$ & Homeomorphisms\\
+    \hline
+    $\ncat{HTop}$ & Homotopy Equivalences\\
+    \hline
+    $\ncat{SmMan}$ & Diffeomorphisms\\
+    \hline
+    $\ncat{Mat}_A$ & Invertible Matrices\\
+    \hline
+    $(\ncat{P},\leq)$ & Equality\\
+    \hline
+    \end{tabular}}
+    \end{center}
+\end{example}
+\item a \emph{monomorphism} if there exist morphisms $g_1,g_2: W \rightrightarrows X$
+\[\begin{tikzcd}
+W \arrow[r, "g_1", shift left] \arrow[r, "g_2"', shift right] & X \arrow[r, "f"] & Y
+\end{tikzcd}\]
+such that if $fg_1 = fg_2$, then $g_1 = g_2$.
+\item an \emph{epimorphism} if there exist morphisms $h_1,h_2: Y \rightrightarrows Z$
+\[\begin{tikzcd}
+X \arrow[r, "f"] & Y \arrow[r, "h_1", shift left] \arrow[r, "h_2"', shift right] & Z
+\end{tikzcd}\]
+such that if $h_1f = h_2f$, then $h_1 = h_2$.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Monomorphisms, epimorphisms and isomorphisms are categorical generalisations of an injective, a surjective and a bijective map (see Problems \ref{prob 2.5} and \ref{prob 2.5a}). But it's important to note that in general, morphisms that are both a monomorphism and an epimorphism are \emph{not} isomorphisms. See Problem \ref{prob 2.5} (c) for an example, and Problem \ref{prob 2.5a} for a more satisfactory conclusion. 
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{definition}
+A category $\cat{C}$ is called a \emph{groupoid} if every morphism is an isomorphism.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}
+Last time we saw how a group $G$ gives rise to a category with a single object that we called $\ncat{B}G$. Since every group element has an inverse, this category has the property that all its morphisms are invertible. The notion of a groupoid captures this notion more generally.\\[1em]
+In fact, in this manner \emph{a group is a groupoid with one object}.\\[0.5em]
+To a group $G$, we can associate the groupoid $\ncat{B}G$. Conversely, given a groupoid $\cat{G}$ with one object $\bullet$, we recover the group as $\mathrm{Hom}_{\cat{G}}(\bullet,\bullet)$.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{example}[Maximal Groupoid]
+Any category $\cat{C}$ has a subcategory called the \emph{maximal groupoid}, $\cat{C}^{\cong}$, where any subcategory of $\cat{C}$ that's a groupoid is then a subcategory of $\cat{C}^{\cong}$.
+\begin{itemize}
+\item $\mathrm{obj}(\cat{C}^{\cong}) = \mathrm{obj}(\cat{C})$;
+\item $\mathrm{Hom}_{\cat{C}^{\cong}}(X,Y) = \setp{f \in \mathrm{Hom}_{\cat{C}}(X,Y)}{f \text{ is an isomorphism}}$.
+\end{itemize}
+This is a subcategory since the composition of two isomorphisms is again an isomorphism.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Given an object $X$ in a category $\cat{C}$, the \emph{automorphism group of $X$} is defined to be
+\[\mathrm{Aut}_{\cat{C}}(X) \coloneqq \mathrm{Hom}_{\cat{C}^{\cong}}(X,X)\]
+It's indeed a group with respect to composition.
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{example}[Fundamental Groupoid]\label{fundgrpd}
+Given a topological space $X$, we have an associated groupoid $\Pi(X)$ called the \emph{fundamental groupoid}.
+\begin{itemize}
+\item The objects of $\Pi(X)$ are points of $X$;
+\item For points $x$ and $y$, the morphism from $x$ to $y$ are homotopy classes of paths from $x$ to $y$, that is
+\[\mathrm{Hom}_{\Pi(X)}(x,y) \coloneqq \setp{\gamma:[0,1] \to X}{\gamma \text{ is continuous, and }\gamma(0) = x,\ \gamma(1) = y}\!\!/\text{homotopy}\]
+\end{itemize}
+This is a groupoid, since given a path $\gamma:x \to y$ we can always create an inverse path $\gamma^{-1}: y \to x$ given as $\gamma^{-1}(t) = \gamma(1-t)$.\\[0.5em]
+For a point $x_0 \in X$, \emph{the fundamental group of $X$ at basepoint $x_0$} is\footnote{Once can also define this as $\pi_1(X,x_0) = \mathrm{Hom}_{\ncat{Top}_*}((S^1,*),(X,x_0))/\text{homotopy}$. Showing that these two definitions are the same is a good exercise in elementary topology.}
+\[\pi_1(X,x_0) \coloneqq \mathrm{Aut}_{\Pi(X)}(x_0)\]
+\end{example}
+
+%\vspace*{0.3in}
+
+Our guiding principle is that morpshisms take precedence, and whenever we have objects we should give a notion of morphisms. So, if were to give a category of all categories $\ncat{CAT}$, what is the right notion of a morphisms between categories?
+
+\vspace*{0.1in}
+
+\begin{definition}[Functors]\label{funcdefn}
+Given categories $\cat{C}$ and $\cat{D}$, a \emph{functor}
+\[F:\cat{C} \to \cat{D}\]
+consists of,
+\begin{itemize}
+\item for every object $X$ of $\cat{C}$, an object $F(X)$ of $\cat{D}$.
+\item for every morphism $f \in \mathrm{Hom}_{\cat{C}}(X,Y)$, a morphism $F(f) \in \mathrm{Hom}_{\cat{D}}(F(X),F(Y))$
+\[\begin{tikzcd}[row sep=large]
+X \arrow[d,"f"] \\
+Y          
+\end{tikzcd}\qquad \mapsto \qquad \begin{tikzcd}[row sep=large]
+F(X) \arrow[d,"F(f)"] \\
+F(Y)          
+\end{tikzcd}\]
+\end{itemize}
+such that
+\begin{itemize}
+\item $F(\id_X) = \id_{F(X)}$ for any object $X$ of $\cat{C}$
+\item Given morphisms $f:X \to Y$ and $g: Y \to Z$ in $\cat{C}$, we have $F(gf) = F(g)F(f)$;
+\[\begin{tikzcd}[row sep=large]
+                                             & F(Y) \arrow[rd, "F(g)"] &      \\
+F(X) \arrow[ru, "F(f)"] \arrow[rr, "F(gf)"'] &                         & F(Z)
+\end{tikzcd}\]
+that is, the above diagram commutes.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.3in}
+
+Sometimes the functors defined previously are called \emph{covariant functors} to distinguish them from the functors we now define below
+
+\begin{definition}[Contravariant Functors]
+Given categories $\cat{C}$ and $\cat{D}$, a \emph{contravriant functor}
+\[F:\cat{C} \to \cat{D}\]
+consists of,
+\begin{itemize}
+\item for every object $X$ of $\cat{C}$, an object $F(X)$ of $\cat{D}$.
+\item for every morphism $f \in \mathrm{Hom}_{\cat{C}}(X,Y)$, a morphism $F(f) \in \mathrm{Hom}_{\cat{D}}(F(Y),F(X))$
+\[\begin{tikzcd}[row sep=large]
+X \arrow[d,"f"] \\
+Y          
+\end{tikzcd}\qquad \mapsto \qquad \begin{tikzcd}[row sep=large]
+F(X) \\
+F(Y) \arrow[u,"F(f)"]          
+\end{tikzcd}\]
+\end{itemize}
+such that
+\begin{itemize}
+\item $F(\id_X) = \id_{F(X)}$ for any object $X$ of $\cat{C}$
+\item Given morphisms $f:X \to Y$ and $g: Y \to Z$ in $\cat{C}$, we have $F(gf) = F(f)F(g)$;
+\[\begin{tikzcd}[row sep=large]
+                                             & F(Y)  \arrow[ld, "F(f)"'] &      \\
+F(X) &                         & F(Z) \arrow[ll, "F(gf)"] \arrow[lu, "F(g)"']
+\end{tikzcd}\]
+that is, the above diagram commutes.
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{remark}
+The notion of a contravariant functor is not a new concept. Problem \ref{prob 2.9} tells us that it's simply a (covariant) functor $F:\cat{C}^{\text{op}} \to \cat{D}$.
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{example}\label{func}\hfill
+  \begin{center}
+    {\renewcommand{\arraystretch}{2}%
+    \begin{longtable}{|c|c|c|}
+    \hline
+    {\bf Functors} & {\bf What they do to Objects} & {\bf What they do to Morphisms}\\
+    \hline
+    \makecell{$\cat{P}_*:\ncat{Set} \to \ncat{Set}$\\[0.5em] \emph{direct image fuctor}} & \makecell{$A \mapsto \cat{P}(A)$\\[0.5em] Power set of $A$} & $\begin{tikzcd} A \overset{f}{\longrightarrow} B \arrow[d, maps to] \\ \cat{P}(A) \to \cat{P}(B): S \mapsto f(S) \end{tikzcd}$\\
+    \hline
+    \makecell{$\cat{P}^*:\ncat{Set}^{\text{op}} \to \ncat{Set}$\\[0.5em] \emph{inverse image fuctor}} & \makecell{$A \mapsto \cat{P}(A)$\\[0.5em] Power set of $A$} & $\begin{tikzcd} A \overset{f}{\longrightarrow} B \arrow[d, maps to] \\ \cat{P}(B) \to \cat{P}(A): T \mapsto f^{-1}(T) \end{tikzcd}$\\
+    \hline
+    \makecell{$U:\cat{C} \to \ncat{Set}$\\[0.1em] {\small $\cat{C} = \ncat{Mod}_A,\ncat{Grp}$},\\{\small $\ncat{Rng},\ncat{Top},\ldots$}\\[0.5em] \emph{forgetful fuctor}} & \makecell{$A \mapsto U(A)$\\ the underlying set of $A$,\\[0.5em] "forget its additional structure"} & \makecell{$\begin{tikzcd} A \overset{f}{\longrightarrow} B \arrow[d, maps to] \\ U(f):U(A) \to U(B) \end{tikzcd}$\\ the underlying function $f$,\\  "forget its additional structure"}\\
+    \hline
+    \makecell{$h^X:\cat{C} \to \ncat{Set}$\\[0.1em] {\small $X$ is any object in $\cat{C}$}\\[0.5em] \emph{covariant $\mathrm{Hom}$}} & \makecell{$T \mapsto \mathrm{Hom}_{\cat{C}}(X,T)$} & \makecell{$\begin{tikzcd} T \overset{f}{\longrightarrow} S \arrow[d, maps to] \\ \mathrm{Hom}_{\cat{C}}(X,T) \overset{\!f\circ-}{\longrightarrow} \mathrm{Hom}_{\cat{C}}(X,S)\\[-2em]\quad\!\! \phi \longmapsto f\phi\end{tikzcd}$}\\
+    \hline
+    \makecell{$h_X:\cat{C}^{\text{op}} \to \ncat{Set}$\\[0.1em] {\small $X$ is any object in $\cat{C}$}\\[0.5em] \emph{contravariant $\mathrm{Hom}$}} & \makecell{$T \mapsto \mathrm{Hom}_{\cat{C}}(T,X)$} & \makecell{$\begin{tikzcd} T \overset{f}{\longrightarrow} S \arrow[d, maps to] \\ \mathrm{Hom}_{\cat{C}}(S,X) \overset{\!-\circ f}{\longrightarrow} \mathrm{Hom}_{\cat{C}}(T,X)\\[-2em]\quad\!\!\!\! \psi \longmapsto \psi f \end{tikzcd}$}\\
+    \hline
+    \makecell{$\pi_1:\ncat{HTop}_* \to \ncat{Grp}$\\[0.5em] \emph{fundamental group}\\ (example of\\ covariant $\mathrm{Hom}$)} & \makecell{$(X,x_0) \mapsto \pi_1(X,x_0) \coloneqq [S^1,X]_*$\\[0.5em] basepoint preserving,\\ homotopy classes of\\ continuous functions} & \makecell{$\begin{tikzcd} (X,x_0) \overset{f}{\longrightarrow} (Y,y_0) \arrow[d, maps to] \\ \pi_1(X,x_0) \to \pi_1(Y,y_0):[\gamma] \mapsto [f\circ\gamma] \end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^{\text{ab}}:\ncat{Grp} \to \ncat{Ab}$\\[0.5em] \emph{abelianisation}} & \makecell{$G \mapsto G^{\text{ab}} \coloneqq G/[G,G]$\\[0.5em] $[G,G]$ is the commutator\\ subgroup of $G$} & \makecell{$\begin{tikzcd} G \overset{f}{\longrightarrow} H \arrow[d, maps to] \\ f^{\text{ab}}:G^{\text{ab}} \to H^{\text{ab}} \end{tikzcd}$\\ induced by the universal\\ property of quotients}\\
+    \hline
+    \makecell{$T_*(-):\ncat{SmMan}_* \to \ncat{Vec}_{\rr}$\\[0.5em] \emph{tangent space}} & \makecell{$(M,p) \mapsto T_pM$\\[0.5em] the tangent space at $p$} & \makecell{$\begin{tikzcd} (M,p) \overset{F}{\longrightarrow} (N,q) \arrow[d, maps to] \\ dF_p:T_pM \to T_qN \end{tikzcd}$\\ the differential at $p$}\\
+    \hline
+    \makecell{$T(-):\ncat{SmMan} \to \ncat{SmMan}$\\[0.5em] \emph{tangent bundle}} & \makecell{$M \mapsto TM$\\[0.5em] the tangent bundle} & \makecell{$\begin{tikzcd} M \overset{F}{\longrightarrow} N \arrow[d, maps to] \\ dF:TM \to TN \end{tikzcd}$\\ the total differential}\\
+    \hline
+    \makecell{$C^0(-):\ncat{Top}^{\text{op}} \to \ncat{Cring}$\\[0.5em] \emph{continuous functions}\\ \emph{pullback}\\ (example of\\ contravariant $\mathrm{Hom}$:\\ $\mathrm{Hom}_{\ncat{Top}}(-,\rr)$)} & \makecell{$X \mapsto C^0(X,\rr)$\\ $\rr$-valued continuous functions,\\[0.5em] "forget its additional structure"} & \makecell{$\begin{tikzcd} X \overset{f}{\longrightarrow} Y \arrow[d, maps to] \\ C^0(Y,\rr) \to C^0(X,\rr):\phi \mapsto \phi\circ f \end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^*:\ncat{Vec}^{\text{op}}_k \to \ncat{Vec}_k$\\[0.5em] \emph{dual}\\ (example of\\ contravariant $\mathrm{Hom}$:\\ $\mathrm{Hom}_{\ncat{Vec}_k}(-,k)$)} & \makecell{$V \mapsto V^* \coloneqq \mathrm{Hom}_{\ncat{Vec}_k}(V,k)$} & \makecell{$\begin{tikzcd} V \overset{f}{\longrightarrow} W \arrow[d, maps to] \\ W^* \to V^*:\phi \mapsto \phi\circ f \end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^{-1}:\ncat{B}G^{\text{op}} \to \ncat{B}G$} & \makecell{$\bullet \mapsto \bullet$} & \makecell{$\begin{tikzcd} \bullet \overset{g}{\longrightarrow} \bullet \arrow[d, maps to] \\ \bullet \overset{g^{-1}}{\longrightarrow} \bullet \end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^{\intercal}:\ncat{Mat}_A^{\text{op}} \to \ncat{Mat}_A$\\[0.5em] \emph{transpose}} & \makecell{$n \mapsto n$} & \makecell{$\begin{tikzcd} n \overset{A}{\longrightarrow} m \arrow[d, maps to] \\ m \overset{A^\intercal}{\longrightarrow} n \end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^\times:\ncat{Ring} \to \ncat{Grp}$\\[0.5em] \emph{unit functor}} & \makecell{$A \mapsto A^\times$\\[0.5em] group of units} & \makecell{$\begin{tikzcd} A \overset{f}{\longrightarrow} B \arrow[d, maps to] \\f\vert_{A^\times}:A^\times \to B^\times\end{tikzcd}$}\\
+    \hline
+    \makecell{$\zz[-]:\ncat{Grp} \to \ncat{Ring}$\\[0.5em] \emph{group ring functor}} & \makecell{$G \mapsto \zz[G]$\\[0.5em] group ring} & \makecell{$\begin{tikzcd} G \overset{f}{\longrightarrow} H \arrow[d, maps to] \\ \zz[f]:\zz[G] \to \zz[H]\end{tikzcd}$\\ linearly extend $f$}\\
+    \hline
+    \makecell{$\mathrm{Spec}(-):\ncat{CRing} \to \ncat{Set}$\\[0.5em] \emph{spectrum}} & \makecell{$A \mapsto \mathrm{Spec}(A)$\\[0.5em] $\mathrm{Spec}(A) \coloneqq$\hfill\\ \hfill$\setp{\mathfrak{p} \subseteq A}{\mathfrak{p} \text{ is a prime ideal}}$} & \makecell{$\begin{tikzcd} A \overset{f}{\longrightarrow} B \arrow[d, maps to] \\ \mathrm{Spec}(B) \to \mathrm{Spec}(A): \mathfrak{p} \mapsto f^{-1}(\mathfrak{p}) \end{tikzcd}$}\\
+    \hline
+    \makecell{$\mathrm{Aut}(-):K/\ncat{Field} \to \ncat{Grp}$\\[0.5em] \emph{field automorphisms}} & \makecell{$E \mapsto \mathrm{Aut}(E/K)$\\[0.5em] automorphisms of $E$\\ fixing $K$ point-wise} & \makecell{$\begin{tikzcd} E \hookrightarrow F \arrow[d, maps to] \\ \mathrm{Aut}(F/K) \to \mathrm{Aut}(E/K): \sigma \mapsto \sigma\vert_E\end{tikzcd}$}\\
+    \hline
+    \makecell{$(-)^G:G\text{-}\ncat{Set} \to \ncat{Set}$\\[0.5em] \emph{fixed points functor}} & \makecell{$X \mapsto X^G$\\[0.5em] $G$-fixed points of $X$} & \makecell{$\begin{tikzcd} X \overset{f}{\longrightarrow} Y \arrow[d, maps to] \\ f\vert_{X^G}:X^G \to Y^G \end{tikzcd}$}\\
+    \hline
+    \end{longtable}}
+    \end{center}
+\end{example}
+
+%\vspace*{0.1in}
+
+\subsection{Problems}
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.1}\hfill
+\begin{itemize}
+\item[(a)] Show that $\cat{C}^{\text{op}}$ is indeed a category. What should the composition law be?
+\item[(b)] Show that $(\cat{C}^{\text{op}})^{\text{op}} = \cat{C}$.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.2}
+Recall the notion of \emph{slice categories} from Problem \ref{prob 1.3}. Prove that
+\[(\cat{C}^{\text{op}}/X)^{\text{op}} = X/\cat{C}\]
+A similar argument also gives you $(X/\cat{C}^{\text{op}})^{\text{op}} = \cat{C}/X$.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}[Example of Duality]\label{prob 2.3}
+Prove that giving an epimorphism in $\cat{C}$ is the same as giving a monomorphism in $\cat{C}^{\text{op}}$. Using Problem \ref{prob 2.1} (b), deduce the vice versa.\\[0.5em]
+This is an example of \emph{duality}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.4}
+A morphism $f:X \to Y$ in a category $\cat{C}$ is called a \emph{split epimorphism} if there exists a morphism $\sigma: Y \to X$ (called a \emph{section}) such that $f\sigma = \id_Y$
+\[\begin{tikzcd}
+Y \arrow[rd, "\id_Y"', bend right] \arrow[r, "\sigma"] &[0.2em] X \arrow[d, "f"] &   \\[0.2em]
+                                                   &                   Y
+\end{tikzcd}\]
+that is, the above diagram commutes. Prove that $f$ is an epimorphism (and $\sigma$ a monomorphism).
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.4a}
+A split epimorphism in $\cat{C}^{\text{op}}$ is called a \emph{split monomorphism} in $\cat{C}$, where the section of the split epimorphism in $\cat{C}^{\text{op}}$ is called a \emph{retract} in $\cat{C}$.\\[0.5em] Carefully write down this definition as it would be stated in $\cat{C}$.\\[1em]
+Duality tells you that a split monomorphism is a monomorphism, and the retract is an epimorphism.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.5}
+A monomorphism and epimorphism are categorical generalisation of injective and surjective maps respectively. The following problems should help you understand why.
+\begin{itemize}
+\item[(a)] Prove that in the categories $\ncat{Set}$ and $\ncat{Ab}$, a morphism is a monomorphism if and only if it's an injective map, and a morphism is a monomorphism if and only if it's a surjective map.
+\footnote{One way to prove the "mono" part for $\ncat{Set}$ is to reduce the definition of monomorphism to a singleton $*$. It is thus called a \emph{generator} (or \emph{separator}) of $\ncat{Set}$. A similar argument works for $\ncat{Ab}$; namely, it has a separator (for example, $\zz$). One way to prove the "epi" part for $\ncat{Set}$ is to reduce the definition of epimorphism to the set of truth values $\Omega=\set{\textsc{T},\textsc{F}}$. It is thus called a \emph{cogenerator} (or \emph{classifer}) of $\ncat{Set}$. However, a similar argument fails for $\ncat{Ab}$ since it has no classifier.}
+\item[(b)] (Challenge) Prove similarly for $\ncat{Grp}$.
+\end{itemize}
+The following two examples tell us that in a category \emph{not all} morphisms that are both a monomorphism and an epimorphism are necessarily isomorphisms.
+\begin{itemize}
+\item[(c)] Prove that every surjective map is an epimorphism in $\ncat{Ring}$ but the following morphism is an epimorphism and not a surjective map
+\[\iota: \zz \hookrightarrow \qq\]
+\item[(d)] An abelian group $A$ is called \emph{divisible} if the "multiplication-by-$n$-map" is surjective
+\[A \to A: a\mapsto na \coloneqq \underbrace{a+\cdots+a}_{\text{$n$ times}}.\]
+Examples include fields, and $\qq/\zz,\, \rr/\zz$ etc. We can consider the subcategory $\ncat{Div}$ of $\ncat{Ab}$, of divisible abelian groups with morphisms as group homomorphisms.\\[0.5em]
+Prove that every injective map is an monomorphism in $\ncat{Div}$ but the following morphism is a monomorphism and not an injective map
+\[\pi: \qq \twoheadrightarrow \qq/\zz\]
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 2.5a}
+It's actually more reasonable\footnote{Here \emph{reasonable} means it behaves as one intended expect. In contrast, for example, in the category of rings, an epimorphism may not be a surjective homomorphism, see (c) of Problem \ref{prob 2.5}; in the category of fields, an injective homomorphism is a split monomorphism if and only if it is an isomorphism, which is too restrictive.} to note that \emph{monomorphisms model injective maps} and \emph{split epimorphisms model surjective maps} and epimorphisms and split monomorphisms tag along as just dual notions. The following problem should help you make sense of this.\\
+\\
+Show that if a morphism $f$ in a category $\cat{C}$ is a monomorphism and a split epimorphism, then $f$ is an isomorphism. State what the dual statement will be.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.6}\hfill
+\begin{itemize}
+\item[(a)] Prove that an isomorphism in $\cat{C}$ is an isomorphism in $\cat{C}^{\text{op}}$. That is, if a morphism $f$ in $\cat{C}$ is an isomorphism, then the associated morphism $f^{\text{op}}$ is an isomorphism in $\cat{C}^{\text{op}}$.
+\item[(b)] Prove that a functor sends isomorphisms to isomorphisms. That is, given a functor $F: \cat{C} \to \cat{D}$ and an isomorphism $f$ in $\cat{C}$. Prove $F(f)$ is an isomorphism.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.7}
+Prove that the following association gives you a functor
+\[\mathrm{Aut}_{\cat{C}}(-):\cat{C}^{\cong} \to \ncat{Grp},\ X \mapsto \mathrm{Aut}_{\cat{C}}(X);\]
+what does it do to morphisms?\\
+\\
+Using Problem \ref{prob 2.6}, this tells us that if $X \cong Y$ then $\mathrm{Aut}_{\cat{C}}(X) \cong \mathrm{Aut}_{\cat{C}}(Y)$. Applying this result to the fundamental groupoid of a topological space (Example \ref{fundgrpd}) tells us that if the topological space is path connected, the fundamental groups at two different basepoints are isomorphic.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.8}\hfill
+\begin{itemize}
+\item[(a)] What's a functor $F: \ncat{B}G \to \ncat{B}H$, where $G$ and $H$ are groups?
+\item[(b)] Consider posets $(\ncat{P},\leq_{\ncat{P}})$ and $(\ncat{Q},\leq_{\ncat{Q}})$ as categories. 
+\begin{itemize}
+\item[(b1)] What's a functor $F:\ncat{P} \to \ncat{Q}$?
+\item[(b2)] What's a functor $F:\ncat{P}^{\text{op}} \to \ncat{Q}$?
+\end{itemize}
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.9}\hfill
+\begin{itemize}
+\item[(a)] Describe a category (that is, verify the axioms) $\ncat{CAT}$ where the objects are categories and morphisms are functors. This construction produces from size issues which we will ignore.
+\item[(b)] Prove that the notion of a contravariant functor $F: \cat{C} \to \cat{D}$ is equivalent to the notion of a (covariant) functor $F:\cat{C}^{\text{op}} \to \cat{D}$.
+\item[(c)] Let $F:\cat{C} \to \cat{D}$ and $G: \cat{D} \to \cat{E}$ be contravariant functors, carefully describe the composition $GF:\cat{C} \to \cat{E}$ and exhibit that it is a covariant functor.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.10}
+Prove that the examples in Example \ref{func} are in fact functors.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.11}
+Prove that the association \[Z(-): \ncat{Grp} \to \ncat{Ab},\ Z \mapsto Z(G),\]
+sending a group to its center, is not functorial. Prove that it is when we restrict this association to the subcategory $\ncat{SurjGrp}$.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 2.12}
+For a commutative unital ring $A$, we define 
+\[\mathrm{MaxSpec}(A) = \setp{\mathfrak{m}\subseteq A}{\mathfrak{m} \text{ is a maximal ideal}} \subseteq \mathrm{Spec}(A)\]
+Prove that the association
+\[\mathrm{MaxSpec}(-): \ncat{CRing} \to \ncat{Set},\ A \mapsto \mathrm{MaxSpec}(A)\]
+is not functorial in the same way $\mathrm{Spec}(-)$ is.
+\end{problem}
+
+\vspace*{0.2in}
+
+\printendnotes 

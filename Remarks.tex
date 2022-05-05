@@ -1,0 +1,45 @@
+%\begin{itemize}
+%\item \xu{In many categories, it is the notion of split epimorphism more reasonable analogy of surjective maps than the notion of epimorphism. On the other hand, The notion of monomorphism is more reasonable analogy of injective maps than the notion of split monomorphism.\\[0.5em]
+%Here \emph{reasonable} means it behaves as one expect. For example, in the category of rings, an epimorphism may not be a surjective homomorphism, see (c) of \ref{prob 2.5}; in the category of fields, an injective homomorphism is a split monomorphism if and only if it is an isomorphism, which is too restricted.}
+
+%\item \xu{One way to prove the ``mono'' part for $\ncat{Set}$ is to reduce the definition of monomorphism to a singleton $\{\bullet\}$. It is thus called a \emph{generator} or \emph{separator} of $\ncat{Set}$. A similar argument works for $\ncat{Ab}$, namely it has a separator (for example, $\zz$). One way to prove the ``epi'' part for $\ncat{Set}$ is to reduce the definition of epimorphism to the set $\Omega=\{\textsc{T},\textsc{F}\}$. It is thus called a \emph{cogenerator} or \emph{classifer} of $\ncat{Set}$. However, similar argument fails for $\ncat{Ab}$ since it has no classifier.}
+
+%\item \xu{The proof of ``mono'' part is similar as for $\ncat{Set}$ or $\ncat{Ab}$. However, for the ``epi'' part one has to modify the proof to get homomorphisms to a \emph{group}.}
+
+%\item \xu{One way to prove the ``mono'' part for $\ncat{Ab}$ is to introduce the notion of \emph{kernel}. Formally invert the morphisms involved in the proof, one can work out a proof of the ``epi'' part by using the notion of \emph{cokernel}, which is the dual notion of kernel, namely the kernel is the cokernel in the opposite category. One can verify that it is indeed the quotient of target by image.}
+%\end{itemize}
+
+%This property in fact characterises the triple $(X \times Y,p_X,p_Y)$. To see this, suppose $(P,q_X,q_Y)$ is another triple with this property, then\\
+%\begin{minipage}{0.5\textwidth}
+%    \[\begin{tikzcd}[row sep=huge]
+%        & X \times Y \arrow[ldd, "p_X"', bend right] \arrow[rdd, "p_Y", bend left] \arrow[d, "\exists ! \phi" description, dashed] &   \\
+%        & P \arrow[ld, "q_X"] \arrow[rd, "q_Y"']                                                                                   &   \\
+%      X &                                                                                                                          & Y
+%      \end{tikzcd}\]
+%    \begin{center}
+%        the universal property of $X \times Y$\\ with respect to $P$
+%    \end{center}      
+%\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%    \[\begin{tikzcd}[row sep=huge]
+%        & P \arrow[ldd, "q_X"', bend right] \arrow[rdd, "q_Y", bend left] \arrow[d, "\exists ! \psi" description, dashed] &   \\
+%        & X\times Y \arrow[ld, "p_X"] \arrow[rd, "p_Y"']                                                                  &   \\
+%      X &                                                                                                                 & Y
+%      \end{tikzcd}\]
+%      \begin{center}
+%        the universal property of $P$\\ with respect to $X\times Y$
+%    \end{center}      
+%\end{minipage}
+%\vspace*{0.1in}\\
+%When combined, we get
+%\[\begin{tikzcd}[row sep=huge]
+%    & X \times Y \arrow[ldd, "p_X"', bend right] \arrow[rdd, "p_Y", bend left] \arrow[d, "\psi\circ\phi" description, dashed] &   \\
+%    & X\times Y \arrow[ld, "p_X"] \arrow[rd, "p_Y"']                                                                                   &   \\
+%  X &                                                                                                                          & Y
+%  \end{tikzcd}\]
+%\vspace*{0.1in}\\
+%The universal property of $X \times Y$ applied to $X \times Y$ tells us that $\psi\circ\phi$ is the unique map that fits in that diagram. But we know one other map that can, the identity map $\id_{X\times Y}$. Therefore by uniqueness we get $\psi\circ\phi = \id_{X\times Y}$. Similarly we get $\phi\circ\psi = \id_P$. That $X \times Y$ and $P$ are bijective to each other via a \emph{unique} map $\phi$. We say then that $X \times Y$ is \emph{unique upto a unique isomorphism}. This gives us the right to denote any set with this property as $X \times Y$ even if it's not presented as we described the cartesian product, since with this property it's uniquely defined.\\
+%\\
+%The uniqueness argument has the advantage that it can be applied to show uniqueness if you come across an object with a universal property, as is the case with several categorical construction. The definition itself will apply in a general category.\\
+%\\
+%If time permits, we'll talk about universal properties in a more sophesticated manner.

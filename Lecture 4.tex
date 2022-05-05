@@ -1,0 +1,278 @@
+\vspace*{1em}
+
+Recall that we assumed our categories to be \emph{locally small}. That is, we have assumed in our categories $\cat{C}$, for any two objects $X,\,Y$, that $\mathrm{Hom}_{\cat{C}}(X,Y)$ is a set. We introduce some more size-related notions for categories.
+\begin{definition}
+A category $\cat{C}$ is said to be 
+\begin{itemize}
+\item \emph{small} if $\cat{C}$ is locally small, and $\mathrm{obj}(\cat{C})$ is a set. For example, a set itself can be treated as a category with its elements as objects and the only morphisms being identity morphisms; in this way, a set is an example of a small category.
+\item \emph{essentially small} if $\cat{C}$ is equivalent to a small category. Equivalently, if $\mathrm{sk}(\cat{C})$, the skeleton of $\cat{C}$, is small (see Problem \ref{prob 3.7}). For example, the category of finite sets (resp. finite dimensional vector spaces) is essentially small; this follows from Problem \ref{prob 3.7}(e) (resp. Example \ref{vectorspace} and Problem \ref{prob 3.5}).
+\end{itemize}
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{remark}\label{2cat}
+We have introduced (or now know) mathematical objects with different levels of structures (assume our categories are small).
+\begin{itemize}
+\item[$\circ$] sets (treated as a small category) have
+\begin{itemize}
+\item[$\rhd$] objects (elements) $\bullet$
+\end{itemize}
+\item[$\circ$] categories have
+\begin{itemize}
+\item[$\rhd$] objects $\bullet$
+\item[$\rhd$] morphisms $\bullet \longrightarrow \bullet$
+\end{itemize}
+\item[$\circ$] the category of categories has
+\begin{itemize}
+\item[$\rhd$] objects (categories)\ $\bullet$\quad "$0$-dimensional".
+\item[$\rhd$] morphisms (functors)\ $\bullet \longrightarrow \bullet$\quad "$1$-dimensional".
+\item[$\rhd$] $2$-morphisms (natural transformations)\ $\begin{tikzcd}
+	\bullet && [-1em] \bullet
+	\arrow[""{name=0, anchor=center, inner sep=0}, curve={height=-18pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, curve={height=18pt}, from=1-1, to=1-3]
+	\arrow[shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd}$\quad "$2$-dimensional".
+\begin{itemize}[itemsep=1em]
+\item[$\diamond$] (identities) Given a functor $F:\cat{C} \to \cat{D}$, we can define an identity natural tranformation $1_F: F \Rightarrow F$, where the components are $1_{F(X)}:F(X) \to F(X)$.
+\item[$\diamond$] (vertical composition)
+\[\begin{tikzcd}
+	\bullet && \bullet
+	\arrow[""{name=0, anchor=center, inner sep=3}, "G"{description}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \alpha", shorten <=2pt, shorten >=2pt, Rightarrow, from=1, to=0]
+	\arrow["\ \beta", shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=2]
+\end{tikzcd} \qquad \leadsto \qquad \begin{tikzcd}
+	\bullet && \bullet
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "H"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \beta\cdot\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\item[$\diamond$] (horizontal composition)
+\[\begin{tikzcd}
+	\bullet && \bullet && \bullet
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "A", curve={height=-25pt}, from=1-3, to=1-5]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "B"', curve={height=25pt}, from=1-3, to=1-5]
+	\arrow["\ \alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+	\arrow["\ \beta", shorten <=5pt, shorten >=5pt, Rightarrow, from=2, to=3]
+\end{tikzcd} \qquad \leadsto \qquad \begin{tikzcd}
+	\bullet && \bullet
+	\arrow[""{name=0, anchor=center, inner sep=0}, "AF", curve={height=-25pt}, from=1-1, to=1-3]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "BG"', curve={height=25pt}, from=1-1, to=1-3]
+	\arrow["\ \beta*\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+\end{tikzcd}\]
+\end{itemize}
+We can collect these to into a construction called a $2$-category (for more, for example on horizontal composition, see Appendix \ref{appendixa}).
+\end{itemize}
+\end{itemize}
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{definition}
+For a category $\cat{C}$, an object $I$ is called an \emph{initial object} if there exists a unique morphism $I \to X$ for any object $X$ of $\cat{C}$.\\[0.5em]
+Dually, an object $T$ is called a \emph{final} or \emph{terminal object} if there exists a unique morphism $X \to T$ for any object $X$ of $\cat{C}$ (i.e., it's an initial object in $\cat{C}^{\text{op}}$).\\[0.5em]
+In other words, $I$ is an initial object if and only if $\mathrm{Hom}_{\cat{C}}(I,X) \cong *$ (the singleton set).
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}
+An initial object in $\ncat{Set}$ is $\emptyset$, the unique map $\emptyset \hookrightarrow X$ can be understood to be the inclusion of the empty set as a subset of any set $X$. A terminal object in $\ncat{Set}$ is the singleton set $\set{1}$, the unique map $X \to \set{1}$ is the constant function for any set $X$. See Problem \ref{prob 4.1} for more examples and ideas.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{discussion}\label{initialrep}
+We can interpret the notion of an initial object in terms of functors.\\[0.5em]
+For an object $Z$ in a category $\cat{C}$, recall the functor $h^Z = \mathrm{Hom}_{\cat{C}}(Z,-):\cat{C} \to \ncat{Set}$ where $X \mapsto \mathrm{Hom}_{\cat{C}}(Z,X)$ and
+\[\begin{tikzcd}[row sep=large]
+X \arrow[d, "f" description] \\
+Y               
+\end{tikzcd} \quad \longmapsto \begin{tikzcd}[row sep=large]
+\mathrm{Hom}_{\cat{C}}(Z,X) \arrow[d, "f\circ-" description] \\
+\mathrm{Hom}_{\cat{C}}(Z,Y)               
+\end{tikzcd}\]
+For any category $\cat{C}$ and any singleton set $*$, we can define the constant functor $*:\cat{C} \to \ncat{Set}$ where any object $X \mapsto *$ and any morphism $f \mapsto 1_*$.\\[0.5em]
+Then, an object $I$ in $\cat{C}$ is an initial object if and only if there exists a natural isomorphism
+\[\rho:\mathrm{Hom}_{\cat{C}}(I,-) \overset{\sim}{\Longrightarrow} *\]
+That is, for any object $X$ we have a bijection $\rho_X:\mathrm{Hom}_{\cat{C}}(I,X) \overset{\!\!\sim}{\to} *$ and for any morphism $X \overset{f}{\to} Y$ the following square
+\[\begin{tikzcd}
+{\mathrm{Hom}_{\cat{C}}(I,X)} \arrow[d, "f\circ-"'] \arrow[r, "\rho_X"] & * \arrow[d, "1_*"] \\[1em]
+{\mathrm{Hom}_{\cat{C}}(I,Y)} \arrow[r, "\rho_Y"']                       & *                 
+\end{tikzcd}\]
+commutes.\\[0.5em]
+We can think of this as saying $I$ witnesses the structure of the constant functor $*$; we say that $I$ \emph{represents} the functor $*$.
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{definition}\label{repfunc}
+A functor $F:\cat{C} \to \ncat{Set}$ is \emph{representable} if there exists an object $X$ of $\cat{C}$ and a natural isomorphism
+\[\mathrm{Hom}_{\cat{C}}(X,-) \overset{\sim}{\Longrightarrow} F\]
+Note: if $F$ were a contravariant functor, that is a functor $F:\cat{C}^{\text{op}} \to \ncat{Set}$, then for it to be a representable functor we would want a natural isomorphism $\mathrm{Hom}_{\cat{C}}(-,X) = \mathrm{Hom}_{\cat{C}^{\text{op}}}(X,-) \overset{\sim}{\Longrightarrow} F$.\\
+\\
+We then say \emph{$F$ is represented by $X$}.\\
+\\
+Therefore, a category $\cat{C}$ has an initial object if and only if the constant functor $*$ is representable.
+\end{definition}
+
+\vspace{0.1in}
+
+\begin{definition}\label{repfuncat1}
+Given a functor $F:\cat{C} \to \ncat{Set}$, a \emph{representation of $F$} or a \emph{universal object for $F$} is a pair $(X,\alpha)$, where $X$ is an object in $\cat{C}$ and $\alpha$ is a choice of a natural isomorphism $\mathrm{Hom}_{\cat{C}}(X,-) \overset{\sim}{\Longrightarrow} F$.
+\end{definition}
+
+\vspace{0.1in}
+
+\begin{example}\label{repfuncex}
+We give an example and a non-example of representable functors. 
+\begin{itemize}[itemsep=1.5em]
+\item Recall the functor $\cat{P}^*:\ncat{Set}^{\text{op}} \to \ncat{Set}$ which sends a set $A \mapsto \cat{P}(A)$ to its power set, and a function $f: A \to B$ is sent to
+\[f^*:\cat{P}(B) \to \cat{P}(A),\ S \mapsto f^{-1}(S)\]
+The functor is representable, and is represented by the set $\Omega = \set{\text{T},\text{F}}$.\\[0.5em]
+We claim that we obtain a natural isomorphism $C:\mathrm{Hom}_{\ncat{Set}}(-,\Omega) \Longrightarrow \cat{P}^*$ with the components as the bijections
+\begin{align*}
+C_A: \mathrm{Hom}_{\ncat{Set}}(A,\Omega) &\longrightarrow \cat{P}^*(A)\\[0.5em]
+\chi &\longmapsto \chi^{-1}(\text{T})\\[0.5em]
+\left(\chi_S: a \mapsto \begin{cases}\text{T} & \text{if } a \in S\\ \text{F} & \text{if } a \notin S \end{cases}\right) &\longmapsfrom S
+\end{align*}
+for any set $A$. We now verify that the components $(C_A)_A$ do assemble to give a natural isomorphism; that is, given any function $f: A \to B$, we verify the following diagram commutes.
+\[\begin{tikzcd}
+{\mathrm{Hom}_{\ncat{Set}}(B,\Omega)} \arrow[d, "-\circ f"'] \arrow[r, "C_B"] & \cat{P}(B) \arrow[d, "f^*"] \\[1em]
+{\mathrm{Hom}_{\ncat{Set}}(A,\Omega)} \arrow[r, "C_A"']                       & \cat{P}(A)                 
+\end{tikzcd}\]
+Consider any function $\chi \in \mathrm{Hom}_{\ncat{Set}}(B,\Omega)$, then
+\begin{align*}
+f^*\circ C_B(\chi) &= f^*(\chi^{-1}(\text{T})) = f^{-1}(\chi^{-1}(\text{T})) = f^{-1}\circ\chi^{-1}(\text{T})\\[0.5em]
+C_A\circ (-\circ f)(\chi) &= C_A(\chi\circ f) = (\chi\circ f)^{-1}(\text{T})
+\end{align*}
+We know from properties of inverse image that $(\chi\circ f)^{-1}(\text{T}) = f^{-1}\circ\chi^{-1}(\text{T})$, hence the diagram indeed commutes. Thus, we have proven that $C$ is a natural isomorphism and therefore $(\Omega,C)$ is a representation of $\cat{P}^*$.
+\item Consider the abelianisation functor $(-)^{\text{ab}}:\ncat{Grp} \to \ncat{Ab}$ which sends a group $G \mapsto G^{\text{ab}}$ to its abelianisation where $G^{\text{ab}} \coloneqq G/[G,G]$. A group homomorphism $f:G \to H$ is sent to the induced group homomorphism $f^{\text{ab}}:G^{\text{ab}} \to H^{\text{ab}}$. We prove that this functor is not representable, and for that we use Problem \ref{prob 4.3}. Recall that monomorphisms in these categories are simply injective functions (see Problem \ref{prob 2.6}).\\
+\\
+Consider the non-abelian group $S_3$, and its subgroup $A_3$, which is abelian. Therefore $A_3^{\text{ab}} \cong A_3$ and one can prove that $S_3^{\text{ab}} \cong C_2$, the cyclic group of order $2$. Consider the inclusion group homomorphism $\iota: A_3 \hookrightarrow S_3$, which is indeed injective. But the induced map $\iota^{\text{ab}}: A_3 \to C_2$ is necessarily the trivial homomorphism and hence not injective. Thus $(-)^{\text{ab}}$ is not a representable functor.
+\end{itemize}
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{remark}
+Representable functors are rare and form a very special class of functors. For example, some of the biggest questions in algebraic geometry in the past century were if certain nice geometric functors were representable, and what to do if they were found to be not.
+\end{remark}
+
+\vspace*{0.1in}
+
+\begin{definition}[a first attempt]
+A \emph{universal property} of an object $X$ is expressed by a representable functor $F$ together with a natural isomorphism $\mathrm{Hom}_{\cat{C}}(X,-)\cong F$ (or $\mathrm{Hom}_{\cat{C}}(-,X)\cong F$ if $F$ is contravariant).\\
+\\
+We will give a slightly better description once we have discussed the Yoneda lemma, and we can then also interpret this as an initial object in some category.
+\end{definition}
+
+\vspace*{0.1in}
+
+\begin{example}\label{tensorprodrep}
+Let $R$ be a commutative ring with unity and $M$ and $N$ are $R$-modules, we consider the functor
+\[\mathrm{Bil}_R(M \times N,-):\ncat{Mod}_R \to \ncat{Set},\]
+where any $R$-module $T$ is sent to the set of $R$-bilinear maps $\mathrm{Bil}_R(M \times N,R)$. These are maps \[f: M\times N \to T\] such for any $m \in M$ and $n\in N$, the maps $f(m,-):N \to T$ and $f(-,n):M \to T$ are $R$-linear.\\[0.5em]
+This functor has as a representation $(M\otimes_R N,\iota)$, where $M \otimes_R N$ is an $R$-module called the \emph{tensor product} and $\iota: M \times N \to M\otimes_R N,\ (m,n) \mapsto m\otimes n$ is an $R$-bilinear map. The map $\iota$ affords the natural isomorphism
+\[\mathrm{Hom}_R(M \otimes_R N,T) \cong \mathrm{Bil}_R(M \times N,T)\]
+which we illustrate by exhibiting the universal property of $M \otimes_R N$.\\
+\\
+The universal property is as follows: for any $R$-module $T$ and $R$-bilinear map $f:M \times N \to T$ there exists a unique $R$-linear map $\tilde{f}:M \otimes_R N \to T$ such that the diagram
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+M \times N \arrow[rr, "f"]\arrow[rd, "\iota"']         & &[1em] T \\
+ & M \otimes_R N \arrow[ur, "\exists!\tilde{f}"', dashed] &
+\end{tikzcd}\]
+commutes. That is, we have the bijection
+\[\mathrm{Hom}_R(M \otimes_R N,T) \overset{\sim}{\longrightarrow} \mathrm{Bil}_R(M \times N,T):g \mapsto g\circ\iota\]
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{example}\label{quotkill}
+Let $G$ be a group and $N$ a normal subgroup of $G$, we consider the functor
+\[\mathrm{Kil}_N(G,-):\ncat{Grp} \to \ncat{Set},\]
+where any group $H$ is sent to the set
+\[\mathrm{Kil}_N(G,H) = \setp{\phi:G \to H}{N \subseteq \ker\phi} \subseteq \mathrm{Hom}_{\ncat{Grp}}(G,H)\]
+This functor has as a representation $(G/N,\pi)$, where $G/N$ is the usual quotient group (of left cosets) and $\pi: G \to G/N,\ g \mapsto gN$ is the natural projection map. The map $\pi$ affords the natural isomorphism
+\[\mathrm{Hom}_{\ncat{Grp}}(G/N,H) \cong \mathrm{Kil}_N(G,H)\]
+which we illustrate by exhibiting the universal property of $G/N$.\\
+\\
+The universal property is as follows: for any module $H$ and group homomorphism $\phi:G \to H$ such that $N \subseteq \ker\phi$ there exists a unique group homomorphism $\tilde{\phi}:G/N \to H$ such that the diagram
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+G \arrow[rr, "\phi"]\arrow[rd, "\pi"']         & &[0.5em] N \\
+ & G/N \arrow[ur, "\exists!\tilde{\phi}"', dashed] &
+\end{tikzcd}\]
+commutes. That is, we have the bijection
+\[\mathrm{Hom}_{\ncat{Grp}}(G/N,H) \overset{\sim}{\longrightarrow} \mathrm{Kil}_N(G,H):\psi \mapsto \psi\circ\pi\]
+\end{example}
+
+\vspace*{0.2in}
+
+\subsection{Problems}
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.1}\hfill
+\begin{itemize}
+\item[(a)] Look at the categories in Examples \ref{catex1}, \ref{catex2} and \ref{ex3}, and try determining or describing the initial and terminal objects in those categories.
+\item[(b)] Prove that an initial object of a category is \emph{unique up to unique isomorphism}. Precisely put, suppose $I$ and $I'$ are two initial objects of a category $\cat{C}$, prove that there exists a unique isomorphism $f: I \to I'$.\\[0.5em]
+Applying this to $\cat{C}^{\text{op}}$ gives us that terminal objects are also unique upto unique isomorphism, this again is an example of a duality argument.
+\item[(c)] Let $I$ and $T$ be initial and terminal objects in a category $\cat{C}$, prove that if there exists a morphism $f: T \to I$, then $f$ is necessarily an isomorphism.
+\item[(d)] An object that's both an initial and terminal object is called a \emph{zero object}. Did you encounter any zero objects while solving (a)?
+
+\item[(e)] Prove that a zero object exists in a category $\cat{C}$ if and only if $\cat{C}$ has an initial object, a terminal object and a morphism from the terminal to the initial object.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.2}
+Formulate a similar statement for terminal objects to the one that's been formulated for initial objects in Discussion \ref{initialrep}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.2a}
+For objects $X$ in a category $\cat{C}$, consider the slice category $\cat{C}/X$. Prove that $1_X$ is a terminal object in $\cat{C}/X$. We think of this as "$X$ is the terminal object of $\cat{C}/X$".\\
+\\
+Using Problem \ref{prob 2.2} (or not), what can you say about the initial object of the slice category $X/\cat{C}$.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.2b}
+Prove that if $I$ is an initial object in a category $\cat{C}$, then the slice category $I/\cat{C}$ is isomorphic to $\cat{C}$.\\
+\\
+Using Problem \ref{prob 2.2} (or not), prove that if $T$ is a terminal object in a category $\cat{C}$, then $\cat{C}/T \cong \cat{C}$.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.3}
+Prove that if $F : \cat{C} \to \ncat{Set}$ is representable, then $F$ preserves monomorphisms, i.e., sends every monomorphism in $\cat{C}$ to an injective function. What would be the statement if $F$ was contravariant?\\[0.5em]
+{\footnotesize Hint: it's enough to prove this for the functor $\mathrm{Hom}_{\cat{C}}(X,-)$ for some object $X$ of $\cat{C}$ (why?).}\\
+\\
+Using this, produce an example of a non-representable functor (covariant or contravariant), different from the one seen in Example \ref{repfuncex}.
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.4}
+Prove that
+\begin{itemize}
+\item[(a)] the forgetful functor $U:\ncat{Grp} \to \ncat{Set}$ is represented by the group $\zz$.
+\item[(b)] the forgetful functor $U:\ncat{Mod}_R \to \ncat{Set}$ is represented by the ring $R$ treated as an $R$-module.
+\item[(c)] the functor $U(-)^n:\ncat{Ring} \to \ncat{Set}$, where any ring $R$ is sent to the set $R^n$, is represented by the ring $\zz[t_1,\ldots,t_n]$.
+\item[(d)] the functor $\mathcal{O}:\ncat{Top}^{\text{op}} \to \ncat{Set}$ defined in Example \ref{opensetfun}, where we send a space to its set of open sets, is represented by the \emph{Sierpinski space} $\mathcal{S} = \set{0,1}$ where the open sets are $\emptyset,\ \set{0}$ and $\mathcal{S}$.
+\item[(e)] the functor $\mathrm{Hom}_{\ncat{Set}}(-,X) \times \mathrm{Hom}_{\ncat{Set}}(-,Y):\ncat{Set}^{\text{op}} \to \ncat{Set},\ T \mapsto \mathrm{Hom}_{\ncat{Set}}(T,X) \times \mathrm{Hom}_{\ncat{Set}}(T,Y)$ is represented by the cartesian product $X \times Y$.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 4.5}
+Given a group $G$, prove that a functor $E : \ncat{B}G \to \ncat{Set}$, i.e., a left $G$-set $E$ (see Example \ref{gsetasfunc}), is representable if and only if there is an isomorphism $G \cong E$ of left $G$-sets.\\[1em]This implies that the action of $G$ on $E$ is free (every stabilizer group is trivial) and transitive (the orbit of any point is the entire set), and that $E$ is non-empty. One thinks of this $E$ being the group $G$ that has forgotten its identity element. Such a $G$-set is called a \emph{$G$-torsor}.
+\end{problem}

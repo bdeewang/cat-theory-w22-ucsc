@@ -1,0 +1,566 @@
+\vspace*{1em}
+
+\begin{example}[Product of Sets]\label{prodsetex}
+Given two (assume non-empty for ease) sets $X$ and $Y$, let's investigate the cartesian product $X \times Y = \setp{(x,y)}{x \in X,\,y \in Y}$. There are two obvious maps that we can always consider in this case, the projections
+\[\begin{tikzcd}[row sep = small]
+                                               & X \\
+X\times Y \arrow[ru, "p_X"] \arrow[rd, "p_Y"'] &   \\
+                                               & Y
+\end{tikzcd}\]
+where
+\[p_X:(x,y) \mapsto x \quad \text{and}\quad p_Y: (x,y) \mapsto y\]
+$(X \times Y,p_X,p_Y)$ possesses a defining property. To see this, suppose we consider any other set $Z$ with functions
+\[f_X:Z \to X \quad \text{and} \quad f_Y: Z \to Y.\]
+Then we can describe an induced function
+\[f:Z \to X \times Y,\ z \mapsto (f_X(z),f_Y(z)),\]
+which is such that $f_X = p_X \circ f$ and $f_Y = p_Y \circ f$. Diagramatically, we describe this as follows
+\[\begin{tikzcd}
+                                                                                                          &    [1.5em]                                            & X \\
+Z \arrow[rru, "f_X", bend left] \arrow[rrd, "f_Y"', bend right] \arrow[r, "\exists f" description, dashed] &[1.5em] X\times Y \arrow[ru, "p_X"'] \arrow[rd, "p_Y"] &   \\
+                                                                                                          & [1.5em]                                               & Y
+\end{tikzcd}\]
+where the triangles commute.\\
+\\
+\textbf{Claim.} \emph{The function $f$ is the unique function with the property $f_X = p_X \circ f$ and $f_Y = p_Y \circ f$. That is, $f$ is the unique function that fits into the diagram above.}\\[0.5em]
+Suppose $g:Z \to X\times Y$ is any other functions such that $f_X = p_X \circ g$ and $f_Y = p_Y \circ g$. Then necessarily, we have $g:z \mapsto (f_X(z),f_Y(z))$ and therefore $f = g$. Thus,
+\[\begin{tikzcd}
+                                                                                                          &    [1.5em]                                            & X \\
+Z \arrow[rru, "f_X", bend left] \arrow[rrd, "f_Y"', bend right] \arrow[r, "\exists ! f" description, dashed] &[1.5em] X\times Y \arrow[ru, "p_X"'] \arrow[rd, "p_Y"] &   \\
+                                                                                                          & [1.5em]                                               & Y
+\end{tikzcd}\]
+This is describing the \emph{universal property} of $(X \times Y,p_X,p_Y)$ (what functor are they representation of?). One thinks of this, morally, as saying that the product $(X \times Y,p_X,p_Y)$ is the best approximation of the diagram
+\[\begin{tikzcd}
+X \\[-0.5em]
+Y
+\end{tikzcd}\]
+from the left. It's important to note that the maps $p_X$ and $p_Y$ play a fundamental role.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{attempt-definition}[Take 1: Intuition as Approximation]
+Fix a category $\cat{C}$.
+\begin{itemize}[leftmargin=*]
+\item \emph{Limits} are the best ``best approximation" of a diagram ``on the left". For example,\\[0.5em]
+\begin{minipage}{0.4\textwidth}
+    \[\begin{tikzcd}
+X_1 \arrow[rd,"a"]            &     \\
+                          & X_2 \\
+X_3 \arrow[ru,"b"] \arrow[rd,"c"] &     \\
+                          & X_4 \\
+X_5     \arrow[ru, "d"']                              &    
+\end{tikzcd}\]
+    \begin{center}
+        consider this diagram
+    \end{center}      
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+\[\begin{tikzcd}
+                                                                                                                                                                                                    &  & X_1 \arrow[rd, "a"]                  &                     \\
+                                                                                                                                                                                                    &  &                                      & X_2                 \\
+{\color{darkred}L} \arrow[rruu, "1" description, bend left, darkred] \arrow[rrru, "2" description, bend left, darkred] \arrow[rr, "3" description, darkred] \arrow[rrrd, "4" description, bend right, darkred] \arrow[rrdd, "5" description, bend right, darkred] &  & X_3 \arrow[ru, "b"'] \arrow[rd, "c"] &                     \\
+                                                                                                                                                                                                    &  &                                      & X_4 \\
+                                                                                                                                                                                                    &  & X_5 \arrow[ru, "d"']                                  &                    
+\end{tikzcd}\]
+      \begin{center}
+        a limit (in red) is mapping in to the diagram
+    \end{center}      
+\end{minipage}\\[1.5em]
+So, a limit is first an object along with morphisms that map into the diagram such that all triangles commute.\\[0.5em]
+In our example, commutativity makes some morphisms superfluous, as  $2 = a\circ 1 = b\circ 3$ and $4 = c\circ 3 = d\circ 5$. Therefore, it suffices to consider
+\[\begin{tikzcd}
+                                                                       &  & X_1 \arrow[rd, "a"]                  &                     \\
+                                                                       &  &                                      & X_2                 \\
+{\color{darkred}L} \arrow[rruu, "1" description, bend left, darkred] \arrow[rr, "3" description, darkred]\arrow[rrdd, "5" description, bend right, darkred] &  & X_3 \arrow[ru, "b"'] \arrow[rd, "c"] &                     \\
+                                                                       &  &                                      & X_4 \\
+                                                                       &  & X_5                                  \arrow[ru, "d"'] &                    
+\end{tikzcd}\]
+The ``best approximation" property of the limit $(L,1,3,5)$ translates to the following diagram for any object $N$ mapping in to the diagram
+\[\begin{tikzcd}
+                                                                                                                            &  &                                                                                                                  &  & X_1 \arrow[rd, "a"]                  &                     \\
+                                                                                                                            &  &                                                                                                                  &  &                                      & X_2                 \\
+N \arrow[rrrruu, bend left] \arrow[rrrrdd, bend right] \arrow[rrrr, bend right] \arrow[rr, "\exists !" description, dashed] &  & {\color{darkred}L} \arrow[rruu, "1" description, bend left, darkred] \arrow[rr, "3" description, darkred] \arrow[rrdd, "5" description, bend right, darkred] &  & X_3 \arrow[ru, "b"'] \arrow[rd, "c"] &                     \\
+                                                                                                                            &  &                                                                                                                  &  &                                      & X_4 \\
+                                                                                                                            &  &                                                                                                                  &  & X_5   \arrow[ru, "d"']                                 &                    
+\end{tikzcd}\]
+where the unique map $N \to L$ makes all possible diagrams commute.
+\item Dually, \emph{Colimits} are the best ``best approximation" of a diagram ``on the right". For our example diagram above, this translates to a colimit (in blue), an object along with morphisms, mapping out of the diagram such that all triangles commute.
+\[\begin{tikzcd}
+X_1 \arrow[rd, "a"'] \arrow[rrrdd, "1'" description, bend left, darkblue]     &                                                               &  &   \\
+                                                                   & X_2 \arrow[rrd, "2'" description, bend left, darkblue]                  &  &   \\
+X_3 \arrow[ru, "b"] \arrow[rd, "c"'] \arrow[rrr, "3'" description, darkblue] &                                                               &  & {\color{darkblue} C} \\
+                                                                   & X_4 \arrow[rru, "4'" description, bend right, darkblue] &  &   \\
+X_5 \arrow[ru, "d"]  \arrow[rrruu, "5'" description, bend right, darkblue]                    &                                                               &  &  
+\end{tikzcd}\quad
+\rightsquigarrow\quad
+\begin{tikzcd}
+X_1 \arrow[rd, "a"']     &                                                               &  &   \\
+                                                                   & X_2 \arrow[rrd, "2'" description, bend left, darkblue]                  &  &   \\
+X_3 \arrow[ru, "b"]\arrow[rd, "c"'] &                                                               &  & {\color{darkblue} C} \\
+                                                                   & X_4 \arrow[rru, "4'" description, bend right, darkblue] &  &   \\
+X_5  \arrow[ru, "d"]                  &                                                               &  &  
+\end{tikzcd}\]
+since $1' = 2'\circ a,\ 3' = 2'\circ b = 4'\circ c$ and $5' = 4'\circ d$. The ``best approximation" property of the colimit $(C,2',4')$ translates to the following diagram for any object $M$ mapping out of the diagram
+\[\begin{tikzcd}
+X_1 \arrow[rd, "a"]                  &                                                                                         &  &                                               &  &   \\
+                                     & X_2 \arrow[rrd, "2'" description, bend left, darkblue] \arrow[rrrrd, bend left]                   &  &                                               &  &   \\
+X_3 \arrow[ru, "b"'] \arrow[rd, "c"] &                                                                                         &  & {\color{darkblue} C} \arrow[rr, "\exists !" description, dashed] &  & M \\
+                                     & X_4 \arrow[ld, "d"] \arrow[rru, "4'" description, bend right, darkblue] \arrow[rrrru, bend right] &  &                                               &  &   \\
+X_5                                  &                                                                                         &  &                                               &  &  
+\end{tikzcd}\]
+where the unique map $C \to M$ makes all possible diagrams commute.
+\end{itemize}
+Compare the limit to a notion of minimum, and colimit to the notion of a maximum. We make this rigorous in Problem \ref{prob 6.2}.
+\end{attempt-definition}
+
+\vspace*{0.1in}
+
+\begin{attempt-definition}[Take 2: Cones]\label{conlim}
+Consider a diagram in a category $\cat{C}$, for example, such as
+\[\begin{tikzcd}
+\cdots \arrow[r] & X_{n-1} \arrow[r] & X_n \arrow[r] & X_{n+1} \arrow[r] & \cdots
+\end{tikzcd}\]
+\\
+\textbf{Definition.} A \emph{cone over a diagram with summit $C$} is an object $C$ in $\cat{C}$  with maps
+\[\begin{tikzcd}[row sep=huge]
+                 &                   & {\color{darkgreen}C} \arrow[d,darkgreen] \arrow[ld, darkgreen] \arrow[lld, dashed, darkgreen] \arrow[rd, darkgreen] \arrow[rrd, dashed, darkgreen] &                   &        \\
+\cdots \arrow[r] & X_{n-1} \arrow[r] & X_n \arrow[r]                                                             & X_{n+1} \arrow[r] & \cdots
+\end{tikzcd}\]
+such that all the triangles commute, illustrated here with our example.
+
+\begin{example}\hfill
+\begin{itemize}
+\item The cone of the diagram below (in black) is
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+{\color{darkgreen}C} \arrow[d, "\beta"',darkgreen] \arrow[r, "\alpha",darkgreen] \arrow[rd, "\gamma",darkgreen] & X \arrow[d, "f"] \\
+Y \arrow[r, "g"']                                              & Z               
+\end{tikzcd}
+\qquad
+\rightsquigarrow
+\qquad
+\begin{tikzcd}[row sep=huge, column sep = large]
+{\color{darkgreen}C} \arrow[d, "\beta"',darkgreen] \arrow[r, "\alpha",darkgreen] & X \arrow[d, "f"] \\
+Y \arrow[r, "g"']                                              & Z               
+\end{tikzcd}\]
+where, since the triangles commute, we have $\gamma = f\alpha = g\beta$; so we can exclude $\gamma$. Therefore we get a diagram, given on the right, such that $f\alpha = g\beta$.
+\item The cone of the diagram below (in black) is
+\[\begin{tikzcd}[column sep=small, row sep = large]
+                                                            & {\color{darkgreen}C} \arrow[ld, "\alpha"', bend right,darkgreen] \arrow[rd, "\beta", bend left,darkgreen] &   \\
+X \arrow[rr, "f", shift left] \arrow[rr, "g"', shift right] &                                                                    & Y
+\end{tikzcd}
+\qquad
+\rightsquigarrow
+\qquad
+\begin{tikzcd}[column sep=large]
+{\color{darkgreen}C} \arrow[r, "\alpha",darkgreen] & X \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & Y
+\end{tikzcd}\]
+where, since the triangles commute, we have $\beta = f\alpha = g\alpha$; so we can exclude $\beta$. Therefore we get a diagram, given on the right, such that $f\alpha = g\alpha$.
+\end{itemize}
+\end{example}
+\vspace*{0.1in}
+\begin{definition}
+The \emph{limit} of a diagram is the \emph{universal cone over the diagram}.
+\end{definition}
+\end{attempt-definition}
+
+\vspace*{0.1in}
+
+\begin{discussion}\label{cone-adjunc}
+We still haven't really given a precise definition of a limit, the Yoneda lemma helps us out. You're better served reading this remark after you've attempted a few problems and have gained familiarity with specific examples of limits. 
+\begin{itemize}
+\item A \emph{$\cat{J}$-shaped diagram} in a category $\cat{C}$ is a functor $F: \cat{J} \to \cat{C}$, where $\cat{J}$, called the indexing category, is a small category: a set's worth of objects and morphisms.\\[1em]
+For example, the (naive) diagram 
+\[\begin{tikzcd}[row sep=large]
+ & X \arrow[d, "f"] \\[-0.5em]
+Y \arrow[r, "g"']                                              & Z               
+\end{tikzcd}\]
+is interpreted as a diagram, in the sense introduced above, as follows: let $\cat{J}$ be the category visualised as follows
+\[\begin{tikzcd}[column sep=small]
+ & \bullet \arrow[d] \\[-0.5em]
+\bullet \arrow[r]                                              & \bullet               
+\end{tikzcd}\]
+That is, it's a category with three objects where the only morphisms, apart from identity morphisms, are where two of the objects map to the third one. Then the naive diagram above is the image of the $\cat{J}$-shaped diagram (functor) $F:\cat{J} \to \cat{C}$ which sends the three objects and two morphisms appropriately to $X,\ Y,\ Z,\ f$ and $g$ (write down this functor precisely for yourself).
+\item For a fixed object $C$ in $\cat{C}$, one can the consider the \emph{constant $\cat{J}$-shaped diagram} $\Delta(C):\cat{J} \to \cat{C}$. This is the functor that sends every object and morphism in $\cat{J}$ to $C$ and $1_C$ respectively.
+\item Thinking of diagrams in this way, a cone over a diagram $F$ with summit $C$ is simply a natural transformation
+\[\eta:\Delta(C) \Rightarrow F\]
+\item Fixing a diagram $F$, there is a functor 
+\[\mathrm{Cone}(-,F):\cat{C}^{\text{op}} \to \ncat{Set}\]
+that sends any object $C$ to $\mathrm{Cone}(C,F)$ which is the set of cones over $F$ with summit $C$. 
+\item Then a \emph{limit of the diagram $F$}, if it exists, is a representation (in the sense of Discussion \ref{univel}) of the functor $\mathrm{Cone}(-,F)$. That is, a limit is $(\lim F,\lambda)$ where $\lim F$ is an object in $\cat{C}$ and $\lambda: \Delta(\lim F) \Rightarrow F$ is a cone over $F$ with summit $\lim F$ that induces a natural isomorphism
+\[\mathrm{Nat}(\Delta(-),F) = \mathrm{Cone}(-,F) \cong \mathrm{Hom}_{\cat{C}}(-,\lim F)\]
+This, in particular, tells us that the limit, whenever it exists, is unique upto a unique isomorphism.
+\item Equivalently (see Problem \ref{prob 5.7} (h)) $\lim F$ is a terminal object in $\int\mathrm{Cone}(-,F)$.
+\end{itemize}
+\end{discussion}
+
+\vspace*{0.1in}
+
+\begin{example}[Some Special Limits]\label{splimex}\hfill
+\begin{itemize}
+\item[(i)] The limit (in colour) of the diagram (in black); the indexing category is on the right 
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+{\color{darkgreen}X\times_Z Y} \arrow[d, "p_Y"',darkgreen] \arrow[r, "p_X",darkgreen] & X \arrow[d, "f"] \\
+Y \arrow[r, "g"']                                              & Z               
+\end{tikzcd} \qquad\qquad \begin{tikzcd}[row sep=huge, column sep = large]
+ & \bullet \arrow[d] \\
+\bullet \arrow[r]                                              & \bullet               
+\end{tikzcd}\]
+is called the \emph{pullback} or \emph{fiber(ed) product}; this square is also sometimes called a \emph{Cartesian square}. Here $fp_X = gp_Y$.
+
+\item[(ii)] The limit (in colour) of the diagram (in black); the indexing category is on the right  
+\[\begin{tikzcd}[column sep=large]
+{\color{darkgreen}\mathrm{eq}(f,g)} \arrow[r, "\alpha",darkgreen] & X \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & Y
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[column sep=large]
+\bullet \arrow[r, shift left] \arrow[r, shift right] & \bullet
+\end{tikzcd}\]
+is called the \emph{equaliser}. Here $f\alpha = g\alpha$.
+
+\item[(iii)] The limit (in colour) of the diagram (in black); the indexing category is below
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+       &         &         & {\color{darkgreen}\prod_iX_i} \arrow[ld,darkgreen] \arrow[d,darkgreen] \arrow[rd,darkgreen] \arrow[rrd,darkgreen] \arrow[lld,darkgreen] \arrow[rrrd, dashed,darkgreen] \arrow[llld, dashed,darkgreen] &         &         &        \\
+\cdots & X_{n-2} & X_{n-1} & X_{n}                                                                                                               & X_{n+1} & X_{n+2} & \cdots
+\end{tikzcd}\]\\[-0.5em]
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+\cdots & \bullet & \bullet & \bullet & \bullet & \bullet & \cdots
+\end{tikzcd}\]
+is called the \emph{product}.
+
+\item[(iv)] The limit (in colour) of the diagram (in black); the indexing category is below  %replace and add section on sequential/directed limits
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+                                   &                         &                         & {\color{darkgreen}\varprojlim P_i} \arrow[d, "f_1" description, darkgreen] \arrow[rd, "f_0" description, darkgreen] \arrow[ld, "f_2" description, darkgreen] \arrow[lld, "f_3" description, darkgreen] \arrow[llld, "f_4"' description, dashed, darkgreen] &     \\
+\cdots \arrow[r, "\pi_4"', dashed] & P_3 \arrow[r, "\pi_3"'] & P_2 \arrow[r, "\pi_2"'] & P_1 \arrow[r, "\pi_1"']                                                                                              & P_0
+\end{tikzcd}\]\\[-0.6em]
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+\cdots \arrow[r, dashed] & \bullet \arrow[r] & \bullet \arrow[r] & \bullet \arrow[r] & \bullet
+\end{tikzcd}\]\\[-0.6em]
+is an example of a limit called the \emph{sequential limit} (or \emph{projective limit} or \emph{inverse limit}). Here $\pi_{i+1}f_{i+1} = f_i$ for all $i \geq 0$.
+\end{itemize}
+%See Problems below for several examples.
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{attempt-definition}
+We can repeat the discussion in Attempting Definition \ref{conlim} in a dual manner: considering cones \emph{under} a diagram.
+
+\vspace{0.1in}
+
+\begin{definition}
+A \emph{colimit} for a diagram is the \emph{universal cone} under it.
+\end{definition}
+
+\vspace*{0.1in}
+
+Dually to the discussion in Discussion \ref{cone-adjunc}, we produce a functor for a diagram $F$
+\[\mathrm{Cone}(F,-):\cat{C} \to \ncat{Set}\]
+The colimit, if it exists, will be a representation of this functor, if and only if $\int \mathrm{Cone}(F,-)$ has an initial object. We will have exhibited a natural isomorphism
+\[\mathrm{Nat}(F,\Delta(-)) = \mathrm{Cone}(F,-) \cong \mathrm{Hom}_{\cat{C}}(\colim F,-)\]
+More precisely, a colimit will be $(\colim F,\kappa)$ where $\colim F$ is an object in $\cat{C}$ and $\kappa: F \Rightarrow \Delta(\colim F)$ is a cone under $F$ with summit $\colim F$ which induces the above natural isomorphism.\\
+\\
+Therefore, colimits, just like limits, are unique up to unique isomorphism whenever they exist.
+\end{attempt-definition}
+
+\vspace*{0.1in}
+
+\begin{example}[Some Special Colimits]\hfill
+\begin{itemize}
+\item[(i)] The colimit (in colour) of the diagram (in black); the indexing category is on the right 
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+Z \arrow[d, "g"'] \arrow[r, "f"] & X \arrow[d, "i_X",darkgreen] \\[0.5em]
+Y \arrow[r, "i_Y"',darkgreen]                                              & {\color{darkgreen}X\amalg_Z Y}               
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[row sep=huge, column sep = large]
+\bullet \arrow[d] \arrow[r] & \bullet \\[0.5em]
+\bullet &                
+\end{tikzcd}\]
+is called the \emph{pushout} or \emph{fibered coproduct}. Here $i_Xf = i_Yg$.
+
+\item[(ii)] The colimit (in colour) of the diagram (in black); the indexing category is on the right 
+\[\begin{tikzcd}[column sep=large]
+X \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & Y \arrow[r, "\alpha",darkgreen] & {\color{darkgreen}\mathrm{coeq}(f,g)}
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[column sep=large]
+\bullet \arrow[r, shift left] \arrow[r, shift right] & \bullet
+\end{tikzcd}\]
+is called the \emph{coequaliser}. Here $\alpha f = \alpha g$.
+
+\item[(iii)] The colimit (in colour) of the diagram (in black); the indexing category is below
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+ &                     &                    & {\color{darkgreen}\coprod_iX_i} &                    &                     &                             \\
+\cdots \arrow[rrru, dashed,darkgreen]        & X_{n-2} \arrow[rru,darkgreen] & X_{n-1} \arrow[ru,darkgreen] & X_{n} \arrow[u,darkgreen]            & X_{n+1} \arrow[lu,darkgreen] & X_{n+2} \arrow[llu,darkgreen] & \cdots \arrow[lllu, dashed,darkgreen]
+\end{tikzcd}\]\\[-0.5em]
+\[\begin{tikzcd}[row sep=huge, column sep=small]
+\cdots & \bullet & \bullet & \bullet & \bullet & \bullet & \cdots
+\end{tikzcd}\]
+is called the \emph{coproduct}.
+
+\item[(iv)] The colimit (in colour) of the diagram (in black); the indexing category is below %replace and add section on sequential/directed colimits
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+                                                        & {\color{darkgreen}\varinjlim I_j}                                         &                                                         &                                                                  &                                                \\
+I_0 \arrow[r, "\iota_0"'] \arrow[ru, "g_0" description,darkgreen] & I_1 \arrow[r, "\iota_1"'] \arrow[u, "g_1" description,darkgreen] & I_2 \arrow[r, "\iota_2"'] \arrow[lu, "g_2" description,darkgreen] & I_3 \arrow[r, "\iota_3"', dashed] \arrow[llu, "g_3" description,darkgreen] & \cdots \arrow[lllu, "g_4" description, dashed,darkgreen]
+\end{tikzcd}\]\\[-0.6em]
+\[\begin{tikzcd}[row sep=huge, column sep=large]
+\bullet \arrow[r] & \bullet \arrow[r] & \bullet \arrow[r] & \bullet \arrow[r, dashed] & \cdots
+\end{tikzcd}\]\\[-0.6em]
+is an example of a colimit called the \emph{sequential colimit} (or \emph{direct limit}; more generally, \emph{inductive limit}). Here $g_{j+1}\iota_j = g_j$ for all $j \geq 0$.
+\end{itemize}
+%See Problems below for several examples.
+\end{example}
+
+%\vspace*{0.1in}
+
+\begin{example}\label{explimcolimex}
+Here are some important objects defined as limit and colimits in various field of mathematics.
+\begin{itemize}
+\item There's a projective system, where $p$ is a prime,
+\[\begin{tikzcd}[row sep=huge]
+\cdots \arrow[r, "\pi_4"] & \zz/p^4\zz \arrow[r, "\pi_3"] & \zz/p^3\zz \arrow[r, "\pi_2"] & \zz/p^2\zz \arrow[r, "\pi_1"]                                                                                              & \zz/p\zz
+\end{tikzcd}\]
+where each $\pi_i$ is the usual reduction map. The \emph{$p$-adic integers} is defined to be $\zz_p \coloneqq \varprojlim \zz/p^n\zz$.
+%\item There's a projective system, such that for any integers $n,\,m \geq 1$, whenever, $m\mid n$ we consider the usual reduction map
+%\[\begin{tikzcd}[row sep=huge]
+%\zz/n\zz \arrow[r, "\pi_{nm}"] & \zz/m\zz
+%\end{tikzcd}\]
+%The \emph{profinite integers} is defined to be $\widehat{\zz} \coloneqq \varprojlim \zz/n\zz$.\\[1em]
+%We can describe this more precisely, consider the poset of positive integers with partial order given by divisibility, i.e. $(\mathbb{Z}_{>0},\leq)$ where $m\leq n$ if and only if $m\mid n$. Treat this poset as a category, and our indexing category $\cat{J}$ is its opposite. Our diagram is defined to be the functor $F:\cat{J} \to \ncat{CRing}$ which sends $n$ to $\zz/n\zz$ and $m\leq n$ to $\pi_{nm}$. Then, $\widehat{\zz} = \lim F$.\\[1em]
+%The chinese remainder theorem and its compatibility with the reduction maps gives us
+%\[\widehat{\zz} \cong \prod_p \zz_p\]
+%where $\zz_p$ is the $p$-adic integers.
+\item There are directed systems
+\[\begin{tikzcd}[row sep=huge]
+\rr^0 \arrow[r, hook] & \rr^1 \arrow[r, hook] & \rr^2 \arrow[r, hook] & \rr^3 \arrow[r, hook] & \cdots
+\end{tikzcd}\]
+\[\begin{tikzcd}[row sep=huge]
+S^0 \arrow[r, hook] & S^1 \arrow[r, hook] & S^2 \arrow[r, hook] & S^3 \arrow[r, hook] & \cdots
+\end{tikzcd}\]
+where each inclusion is the map $(x_1,\ldots,x_n) \mapsto (x_1,\ldots,x_n,0)$.\\
+\\
+The \emph{infinite dimensional Euclidean space} and the \emph{infinite dimensional sphere} are defined to be $\rr^\infty \coloneqq \varinjlim \rr^n$ and $S^\infty \coloneqq \varinjlim S^n$ respectively.
+\item If you have seen CW complexes or relative CW complexes, they can be defined very cleanly as a colimit (of their cells) in $\ncat{Top}$.
+\item Recall the notion of a \emph{solenoid} described at the beginning of Lecture \ref{lecture2}: it was described as a collection $(S_i,f_i)_{i\in \zz_{\geq 0}}$ where $S_i$ are circles and $f_i:S_{i+1} \to S_i$ is the map that wraps $S_{i+1}$ around $S_i$,\ $n_i$ times $ (n_i \in \zz_{\geq 2})$.\\
+\\
+This is actually describing a projective system
+\[\begin{tikzcd}[row sep=huge]
+\cdots \arrow[r, "f_4"] & S_4 \arrow[r, "f_3"] & S_3 \arrow[r, "f_2"] & S_2 \arrow[r, "f_1"] & S_1
+\end{tikzcd}\]
+and a \emph{solenoid} $S \coloneqq \varprojlim S_i$.\\
+\\
+If $P = (n_i)_{i\geq 0}$ is in fact a sequence of prime numbers, that is, $n_i$ is a prime number for each $i$, then $S$ is called a \emph{$P$-adic solenoid}.
+\end{itemize}
+\end{example}
+
+\vspace*{0.1in}
+
+\begin{remark}
+In concrete cases, one needs to actually determine if limits (and colimits) exist and what they are, usually by explicitly constructing them.\\[0.5em]
+We shall see that for categories that are "sets with extra steps", i.e. categories $\cat{C}$ such that there's a faithful functor
+\[U:\cat{C} \to \ncat{Set}\]
+(these are called \emph{concrete categories} and $U$ the \emph{forgetful functor}), the limits are easy to describe. In contrast, the colimits can be much harder to describe (see Problem \ref{prob 6.5} (d), for example). We will see why this is so when we discuss \emph{adjunction}.\\
+\\
+You will see some examples of limits in the Problems. In the next lecture, we will construct all (small) limits in $\ncat{Set}$.
+\end{remark}
+
+%\vspace*{0.2in}
+
+\subsection{Problems}\vspace{0.1in}
+
+\begin{problem}\label{prob 6.1}
+In this problem we will prove by hand that the product of two objects, assuming it exists, in a category $\cat{C}$ is \emph{unique up to a unique isomorphism}.
+\begin{itemize}
+\item[(a)] Let $X$ and $Y$ be objects, and suppose $(P,p_X,p_Y)$ and $(Q,q_X,q_Y)$ are products of $X$ and $Y$. Following is the diagram exhibiting the universal property of $P$ with respect to $Q$
+\[\begin{tikzcd}
+                                                                                                          &    [1.5em]                                            & X \\
+Q \arrow[rru, "q_X", bend left] \arrow[rrd, "q_Y"', bend right] \arrow[r, "\exists ! \phi" description, dashed] &[1.5em] P \arrow[ru, "p_X"'] \arrow[rd, "p_Y"] &   \\
+                                                                                                          & [1.5em]                                               & Y
+\end{tikzcd}\]
+
+Draw the diagram exhibiting the universal property of $Q$ with respect to $P$.
+
+\item[(b)] Combine the two diagrams you obtained in (a) to obtain (commutative) diagrams as follows
+\[\begin{tikzcd}
+                                                                                                          &    [1.5em]                                            & X \\
+Q \arrow[rru, "q_X", bend left] \arrow[rrd, "q_Y"', bend right] \arrow[r, "\exists !" description, dashed] &[1.5em] Q \arrow[ru, "q_X"'] \arrow[rd, "q_Y"] &   \\
+                                                                                                          & [1.5em]                                               & Y
+\end{tikzcd}\qquad \begin{tikzcd}
+                                                                                                          &    [1.5em]                                            & X \\
+P \arrow[rru, "p_X", bend left] \arrow[rrd, "p_Y"', bend right] \arrow[r, "\exists !" description, dashed] &[1.5em] P \arrow[ru, "p_X"'] \arrow[rd, "p_Y"] &   \\
+                                                                                                          & [1.5em]                                               & Y
+\end{tikzcd}\]
+
+\item[(c)] What's the diagram exhibiting the universal property of $P$ with respect to $P$? How about $Q$?
+
+\item[(d)] Using (b) and (c), conclude that $Q$ and $P$ are isomorphic to each other via $\phi$.
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 6.2}
+We'll look at some examples of products, to remind yourself of the categories mentioned, look at Examples \ref{catex1}, \ref{catex2} and \ref{ex3}.
+\begin{itemize}
+\item[(a)] Recall that any poset can be considered a category. So, given a poset $(\ncat{P},\leq)$, a product of two objects (i.e., elements of $\ncat{P}$) $x,\,y$, if it exists, is given by $\min\set{x,y}$.\\
+\\
+Using this, find the product of two objects in the following posets.
+\begin{itemize}
+\item[(i)] The poset $(\mathbb{Z}_{>0},\leq)$ where $m \leq n$ if and only if $m\mid n$.
+\item[(ii)] The poset $(\mathscr{P}(X),\leq)$, where $\mathscr{P}(X)$ is the power set of a set $X$, where $A \leq B$ if and only if $A \subseteq B$.
+\end{itemize}
+In the general theory, the (categorical) product of two elements $x$ and $y$ is called their \emph{meet} and denoted $x\wedge y$. The \emph{joint} $x\vee y$ is exactly the coproduct. 
+\item[(b)] Consider the category $\ncat{Mat}_k$, where $k$ is a field. Prove that the product of $n$ and $m$ is $n + m$.
+\item[(c)] Consider the category of fields, does it have products?
+\end{itemize}
+\end{problem}
+
+%\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.3}\hfill
+\begin{itemize}
+\item[(a)] Prove that the cartesian product of two sets is indeed the categorical product in $\ncat{Set}$.
+\item[(b)] Prove that the disjoint union of two sets is the categorical coproduct in $\ncat{Set}$.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.3a}
+Consider a category $\cat{C}$ where products exist.
+\begin{itemize}
+\item[(a)] Prove that $\cat{C}$ has a terminal object $T$ by showing that it's the empty product. Dually, what's the condition for $\cat{C}$ having an initial object with respect to coproducts?
+\item[(b)] Describe the twist isomorphism $\tau: X \times Y \to Y \times X$ for any two objects $X$ and $Y$.
+\item[(c)] Prove that $X \times T \cong X$ for any object $X$, where $T$ is a terminal object of $\cat{C}$. What's the dual statement?
+\item[(d)] Prove that for objects $X$ and $Y$, we have $X \times_T Y \cong X \times Y$. What's the dual statement?
+\item[(e)] What's the product of two objects $X \to Z$ and $Y \to Z$ in the slice category $\cat{C}/Z$.
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.3b}
+Discussion \ref{cone-adjunc} tells us that the limit represents the cone functor. Let's make this explicit in the case of product. Fix a category $\cat{C}$, and let $\cat{J}$ be the category
+\[\bullet\qquad \bullet\]
+that is, it's a category with two objects and no morphisms other than identity morphisms.
+\begin{itemize}
+\item[(a)] Prove a $\cat{J}$-shaped diagram, i.e., a functor $F:\cat{J} \to \cat{C}$ just picks two objects in $\cat{C}$, say $X_1$ and $X_2$.
+\item[(b)] Make sense of this: product of two objects is the limit of a $\cat{J}$-shaped diagram.
+\item[(c)] For any object $Y$ in $\cat{C}$, prove that $\mathrm{Cone}(\Delta(Y),F) \cong \mathrm{Hom}_{\cat{C}}(Y,X_1) \times \mathrm{Hom}_{\cat{C}}(Y,X_2)$.
+\item[(d)] Conclude that a product $(X \times Y,p_X,p_Y)$ represents the functor
+\[Y \mapsto \mathrm{Hom}_{\cat{C}}(Y,X_1) \times \mathrm{Hom}_{\cat{C}}(Y,X_2)\]
+\item[(e)] Explicitly describe the bijection
+\[\mathrm{Hom}_{\cat{C}}(Y,X_1 \times X_2) \cong \mathrm{Hom}_{\cat{C}}(Y,X_1) \times \mathrm{Hom}_{\cat{C}}(Y,X_2)\]
+\end{itemize}
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.3c}
+Let $\cat{C}$ be a category and let $(X\times Y,p_X,p_Y)$ be a product of the objects $X$ and $Y$ in $\cat{C}$. Show that if there exists a map $f:X \to Y$, then $p_X$ is an epimorphism in $\cat{C}$. Formulate a similar statement for $p_Y$.\\[0.5em]
+Formulate a dual statement for coproducts. 
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.4}
+Recall from Example \ref{explimcolimex} that $\zz_p = \varprojlim \zz/p^n/\zz$.
+\begin{itemize}
+\item[(a)] Prove that the limit can be explicitly described as follows
+\[\setp{(a_n)_{n\geq 1} \in \prod_{n\geq 1}\zz/p^n\zz}{\pi_i(a_{i+1}) = a_i,\ \text{for all }i\geq 1}.\]
+\item[(b)] Prove that one can then describe
+\[\zz_p = \setp{\sum_{n\geq 0}\alpha_np^n}{0 \leq \alpha_i < p,\ \text{for all }i\geq 0}\]
+\end{itemize}
+\end{problem}
+
+\vspace{0.1in}
+
+\begin{problem}\label{prob 6.5}
+Consider the category of groups $\ncat{Grp}$ and the subcategory of abelian subgroups $\ncat{Ab}$.
+\begin{itemize}
+\item[(a)] Prove that the product in $\ncat{Grp}$ and $\ncat{Ab}$ is the direct product of groups.
+\item[(b)] What is the equalise of the diagram in $\ncat{Grp}$
+\[\begin{tikzcd}
+G \arrow[r, "\phi", shift left] \arrow[r, "e"', shift right] & H
+\end{tikzcd}\]
+where $e$ denotes the trivial map. How about the coequaliser of this diagram in $\ncat{Ab}$?
+\item[(c)] Describe the pullback of
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+& G \arrow[d, "\phi"] \\
+H \arrow[r, "\psi"']                                              & K         
+\end{tikzcd}\]
+in $\ncat{Grp}$. What if $\psi = e$, the trivial map? What if $H = *$, the trivial group?
+\item[(d)] Describe the pushout of, where $N \unlhd G$
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+N\arrow[d] \arrow[r, hook] & G \\
+*                                              &    
+\end{tikzcd}\]
+in $\ncat{Grp}$.
+\item[(d)] Colimits in subcategories can be vastly different from those in the ambient category. We illustrate this with following problem. 
+\begin{itemize}
+\item[(i)] Let $G$ and $H$ be groups, assume they have presentations
+\[G = \langle S_G\ \vert\ R_G\rangle\quad \text{and} \quad H = \langle S_H\ \vert\ R_H\rangle,\]
+then the \emph{free product of $G$ and $H$} is the group with presentation
+\[G*H \coloneqq \langle S_G \sqcup S_H\ \vert\ R_G\sqcup R_H\rangle\]
+Prove that $G*H$ is the coproduct of $G$ and $H$ in $\ncat{Grp}$.
+\item[(ii)] If $G$ and $H$ are abelian, as long as one of them is non-trivial, $G * H$ is not abelian. Therefore, the coproduct of abelian groups in $\ncat{Grp}$ is not an abelian group. One may then be lead to deduce that coproducts of abelian groups don't exist in $\ncat{Ab}$. This will be a false deduction, coproducts in $\ncat{Ab}$ exist.\\[1em]
+Prove that given abelian group $A$ and $B$, the coproduct of $A$ and $B$ in $\ncat{Ab}$ is $A \times B$. 
+\item[(iii)] Let $A$ and $B$ be abelian groups, prove that \[A \times B \cong (A*B)^{\text{ab}}.\]
+\end{itemize}
+\end{itemize}
+\end{problem}
+
+%\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.6}
+If you've seen topology, prove the following are pushout diagrams in $\ncat{Top}$. That is, the pushout of the diagram (in black) are objects and morphisms (which you need to describe) in colour.
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+S^1\arrow[d,hook] \arrow[r, hook] & D^2\arrow[d,darkgreen] \\
+S^1\arrow[r,darkgreen]                  &   {\color{darkgreen}S^2} 
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[row sep=huge, column sep = large]
+A\arrow[d] \arrow[r, hook] & X\arrow[d,darkgreen] \\
+*  \arrow[r,darkgreen]        & {\color{darkgreen} X/A}    
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[row sep=huge, column sep = large]
+\zz\arrow[d] \arrow[r, hook] & \rr\arrow[d,darkgreen] \\
+*  \arrow[r,darkgreen]          & {\color{darkgreen} S^1}   
+\end{tikzcd}\]
+\end{problem}
+
+\vspace*{0.1in}
+
+\begin{problem}\label{prob 6.7}
+Consider the category of unital commutative rings $\ncat{CRing}$
+\begin{itemize}
+\item[(a)] Make sense of 
+\[\mathbb{Q} = \varinjlim \frac{1}{n}\zz\]
+If you've figured this out, try proving an analogous result for localisation of rings in general. More precisely, make sense of
+\[S^{-1}A = \underset{s\in S}{\varinjlim}\, A_s\]
+where $A_s = A[1/s]$ is the localisation at $s\in S$.
+\item[(b)] Prove that the following is a pushout diagram
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+A\arrow[d] \arrow[r] & B\arrow[d,darkgreen]  \\
+C\arrow[r,darkgreen]    & {\color{darkgreen} B \otimes_A C}   
+\end{tikzcd}\]
+\end{itemize}
+If you've seen algebraic geometry and (pre)sheaves, consider the following questions
+\begin{itemize}
+\item[(c)] Make an educated guess as what should be the pullback of this diagram
+\[\begin{tikzcd}[row sep=huge, column sep = large]
+& \operatorname{Spec} B \arrow[d, "\phi"] \\
+\operatorname{Spec} C \arrow[r, "\psi"']                                              & \operatorname{Spec} A        
+\end{tikzcd}\]
+is in the category of affine schemes.
+%\item[(c)] Recall the notion of a presheaf $\cat{F}$ on a topological space $X$. For any point $x \in X$, one defines the \emph{stalk}
+%\[\cat{F}_x \coloneqq \underset{U \ni x}{\varinjlim}\,\cat{F}(U)\]
+%Prove that the stalk has the following explicit description
+%\[\cat{F}_x = \setp{(f,U)}{U \ni x,\ f \in \cat{F}(U)}/\!\sim,\]
+%where $\sim$ is the equivalence relation (prove this) given as: $(f,U) \sim (g,V)$ if and only if there exists a neighbourhood $W \subseteq U \cap V$ of $x$ such that $f\vert_{W} = g\vert_W$. 
+%\item[(d)] Suppose $\cat{F}$ is a sheaf (of sets) and $U$ an open set such that $U = U_1 \cup U_2$. Let $U_{12} \coloneqq U_1 \cap U_2$. Prove that
+%\[\cat{F}(U) = \cat{F}(U_1) \times_{\cat{F}(U_{12})}\cat{F}(U_2)\]
+%Can you generalise this to an arbitrary cover?
+\end{itemize}
+\end{problem}
