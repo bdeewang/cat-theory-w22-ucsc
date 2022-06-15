@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.16)  25 MAR 2022 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.16)  15 JUN 2022 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**"./Category Theory Learning Seminar Notes, Winter 2022.tex"
+(Category Theory Learning Seminar Notes, Winter 2022.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22> (Preamble.tex
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -1102,7 +1102,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbx' in version `bold'
 )
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 3.
-(main.aux
+(Category Theory Learning Seminar Notes, Winter 2022.aux
 
 LaTeX Warning: Label `prob C.8a' multiply defined.
 
@@ -1110,7 +1110,7 @@ LaTeX Warning: Label `prob C.8a' multiply defined.
 LaTeX Warning: Label `prob C.8a@cref' multiply defined.
 
 )
-\openout1 = `main.aux'.
+\openout1 = `"Category Theory Learning Seminar Notes, Winter 2022.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1209,9 +1209,10 @@ LaTeX Info: Redefining \Ref on input line 520.
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
 LaTeX Info: Redefining \nameref on input line 3.
- (main.out) (main.out)
+ (Category Theory Learning Seminar Notes, Winter 2022.out)
+(Category Theory Learning Seminar Notes, Winter 2022.out)
 \@outlinefile=\write5
-\openout5 = `main.out'.
+\openout5 = `"Category Theory Learning Seminar Notes, Winter 2022.out"'.
 
 LaTeX Info: Redefining \Ref on input line 3.
 
@@ -1288,9 +1289,10 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 [1
 
-{C:/Users/bdeew/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc)
+{C:/Users/bdeew/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(Category Theory Learning Seminar Notes, Winter 2022.toc)
 \tf@toc=\write6
-\openout6 = `main.toc'.
+\openout6 = `"Category Theory Learning Seminar Notes, Winter 2022.toc"'.
 
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -24629,24 +24631,25 @@ opolo-gies, fibered cat-e-gories and de-scent the-ory\T1/ppl/m/n/10.95 . [][]ar
 Xiv:0412512v4[][] 
  []
 
-) [92] (main.aux)
+) [92] (Category Theory Learning Seminar Notes, Winter 2022.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
+Package rerunfilecheck Info: File `"Category Theory Learning Seminar Notes, Win
+ter 2022".out' has not changed.
 (rerunfilecheck)             Checksum: 9E17AFF5008B3932008C2172507B8720;3333.
  ) 
 Here is how much of TeX's memory you used:
- 39662 strings out of 478659
- 831890 string characters out of 2845920
- 1099239 words of memory out of 3000000
- 56699 multiletter control sequences out of 15000+600000
+ 39665 strings out of 478659
+ 832698 string characters out of 2845920
+ 1099337 words of memory out of 3000000
+ 56702 multiletter control sequences out of 15000+600000
  506799 words of font info for 268 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,33n,107p,1023b,1378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 105i,33n,107p,1072b,1378s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/type1/public/dutchcal/DutchCal
 Reg.pfb><C:/Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
@@ -24670,7 +24673,8 @@ al/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/bdeew/AppData
 ata/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/bdeew/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/bde
 ew/AppData/Local/Programs/MiKTeX/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on main.pdf (93 pages, 684851 bytes).
+Output written on "Category Theory Learning Seminar Notes, Winter 2022.pdf" (93
+ pages, 684644 bytes).
 PDF statistics:
  1131 PDF objects out of 1200 (max. 8388607)
  364 named destinations out of 1000 (max. 500000)
