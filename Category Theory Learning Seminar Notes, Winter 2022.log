@@ -1,58 +1,58 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.16)  15 JUN 2022 10:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.21)  28 JAN 2023 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **"./Category Theory Learning Seminar Notes, Winter 2022.tex"
 (Category Theory Learning Seminar Notes, Winter 2022.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2021-11-22> (Preamble.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2022-12-17> (Preamble.tex
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count183
-\c@section=\count184
-\c@subsection=\count185
-\c@subsubsection=\count186
-\c@paragraph=\count187
-\c@subparagraph=\count188
-\c@figure=\count189
-\c@table=\count190
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count191
-\Gm@cntv=\count192
-\c@Gm@tempcnt=\count193
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
 \Gm@dimlist=\toks17
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2021/10/15 v2.17l AMS math features
-\@mathmargin=\skip49
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
@@ -61,52 +61,62 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen147
+\ex@=\dimen149
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen148
+\pmbraise@=\dimen150
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2021/08/26 v2.02 operator names
+Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count194
+\inf@bad=\count196
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count195
-\leftroot@=\count196
+\uproot@=\count197
+\leftroot@=\count198
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count197
-\DOTSCASE@=\count198
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count199
+\DOTSCASE@=\count266
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen149
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen151
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count199
-\c@MaxMatrixCols=\count266
+\macc@depth=\count267
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count268
 \dotsspace@=\muskip16
-\c@parentequation=\count267
-\dspbrk@lvl=\count268
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
 \tag@help=\toks19
-\row@=\count269
-\column@=\count270
-\maxfields@=\count271
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
 \andhelp@=\toks20
-\eqnshift@=\dimen150
-\alignsep@=\dimen151
-\tagshift@=\dimen152
-\tagwidth@=\dimen153
-\totwidth@=\dimen154
-\lineht@=\dimen155
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
 \@envbody=\toks21
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip51
+\multlinetaggap=\skip52
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2938.
-LaTeX Info: Redefining \] on input line 2939.
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
@@ -115,9 +125,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks25
 \thm@notefont=\toks26
 \thm@headpunct=\toks27
-\thm@preskip=\skip52
-\thm@postskip=\skip53
-\thm@headsep=\skip54
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
 \dth@everypar=\toks28
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
@@ -132,38 +142,34 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
-Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count272
-\calc@Bcount=\count273
-\calc@Adimen=\dimen156
-\calc@Bdimen=\dimen157
-\calc@Askip=\skip55
-\calc@Bskip=\skip56
+\calc@Acount=\count274
+\calc@Bcount=\count275
+\calc@Adimen=\dimen158
+\calc@Bdimen=\dimen159
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count274
-\calc@Cskip=\skip57
+\calc@Ccount=\count276
+\calc@Cskip=\skip58
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count275
-\l_MT_multwidth_dim=\dimen158
-\origjot=\skip58
-\l_MT_shortvdotswithinadjustabove_dim=\dimen159
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen160
-\l_MT_above_intertext_sep=\dimen161
-\l_MT_below_intertext_sep=\dimen162
-\l_MT_above_shortintertext_sep=\dimen163
-\l_MT_below_shortintertext_sep=\dimen164
-\xmathstrut@box=\box52
-\xmathstrut@dim=\dimen165
+\g_MT_multlinerow_int=\count277
+\l_MT_multwidth_dim=\dimen160
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen161
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen162
+\l_MT_above_intertext_sep=\dimen163
+\l_MT_below_intertext_sep=\dimen164
+\l_MT_above_shortintertext_sep=\dimen165
+\l_MT_below_shortintertext_sep=\dimen166
+\xmathstrut@box=\box53
+\xmathstrut@dim=\dimen167
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
 sty
@@ -173,14 +179,14 @@ y
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common.tex
 \pgfutil@everybye=\toks29
-\pgfutil@tempdima=\dimen166
-\pgfutil@tempdimb=\dimen167
+\pgfutil@tempdima=\dimen168
+\pgfutil@tempdimb=\dimen169
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common-lists.tex))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -latex.def
-\pgfutil@abb=\box53
+\pgfutil@abb=\box54
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
 code.tex
@@ -195,7 +201,7 @@ sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -207,10 +213,10 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen168
-\Gin@req@width=\dimen169
+\Gin@req@height=\dimen170
+\Gin@req@width=\dimen171
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
 sty
@@ -227,26 +233,26 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 filtered.code.tex
 \pgfkeys@tmptoks=\toks32
 ))
-\pgf@x=\dimen170
-\pgf@y=\dimen171
-\pgf@xa=\dimen172
-\pgf@ya=\dimen173
-\pgf@xb=\dimen174
-\pgf@yb=\dimen175
-\pgf@xc=\dimen176
-\pgf@yc=\dimen177
-\pgf@xd=\dimen178
-\pgf@yd=\dimen179
+\pgf@x=\dimen172
+\pgf@y=\dimen173
+\pgf@xa=\dimen174
+\pgf@ya=\dimen175
+\pgf@xb=\dimen176
+\pgf@yb=\dimen177
+\pgf@xc=\dimen178
+\pgf@yc=\dimen179
+\pgf@xd=\dimen180
+\pgf@yd=\dimen181
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count276
-\c@pgf@countb=\count277
-\c@pgf@countc=\count278
-\c@pgf@countd=\count279
+\c@pgf@counta=\count278
+\c@pgf@countb=\count279
+\c@pgf@countc=\count280
+\c@pgf@countd=\count281
 \t@pgf@toka=\toks33
 \t@pgf@tokb=\toks34
 \t@pgf@tokc=\toks35
-\pgf@sys@id@count=\count280
+\pgf@sys@id@count=\count282
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
@@ -265,29 +271,30 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count281
-\pgfsyssoftpath@bigbuffer@items=\count282
+\pgfsyssoftpath@smallbuffer@items=\count283
+\pgfsyssoftpath@bigbuffer@items=\count284
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
-Package xcolor Info: Model `RGB' extended on input line 1368.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 e.code.tex
@@ -301,9 +308,9 @@ code.tex
 code.tex)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
-\pgfmath@dimen=\dimen180
-\pgfmath@count=\count283
-\pgfmath@box=\box54
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count285
+\pgfmath@box=\box55
 \pgfmath@toks=\toks36
 \pgfmath@stack@operand=\toks37
 \pgfmath@stack@operation=\toks38
@@ -328,59 +335,59 @@ ions.misc.code.tex)
 ions.integerarithmetics.code.tex)))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count284
+\c@pgfmathroundto@lastzeros=\count286
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen181
-\pgf@picmaxx=\dimen182
-\pgf@picminy=\dimen183
-\pgf@picmaxy=\dimen184
-\pgf@pathminx=\dimen185
-\pgf@pathmaxx=\dimen186
-\pgf@pathminy=\dimen187
-\pgf@pathmaxy=\dimen188
-\pgf@xx=\dimen189
-\pgf@xy=\dimen190
-\pgf@yx=\dimen191
-\pgf@yy=\dimen192
-\pgf@zx=\dimen193
-\pgf@zy=\dimen194
+\pgf@picminx=\dimen183
+\pgf@picmaxx=\dimen184
+\pgf@picminy=\dimen185
+\pgf@picmaxy=\dimen186
+\pgf@pathminx=\dimen187
+\pgf@pathmaxx=\dimen188
+\pgf@pathminy=\dimen189
+\pgf@pathmaxy=\dimen190
+\pgf@xx=\dimen191
+\pgf@xy=\dimen192
+\pgf@yx=\dimen193
+\pgf@yy=\dimen194
+\pgf@zx=\dimen195
+\pgf@zy=\dimen196
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen195
-\pgf@path@lasty=\dimen196
+\pgf@path@lastx=\dimen197
+\pgf@path@lasty=\dimen198
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen197
-\pgf@shorten@start@additional=\dimen198
+\pgf@shorten@end@additional=\dimen199
+\pgf@shorten@start@additional=\dimen256
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 escopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box55
-\pgf@hbox=\box56
-\pgf@layerbox@main=\box57
-\pgf@picture@serial@count=\count285
+\pgfpic=\box56
+\pgf@hbox=\box57
+\pgf@layerbox@main=\box58
+\pgf@picture@serial@count=\count287
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen199
+\pgflinewidth=\dimen257
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen256
-\pgf@pt@y=\dimen257
-\pgf@pt@temp=\dimen258
+\pgf@pt@x=\dimen258
+\pgf@pt@y=\dimen259
+\pgf@pt@temp=\dimen260
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 equick.code.tex
@@ -397,14 +404,14 @@ File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen259
+\pgfarrowsep=\dimen261
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen260
-\pgf@sys@shading@range@num=\count286
-\pgf@shadingcount=\count287
+\pgf@max=\dimen262
+\pgf@sys@shading@range@num=\count288
+\pgf@shadingcount=\count289
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
@@ -413,7 +420,7 @@ File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box58
+\pgfexternal@startupbox=\box59
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 elayers.code.tex
@@ -434,7 +441,7 @@ File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 shapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box59
+\pgfnodeparttextbox=\box60
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 plot.code.tex
@@ -443,8 +450,8 @@ File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen261
-\pgf@nodesepend=\dimen262
+\pgf@nodesepstart=\dimen263
+\pgf@nodesepend=\dimen264
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-1-18.sty
@@ -465,8 +472,8 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
 .tex)
-\pgffor@iter=\dimen263
-\pgffor@skip=\dimen264
+\pgffor@iter=\dimen265
+\pgffor@skip=\dimen266
 \pgffor@stack=\toks39
 \pgffor@toks=\toks40
 ))
@@ -477,34 +484,34 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count288
-\pgfplotmarksize=\dimen265
+\pgf@plot@mark@count=\count290
+\pgfplotmarksize=\dimen267
 )
-\tikz@lastx=\dimen266
-\tikz@lasty=\dimen267
-\tikz@lastxsaved=\dimen268
-\tikz@lastysaved=\dimen269
-\tikz@lastmovetox=\dimen270
-\tikz@lastmovetoy=\dimen271
-\tikzleveldistance=\dimen272
-\tikzsiblingdistance=\dimen273
-\tikz@figbox=\box60
-\tikz@figbox@bg=\box61
-\tikz@tempbox=\box62
-\tikz@tempbox@bg=\box63
-\tikztreelevel=\count289
-\tikznumberofchildren=\count290
-\tikznumberofcurrentchild=\count291
-\tikz@fig@count=\count292
+\tikz@lastx=\dimen268
+\tikz@lasty=\dimen269
+\tikz@lastxsaved=\dimen270
+\tikz@lastysaved=\dimen271
+\tikz@lastmovetox=\dimen272
+\tikz@lastmovetoy=\dimen273
+\tikzleveldistance=\dimen274
+\tikzsiblingdistance=\dimen275
+\tikz@figbox=\box61
+\tikz@figbox@bg=\box62
+\tikz@tempbox=\box63
+\tikz@tempbox@bg=\box64
+\tikztreelevel=\count291
+\tikznumberofchildren=\count292
+\tikznumberofcurrentchild=\count293
+\tikz@fig@count=\count294
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count293
-\pgfmatrixcurrentcolumn=\count294
-\pgf@matrix@numberofcolumns=\count295
+\pgfmatrixcurrentrow=\count295
+\pgfmatrixcurrentcolumn=\count296
+\pgf@matrix@numberofcolumns=\count297
 )
-\tikz@expandcount=\count296
+\tikz@expandcount=\count298
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
@@ -526,18 +533,18 @@ File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowinset=\dimen274
-\pgfarrowlength=\dimen275
-\pgfarrowwidth=\dimen276
-\pgfarrowlinewidth=\dimen277
+\pgfarrowinset=\dimen276
+\pgfarrowlength=\dimen277
+\pgfarrowwidth=\dimen278
+\pgfarrowlinewidth=\dimen279
 )))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fancybox\fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
-\@fancybox=\box64
-\shadowsize=\dimen278
-\@Sbox=\box65
+\@fancybox=\box65
+\shadowsize=\dimen280
+\@Sbox=\box66
 \do@VerbBox=\toks41
 \the@fancyput=\toks42
 \this@fancyput=\toks43
@@ -547,11 +554,11 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 ) (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fancyref\fancyref.sty
 Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/tools\varioref.sty
-Package: varioref 2021/07/07 v1.6f package for extended references (FMi)
-\c@vrcnt=\count297
+Package: varioref 2022/01/09 v1.6f package for extended references (FMi)
+\c@vrcnt=\count299
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -569,9 +576,8 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
 keys.sty
@@ -590,49 +596,55 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-\@linkdim=\dimen279
-\Hy@linkcounter=\count298
-\Hy@pagecounter=\count299
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count300
+)
+\@linkdim=\dimen281
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
  (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langp
-atches.def
-File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
-nguages
-)
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count300
+\Hy@SavedSpaceFactor=\count303
  (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count301
+Package hyperref Info: Bookmarks ON on input line 4410.
+\c@Hy@tempcnt=\count304
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen280
+LaTeX Info: Redefining \url on input line 4748.
+\XeTeXLinkMargin=\dimen282
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -642,102 +654,100 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count302
-\Field@Width=\dimen281
-\Fld@charsize=\dimen282
-Package hyperref Info: Hyper figures OFF on input line 6076.
-Package hyperref Info: Link nesting OFF on input line 6081.
-Package hyperref Info: Hyper index ON on input line 6084.
-Package hyperref Info: backreferencing OFF on input line 6091.
-Package hyperref Info: Link coloring OFF on input line 6096.
-Package hyperref Info: Link coloring with OCG OFF on input line 6101.
-Package hyperref Info: PDF/A mode OFF on input line 6106.
-LaTeX Info: Redefining \ref on input line 6146.
-LaTeX Info: Redefining \pageref on input line 6150.
+\Fld@menulength=\count305
+\Field@Width=\dimen283
+\Fld@charsize=\dimen284
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count303
-\c@Item=\count304
-\c@Hfootnote=\count305
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count306
-\c@bookmark@seq@number=\count307
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
 ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+85.
 )
-\Hy@SectionHShift=\skip59
+\Hy@SectionHShift=\skip60
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip60
-\enit@outerparindent=\dimen283
+\labelindent=\skip61
+\enit@outerparindent=\dimen285
 \enit@toks=\toks45
-\enit@inbox=\box66
-\enit@count@id=\count308
-\enitdp@description=\count309
+\enit@inbox=\box67
+\enit@count@id=\count311
+\enitdp@description=\count312
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks46
-\AP@partial=\box67
-\AP@footins=\box68
+\AP@partial=\box68
+\AP@footins=\box69
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip61
-\f@nch@O@elh=\skip62
-\f@nch@O@erh=\skip63
-\f@nch@O@olh=\skip64
-\f@nch@O@orh=\skip65
-\f@nch@O@elf=\skip66
-\f@nch@O@erf=\skip67
-\f@nch@O@olf=\skip68
-\f@nch@O@orf=\skip69
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip62
+\f@nch@O@elh=\skip63
+\f@nch@O@erh=\skip64
+\f@nch@O@olh=\skip65
+\f@nch@O@orh=\skip66
+\f@nch@O@elf=\skip67
+\f@nch@O@erf=\skip68
+\f@nch@O@olf=\skip69
+\f@nch@O@orf=\skip70
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/datetime\datetime.sty
 Package: datetime 2015/03/20 v2.60 Date Time Package
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count310
+\etb@tempcnta=\count313
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fmtcount.sty
 Package: fmtcount 2020/01/30 v3.07
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks47
 \XKV@tempa@toks=\toks48
 )
-\XKV@depth=\count311
+\XKV@depth=\count314
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fcprefix.sty
@@ -746,52 +756,52 @@ Package: fcprefix 2012/09/28
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fcnumparser.st
 y
 Package: fcnumparser 2017/06/15
-\fc@digit@counter=\count312
+\fc@digit@counter=\count315
 ))
-\c@padzeroesN=\count313
-\fc@tmpcatcode=\count314
-\@DT@modctr=\count315
-\@ordinalctr=\count316
-\@orgargctr=\count317
-\@strctr=\count318
-\@tmpstrctr=\count319
-\@DT@loopN=\count320
-\@DT@X=\count321
+\c@padzeroesN=\count316
+\fc@tmpcatcode=\count317
+\@DT@modctr=\count318
+\@ordinalctr=\count319
+\@orgargctr=\count320
+\@strctr=\count321
+\@tmpstrctr=\count322
+\@DT@loopN=\count323
+\@DT@X=\count324
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/datetime\datetime-defau
 lts.sty
 Package: datetime-defaults 2013/09/10
 )
-\@day=\count322
-\@month=\count323
-\@year=\count324
-\c@HOUR=\count325
-\c@HOURXII=\count326
-\c@MINUTE=\count327
-\c@TOHOUR=\count328
-\c@TOMINUTE=\count329
-\c@SECOND=\count330
-\currenthour=\count331
-\currentminute=\count332
-\currentsecond=\count333
+\@day=\count325
+\@month=\count326
+\@year=\count327
+\c@HOUR=\count328
+\c@HOURXII=\count329
+\c@MINUTE=\count330
+\c@TOHOUR=\count331
+\c@TOMINUTE=\count332
+\c@SECOND=\count333
+\currenthour=\count334
+\currentminute=\count335
+\currentsecond=\count336
 Package datetime Info: No datetime.cfg file found, using default settings on in
 put line 308.
-\@dtctr=\count334
-\dayofyear=\count335
-\dayofweek=\count336
+\@dtctr=\count337
+\dayofyear=\count338
+\dayofweek=\count339
 LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks49
 \dt@b=\toks50
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen284
-\ar@mcellbox=\box69
-\extrarowheight=\dimen285
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen286
+\ar@mcellbox=\box70
+\extrarowheight=\dimen287
 \NC@list=\toks51
-\extratabsurround=\skip70
-\backup@length=\skip71
-\ar@cellbox=\box70
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box71
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -799,15 +809,15 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box71
-\beforetitleunit=\skip72
-\aftertitleunit=\skip73
-\ttl@plus=\dimen286
-\ttl@minus=\dimen287
+\ttl@box=\box72
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen288
+\ttl@minus=\dimen289
 \ttl@toksa=\toks52
-\titlewidth=\dimen288
-\titlewidthlast=\dimen289
-\titlewidthfirst=\dimen290
+\titlewidth=\dimen290
+\titlewidthlast=\dimen291
+\titlewidthfirst=\dimen292
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -815,147 +825,147 @@ Package: mdframed 2013/07/01 1.9b: mdframed
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e.sty
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2021-11-22 L3 programming layer (loader) 
+Package: expl3 2022-12-17 L3 programming layer (loader) 
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
-File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count337
-\l__pdf_internal_box=\box72
+File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count340
+\l__pdf_internal_box=\box73
 ))
-Package: xparse 2021-11-12 L3 Experimental document command parser
+Package: xparse 2022-12-17 L3 Experimental document command parser
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
-Package: zref-abspage 2020-07-03 v2.32 Module abspage for zref (HO)
+Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
-Package: zref-base 2020-07-03 v2.32 Module base for zref (HO)
-Package zref Info: New property list: main on input line 764.
-Package zref Info: New property: default on input line 765.
-Package zref Info: New property: page on input line 766.
+Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count338
-Package zref Info: New property: abspage on input line 66.
+\c@abspage=\count341
+Package zref Info: New property: abspage on input line 65.
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
-\mdf@templength=\skip74
-\c@mdf@globalstyle@cnt=\count339
-\mdf@skipabove@length=\skip75
-\mdf@skipbelow@length=\skip76
-\mdf@leftmargin@length=\skip77
-\mdf@rightmargin@length=\skip78
-\mdf@innerleftmargin@length=\skip79
-\mdf@innerrightmargin@length=\skip80
-\mdf@innertopmargin@length=\skip81
-\mdf@innerbottommargin@length=\skip82
-\mdf@splittopskip@length=\skip83
-\mdf@splitbottomskip@length=\skip84
-\mdf@outermargin@length=\skip85
-\mdf@innermargin@length=\skip86
-\mdf@linewidth@length=\skip87
-\mdf@innerlinewidth@length=\skip88
-\mdf@middlelinewidth@length=\skip89
-\mdf@outerlinewidth@length=\skip90
-\mdf@roundcorner@length=\skip91
-\mdf@footenotedistance@length=\skip92
-\mdf@userdefinedwidth@length=\skip93
-\mdf@needspace@length=\skip94
-\mdf@frametitleaboveskip@length=\skip95
-\mdf@frametitlebelowskip@length=\skip96
-\mdf@frametitlerulewidth@length=\skip97
-\mdf@frametitleleftmargin@length=\skip98
-\mdf@frametitlerightmargin@length=\skip99
-\mdf@shadowsize@length=\skip100
-\mdf@extratopheight@length=\skip101
-\mdf@subtitleabovelinewidth@length=\skip102
-\mdf@subtitlebelowlinewidth@length=\skip103
-\mdf@subtitleaboveskip@length=\skip104
-\mdf@subtitlebelowskip@length=\skip105
-\mdf@subtitleinneraboveskip@length=\skip106
-\mdf@subtitleinnerbelowskip@length=\skip107
-\mdf@subsubtitleabovelinewidth@length=\skip108
-\mdf@subsubtitlebelowlinewidth@length=\skip109
-\mdf@subsubtitleaboveskip@length=\skip110
-\mdf@subsubtitlebelowskip@length=\skip111
-\mdf@subsubtitleinneraboveskip@length=\skip112
-\mdf@subsubtitleinnerbelowskip@length=\skip113
+\mdf@templength=\skip75
+\c@mdf@globalstyle@cnt=\count342
+\mdf@skipabove@length=\skip76
+\mdf@skipbelow@length=\skip77
+\mdf@leftmargin@length=\skip78
+\mdf@rightmargin@length=\skip79
+\mdf@innerleftmargin@length=\skip80
+\mdf@innerrightmargin@length=\skip81
+\mdf@innertopmargin@length=\skip82
+\mdf@innerbottommargin@length=\skip83
+\mdf@splittopskip@length=\skip84
+\mdf@splitbottomskip@length=\skip85
+\mdf@outermargin@length=\skip86
+\mdf@innermargin@length=\skip87
+\mdf@linewidth@length=\skip88
+\mdf@innerlinewidth@length=\skip89
+\mdf@middlelinewidth@length=\skip90
+\mdf@outerlinewidth@length=\skip91
+\mdf@roundcorner@length=\skip92
+\mdf@footenotedistance@length=\skip93
+\mdf@userdefinedwidth@length=\skip94
+\mdf@needspace@length=\skip95
+\mdf@frametitleaboveskip@length=\skip96
+\mdf@frametitlebelowskip@length=\skip97
+\mdf@frametitlerulewidth@length=\skip98
+\mdf@frametitleleftmargin@length=\skip99
+\mdf@frametitlerightmargin@length=\skip100
+\mdf@shadowsize@length=\skip101
+\mdf@extratopheight@length=\skip102
+\mdf@subtitleabovelinewidth@length=\skip103
+\mdf@subtitlebelowlinewidth@length=\skip104
+\mdf@subtitleaboveskip@length=\skip105
+\mdf@subtitlebelowskip@length=\skip106
+\mdf@subtitleinneraboveskip@length=\skip107
+\mdf@subtitleinnerbelowskip@length=\skip108
+\mdf@subsubtitleabovelinewidth@length=\skip109
+\mdf@subsubtitlebelowlinewidth@length=\skip110
+\mdf@subsubtitleaboveskip@length=\skip111
+\mdf@subsubtitlebelowskip@length=\skip112
+\mdf@subsubtitleinneraboveskip@length=\skip113
+\mdf@subsubtitleinnerbelowskip@length=\skip114
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
-\mdf@frametitlebox=\box73
-\mdf@footnotebox=\box74
-\mdf@splitbox@one=\box75
-\mdf@splitbox@two=\box76
-\mdf@splitbox@save=\box77
-\mdfsplitboxwidth=\skip114
-\mdfsplitboxtotalwidth=\skip115
-\mdfsplitboxheight=\skip116
-\mdfsplitboxdepth=\skip117
-\mdfsplitboxtotalheight=\skip118
-\mdfframetitleboxwidth=\skip119
-\mdfframetitleboxtotalwidth=\skip120
-\mdfframetitleboxheight=\skip121
-\mdfframetitleboxdepth=\skip122
-\mdfframetitleboxtotalheight=\skip123
-\mdffootnoteboxwidth=\skip124
-\mdffootnoteboxtotalwidth=\skip125
-\mdffootnoteboxheight=\skip126
-\mdffootnoteboxdepth=\skip127
-\mdffootnoteboxtotalheight=\skip128
-\mdftotallinewidth=\skip129
-\mdfboundingboxwidth=\skip130
-\mdfboundingboxtotalwidth=\skip131
-\mdfboundingboxheight=\skip132
-\mdfboundingboxdepth=\skip133
-\mdfboundingboxtotalheight=\skip134
-\mdf@freevspace@length=\skip135
-\mdf@horizontalwidthofbox@length=\skip136
-\mdf@verticalmarginwhole@length=\skip137
-\mdf@horizontalspaceofbox=\skip138
-\mdfsubtitleheight=\skip139
-\mdfsubsubtitleheight=\skip140
-\c@mdfcountframes=\count340
+\mdf@frametitlebox=\box74
+\mdf@footnotebox=\box75
+\mdf@splitbox@one=\box76
+\mdf@splitbox@two=\box77
+\mdf@splitbox@save=\box78
+\mdfsplitboxwidth=\skip115
+\mdfsplitboxtotalwidth=\skip116
+\mdfsplitboxheight=\skip117
+\mdfsplitboxdepth=\skip118
+\mdfsplitboxtotalheight=\skip119
+\mdfframetitleboxwidth=\skip120
+\mdfframetitleboxtotalwidth=\skip121
+\mdfframetitleboxheight=\skip122
+\mdfframetitleboxdepth=\skip123
+\mdfframetitleboxtotalheight=\skip124
+\mdffootnoteboxwidth=\skip125
+\mdffootnoteboxtotalwidth=\skip126
+\mdffootnoteboxheight=\skip127
+\mdffootnoteboxdepth=\skip128
+\mdffootnoteboxtotalheight=\skip129
+\mdftotallinewidth=\skip130
+\mdfboundingboxwidth=\skip131
+\mdfboundingboxtotalwidth=\skip132
+\mdfboundingboxheight=\skip133
+\mdfboundingboxdepth=\skip134
+\mdfboundingboxtotalheight=\skip135
+\mdf@freevspace@length=\skip136
+\mdf@horizontalwidthofbox@length=\skip137
+\mdf@verticalmarginwhole@length=\skip138
+\mdf@horizontalspaceofbox=\skip139
+\mdfsubtitleheight=\skip140
+\mdfsubsubtitleheight=\skip141
+\c@mdfcountframes=\count343
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count341
-\c@mdf@env@i=\count342
-\c@mdf@env@ii=\count343
-\c@mdf@zref@counter=\count344
+\mdf@envdepth=\count344
+\c@mdf@env@i=\count345
+\c@mdf@env@ii=\count346
+\c@mdf@zref@counter=\count347
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\empheq.sty
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
-\l_EQ_equationtype_int=\count345
-\l_EQ_alignmentmode_int=\count346
-\l_EQ_totalwidth_dim=\dimen291
-\l_EQ_displaywidth_dim=\dimen292
-\l_EQ_temp_linewidth_dim=\dimen293
-\l_EQ_linewidth_dim=\dimen294
-\EmphEqdelimitershortfall=\dimen295
-\EmphEqdelimiterfactor=\count347
-\g_EQ_toptag_height_dim=\dimen296
-\g_EQ_bottomtag_depth_dim=\dimen297
-\g_EQ_toprow_height_dim=\dimen298
-\g_EQ_bottomrow_depth_dim=\dimen299
-\g_EQ_widesttag_dim=\dimen300
-\EQ_mathdisplay_box=\box78
-\EQ_tag_box=\box79
-\g_EQ_temprow_int=\count348
+\l_EQ_equationtype_int=\count348
+\l_EQ_alignmentmode_int=\count349
+\l_EQ_totalwidth_dim=\dimen293
+\l_EQ_displaywidth_dim=\dimen294
+\l_EQ_temp_linewidth_dim=\dimen295
+\l_EQ_linewidth_dim=\dimen296
+\EmphEqdelimitershortfall=\dimen297
+\EmphEqdelimiterfactor=\count350
+\g_EQ_toptag_height_dim=\dimen298
+\g_EQ_bottomtag_depth_dim=\dimen299
+\g_EQ_toprow_height_dim=\dimen300
+\g_EQ_bottomrow_depth_dim=\dimen301
+\g_EQ_widesttag_dim=\dimen302
+\EQ_mathdisplay_box=\box79
+\EQ_tag_box=\box80
+\g_EQ_temprow_int=\count351
 ) (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/scalerel\scalerel.sty
 Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchi
 ng of objects, relative to a reference object or in absolute terms
-\thesrwidth=\skip141
-\thesrheight=\skip142
-\srblobheight=\skip143
-\srblobdepth=\skip144
-\mnxsrwidth=\skip145
-\LMex=\skip146
-\LMpt=\skip147
+\thesrwidth=\skip142
+\thesrheight=\skip143
+\srblobheight=\skip144
+\srblobdepth=\skip145
+\mnxsrwidth=\skip146
+\LMex=\skip147
+\LMpt=\skip148
 ) (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup7
@@ -967,21 +977,21 @@ Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS)
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip148
-\LTright=\skip149
-\LTpre=\skip150
-\LTpost=\skip151
-\LTchunksize=\count349
-\LTcapwidth=\dimen301
-\LT@head=\box80
-\LT@firsthead=\box81
-\LT@foot=\box82
-\LT@lastfoot=\box83
-\LT@gbox=\box84
-\LT@cols=\count350
-\LT@rows=\count351
-\c@LT@tables=\count352
-\c@LT@chunks=\count353
+\LTleft=\skip149
+\LTright=\skip150
+\LTpre=\skip151
+\LTpost=\skip152
+\LTchunksize=\count352
+\LTcapwidth=\dimen303
+\LT@head=\box81
+\LT@firsthead=\box82
+\LT@foot=\box83
+\LT@lastfoot=\box84
+\LT@gbox=\box85
+\LT@cols=\count353
+\LT@rows=\count354
+\c@LT@tables=\count355
+\c@LT@chunks=\count356
 \LT@p@ftn=\toks53
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
@@ -1004,15 +1014,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen302
-\c@nlinenum=\count354
+\rotheadsize=\dimen304
+\c@nlinenum=\count357
 \TeXr@lab=\toks54
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count355
-\c@@ppsavesec=\count356
-\c@@ppsaveapp=\count357
+\c@@pps=\count358
+\c@@ppsavesec=\count359
+\c@@ppsaveapp=\count360
 )
 (quiver.sty
 Package: quiver 2021/01/11 quiver
@@ -1027,49 +1037,49 @@ z/libraries\tikzlibrarydecorations.pathmorphing.code.tex
 z/libraries\tikzlibrarydecorations.code.tex
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 decorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen303
-\pgfdecoratedremainingdistance=\dimen304
-\pgfdecoratedinputsegmentcompleteddistance=\dimen305
-\pgfdecoratedinputsegmentremainingdistance=\dimen306
-\pgf@decorate@distancetomove=\dimen307
-\pgf@decorate@repeatstate=\count358
-\pgfdecorationsegmentamplitude=\dimen308
-\pgfdecorationsegmentlength=\dimen309
+\pgfdecoratedcompleteddistance=\dimen305
+\pgfdecoratedremainingdistance=\dimen306
+\pgfdecoratedinputsegmentcompleteddistance=\dimen307
+\pgfdecoratedinputsegmentremainingdistance=\dimen308
+\pgf@decorate@distancetomove=\dimen309
+\pgf@decorate@repeatstate=\count361
+\pgfdecorationsegmentamplitude=\dimen310
+\pgfdecorationsegmentlength=\dimen311
 )
-\tikz@lib@dec@box=\box85
+\tikz@lib@dec@box=\box86
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
 ions\pgflibrarydecorations.pathmorphing.code.tex)))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/enotez\enotez.sty
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
 eys2e.sty
-Package: l3keys2e 2021-11-12 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2022-12-17 LaTeX2e option processing using LaTeX3 keys
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xt
 emplate.sty
-Package: xtemplate 2021-11-12 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen310
-\l__xtemplate_tmp_int=\count359
+Package: xtemplate 2022-12-17 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen312
+\l__xtemplate_tmp_int=\count362
 \l__xtemplate_tmp_muskip=\muskip18
-\l__xtemplate_tmp_skip=\skip152
+\l__xtemplate_tmp_skip=\skip153
 )
 Package: enotez 2022/01/04 v0.10d Endnotes for LaTeX2e
-\l__enotez_list_preamble_skip=\skip153
-\l__enotez_list_postamble_skip=\skip154
-\g__enotez_endnote_id_int=\count360
-\g__enotez_endnote_mark_int=\count361
-\c@endnote=\count362
-\g__enotez_list_printed_int=\count363
-\l__enotez_tmpa_int=\count364
+\l__enotez_list_preamble_skip=\skip154
+\l__enotez_list_postamble_skip=\skip155
+\g__enotez_endnote_id_int=\count363
+\g__enotez_endnote_mark_int=\count364
+\c@endnote=\count365
+\g__enotez_list_printed_int=\count366
+\l__enotez_tmpa_int=\count367
 
 Package xtemplate Info: Declaring object type 'enotez-list' taking 1
 (xtemplate)             argument(s) on line 473.
 
-\l__enotez_list_notes_sep_dim=\dimen311
+\l__enotez_list_notes_sep_dim=\dimen313
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
 ns.sty
-Package: translations 2022/01/04 v1.11 internationalization of LaTeX2e packages
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
  (CN)
 ))
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
@@ -1097,8 +1107,8 @@ Package cleveref Info: `amsthm' support loaded on input line 3026.
 LaTeX Font Info:    Overwriting math alphabet `\mathbx' in version `bold'
 (Font)                  U/BOONDOX-ds/m/n --> U/BOONDOX-ds/b/n on input line 73.
 
-\c@theorem=\count365
-\c@problem=\count366
+\c@theorem=\count368
+\c@problem=\count369
 )
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 3.
@@ -1169,16 +1179,16 @@ LaTeX Font Info:    ... okay on input line 3.
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
-\scratchdimen=\dimen312
-\scratchbox=\box86
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\scratchcounter=\count370
+\scratchdimen=\dimen314
+\scratchbox=\box87
+\nofMPsegments=\count371
+\nofMParguments=\count372
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count370
-\MPscratchDim=\dimen313
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPscratchCnt=\count373
+\MPscratchDim=\dimen315
+\MPnumerator=\count374
+\makeMPintoPDFobject=\count375
 \everyMPtoPDFconversion=\toks56
 )
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1192,29 +1202,11 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 3.
-
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
-lestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-)
-\c@section@level=\count373
-LaTeX Info: Redefining \Ref on input line 520.
-)
-LaTeX Info: Redefining \ref on input line 3.
-LaTeX Info: Redefining \pageref on input line 3.
-LaTeX Info: Redefining \nameref on input line 3.
  (Category Theory Learning Seminar Notes, Winter 2022.out)
 (Category Theory Learning Seminar Notes, Winter 2022.out)
 \@outlinefile=\write5
 \openout5 = `"Category Theory Learning Seminar Notes, Winter 2022.out"'.
 
-LaTeX Info: Redefining \Ref on input line 3.
 
 (C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-english.def
 File: fc-english.def 2016/01/12
@@ -1300,19 +1292,20 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.5 \input{TitlenContent}
-                          [1] (Lecture 1.tex
+                          [1] (Section 0.tex
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 6
+.
+
+(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+))
+[2] (Lecture 1.tex
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 10.95pt on input line 4.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 8.0pt on input line 4.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 6.0pt on input line 4.
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 6
-.
-
-(C:\Users\bdeew\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 9.37807pt on input line 60.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1331,18 +1324,17 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 7.0pt on input line 60.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 5.0pt on input line 60.
-
-[2] [3]) [4] (Lecture 2.tex
+ [3] [4]) [5] (Lecture 2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 105--108
 
  []
@@ -1352,7 +1344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-[7] [8] [9]
+[8] [9] [10]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 10.42007pt on input line 294.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1370,7 +1362,7 @@ Overfull \hbox (32.51357pt too wide) in alignment at lines 286--326
  [] [] [] 
  []
 
-[10] [11] [12] [13]
+[11] [12] [13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 399--402
 
  []
@@ -1380,7 +1372,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 417--421
 
  []
 
-[14]) [15] (Lecture 3.tex
+[15]) [16] (Lecture 3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
@@ -1390,12 +1382,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--33
 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
@@ -1590,7 +1582,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 116.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 116.
-[18]
+[19]
 LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
 ne 120.
 LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
@@ -1693,7 +1685,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 150.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 155.
-[19]
+[20]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 158.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -1896,7 +1888,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 197.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 199.
- [20]
+ [21]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 200.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -1949,7 +1941,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 262.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 262.
- [21]
+ [22]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 280.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -2038,7 +2030,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 309.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 309.
- [22]
+ [23]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 310.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -2109,7 +2101,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 340.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 340.
- [23]
+ [24]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 343.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -2135,7 +2127,7 @@ i-tive in-te-gers and with $[]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 n\OT1/p
 pl/m/n/10.95 , \OML/zplm/m/it/10.95 n\OT1/zplm/m/n/10.95 ) =
  []
 
-) [24] (Lecture 4.tex
+) [25] (Lecture 4.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 3.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -2712,7 +2704,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 66.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 68.
- [25]
+ [26]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 76.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -3001,7 +2993,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--121
 
  []
 
-[26]
+[27]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 126.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -3669,7 +3661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
-[27]
+[28]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 169.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -3894,7 +3886,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 196.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 196.
-[28]
+[29]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 197.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4060,7 +4052,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 226.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 226.
-[29]
+[30]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 239.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4173,13 +4165,13 @@ ine 270.
 
 Overfull \hbox (3.53806pt too wide) in paragraph at lines 270--271
 []\T1/ppl/m/n/10.95 the func-tor $[][]\OT1/zplm/m/n/10.95 (\OMS/zplm/m/n/10.95 
- \OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n
-/10.95  [][]\OT1/zplm/m/n/10.95 (\OMS/zplm/m/n/10.95  \OT1/ppl/m/n/10.95 , \OM
-L/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 ) : [][] \OMS/zplm/m/n/10.95 ! []\OT1/pp
-l/m/n/10.95 ,  \OML/zplm/m/it/10.95 T \OMS/zplm/m/n/10.95 7! [][]\OT1/zplm/m/n/
-10.95 (\OML/zplm/m/it/10.95 T\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 X\OT1/zp
-lm/m/n/10.95 ) \OMS/zplm/m/n/10.95  [][]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10
-.95 T\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 )$
+^^@\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 ) \OMS/zplm/m
+/n/10.95 ^^B [][]\OT1/zplm/m/n/10.95 (\OMS/zplm/m/n/10.95 ^^@\OT1/ppl/m/n/10.95
+ , \OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 ) : [][] \OMS/zplm/m/n/10.95 ! []\
+OT1/ppl/m/n/10.95 ,  \OML/zplm/m/it/10.95 T \OMS/zplm/m/n/10.95 7! [][]\OT1/zpl
+m/m/n/10.95 (\OML/zplm/m/it/10.95 T\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 X\
+OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ^^B [][]\OT1/zplm/m/n/10.95 (\OML/zplm
+/m/it/10.95 T\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 Y\OT1/zplm/m/n/10.95 )$
  []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4224,7 +4216,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 277.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 277.
-) [30] (Lecture 5.tex
+) [31] (Lecture 5.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 3.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4410,7 +4402,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 42.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 42.
-[31]
+[32]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 55.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4757,7 +4749,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 87.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 87.
- [32]
+ [33]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 87.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -4861,7 +4853,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--120
 
  []
 
-[33]
+[34]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 128.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -5071,7 +5063,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 186.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 186.
-[34]
+[35]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 186.
 
@@ -5191,7 +5183,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 207.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 207.
-) [35] (Lecture 6.tex
+) [36] (Lecture 6.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 4.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -5499,7 +5491,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 33.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 35.
-[36]
+[37]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 35.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -6153,7 +6145,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 85.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 85.
-[37]
+[38]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 85.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -6658,7 +6650,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 110.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 111.
- [38]
+ [39]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 119.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -7295,7 +7287,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 176.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 176.
- [39]
+ [40]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 176.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -7542,7 +7534,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 207.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 208.
- [40]
+ [41]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 212.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -8192,7 +8184,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--263
 
  []
 
-[41]
+[42]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 271.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -9007,7 +8999,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 322.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 322.
-[42]
+[43]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 322.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -9106,11 +9098,11 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 323.
 
 Overfull \hbox (4.72662pt too wide) in paragraph at lines 322--333
-\T1/ppl/m/n/10.95 where each $\OML/zplm/m/it/10.95 []$ \T1/ppl/m/n/10.95 is th
-e usual re-duc-tion map. The $\OML/zplm/m/it/10.95 p$\T1/ppl/m/it/10.95 -adic i
-n-te-gers \T1/ppl/m/n/10.95 is de-fined to be $\U/msb/m/n/10.95 Z[] [][]\OT1/zp
-lm/m/n/10.95 = [] \U/msb/m/n/10.95 Z\OT1/zplm/m/n/10.95 /\OML/zplm/m/it/10.95 p
-[]\U/msb/m/n/10.95 Z$\T1/ppl/m/n/10.95 . 
+\T1/ppl/m/n/10.95 where each $\OML/zplm/m/it/10.95 ^^Y[]$ \T1/ppl/m/n/10.95 is 
+the usual re-duc-tion map. The $\OML/zplm/m/it/10.95 p$\T1/ppl/m/it/10.95 -adic
+ in-te-gers \T1/ppl/m/n/10.95 is de-fined to be $\U/msb/m/n/10.95 Z[] [][]\OT1/
+zplm/m/n/10.95 = [] \U/msb/m/n/10.95 Z\OT1/zplm/m/n/10.95 /\OML/zplm/m/it/10.95
+ p[]\U/msb/m/n/10.95 Z$\T1/ppl/m/n/10.95 . 
  []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -9677,7 +9669,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--365
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 372.
-[43]
+[44]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 374.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -10071,7 +10063,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 422.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 423.
-[44]
+[45]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 430.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -10314,7 +10306,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 470.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 472.
- [45]
+ [46]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 472.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -10517,7 +10509,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 507.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 507.
- [46]
+ [47]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 508.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -11246,7 +11238,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 555.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 555.
-) [47] (Lecture 7.tex
+) [48] (Lecture 7.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 3.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -11533,7 +11525,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 28.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 34.
- [48]
+ [49]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 38.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -11918,7 +11910,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 76.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 76.
-[49]
+[50]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 81.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -12301,7 +12293,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 117.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 117.
- [50]
+ [51]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 117.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -12436,7 +12428,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 164.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 164.
- [51]
+ [52]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 171.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -13283,7 +13275,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 211.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 211.
-[52]
+[53]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 217.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -13526,7 +13518,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 233.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 233.
-) [53] (Lecture 8.tex
+) [54] (Lecture 8.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 6.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -13738,7 +13730,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 27.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 31.
-[54]
+[55]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 32.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -13990,7 +13982,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 74.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 74.
-[55]
+[56]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 89.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -14293,166 +14285,166 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 146.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 146.
- [56]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 163.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 163.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 163.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 163.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 166.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 166.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 166.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 168.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 170.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 170.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 170.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 171.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 171.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 171.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 173.
  [57]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 156.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 156.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 160.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 160.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 160.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 160.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 162.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 165.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 166.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 166.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 166.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 168.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 170.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 170.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 170.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 171.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 171.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 171.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 173.
+ [58]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 186.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -14578,7 +14570,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 214.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 214.
-[58]
+[59]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 224.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -14601,7 +14593,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 228.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 228.
- [59]
+ [60]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 243.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -14687,7 +14679,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 261.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 262.
-[60]
+[61]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 265.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -15002,7 +14994,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 298.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 299.
- [61]
+ [62]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 299.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -15230,7 +15222,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 321.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 321.
-[62]
+[63]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 321.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -15385,7 +15377,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 357.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 357.
-[63]
+[64]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 359.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -15692,7 +15684,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 393.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 393.
-[64]
+[65]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 395.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -15927,7 +15919,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 422.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 422.
- [65]
+ [66]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 422.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -16134,7 +16126,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 456.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 456.
-) [66] (Lecture 9.tex
+) [67] (Lecture 9.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 4.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -16583,7 +16575,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 41.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 41.
- [67]
+ [68]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 41.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -16900,7 +16892,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 101.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 101.
- [68]
+ [69]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 110.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -17219,7 +17211,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 153.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 153.
-[69]
+[70]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 153.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -17994,7 +17986,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 185.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 185.
- [70]
+ [71]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 185.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -18081,36 +18073,36 @@ ine 216.
 Overfull \hbox (1.97083pt too wide) in paragraph at lines 215--217
 \T1/ppl/m/n/10.95 Prove that the ad-junc-tion $\OT1/zplm/m/n/10.95 (\OML/zplm/m
 /it/10.95 F\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 G\OT1/ppl/m/n/10.95 , \OML
-/zplm/m/it/10.95 \OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 "\OT1/zplm/m/n/10.9
-5 )$ \T1/ppl/m/n/10.95 re-stricts to an equiv-a-lence $\OT1/zplm/m/n/10.95 (\OM
-L/zplm/m/it/10.95 F[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 G[]\OT1/ppl/m/n/
-10.95 , \OML/zplm/m/it/10.95 []\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 "[]\O
-T1/zplm/m/n/10.95 )$ \T1/ppl/m/n/10.95 be-tween $[]\OT1/zplm/m/n/10.95 (\OML/zp
-lm/m/it/10.95 GF\OT1/zplm/m/n/10.95 )$
+/zplm/m/it/10.95 ^^Q\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 "\OT1/zplm/m/n/10
+.95 )$ \T1/ppl/m/n/10.95 re-stricts to an equiv-a-lence $\OT1/zplm/m/n/10.95 (\
+OML/zplm/m/it/10.95 F[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 G[]\OT1/ppl/m/
+n/10.95 , \OML/zplm/m/it/10.95 ^^Q[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 "
+[]\OT1/zplm/m/n/10.95 )$ \T1/ppl/m/n/10.95 be-tween $[]\OT1/zplm/m/n/10.95 (\OM
+L/zplm/m/it/10.95 GF\OT1/zplm/m/n/10.95 )$
  []
 
-[71]
+[72]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 245.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 245.
-) [72]
+) [73]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 49.
+(Font)              scaled to size 15.0049pt on input line 53.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 49.
+(Font)              scaled to size 15.0049pt on input line 53.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 14.4pt on input line 49.
+(Font)              scaled to size 14.4pt on input line 53.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 49.
+ine 53.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 49.
+(hyperref)                removing `math shift' on input line 53.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 49.
+(hyperref)                removing `math shift' on input line 53.
 
 (Appendix A.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -18891,7 +18883,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 73.
- [73]
+ [74]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -19460,7 +19452,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 129.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 129.
- [74]
+ [75]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 129.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -19829,7 +19821,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 182.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 182.
- [75]
+ [76]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 182.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -20254,9 +20246,9 @@ ine 212.
 Overfull \hbox (2.3048pt too wide) in paragraph at lines 212--213
 []\T1/ppl/m/n/10.95 For a topo-log-i-cal space $\OML/zplm/m/it/10.95 X$\T1/ppl/
 m/n/10.95 , we de-scribe the $\OT1/ppl/m/n/10.95 2$\T1/ppl/m/n/10.95 -category 
-$\OT1/zplm/m/n/10.95 [](\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 )$ \T1/ppl/m
-/n/10.95 called the \T1/ppl/m/it/10.95 fun-da-men-tal $\OT1/ppl/m/n/10.95 2$\T1
-/ppl/m/it/10.95 -groupoid\T1/ppl/m/n/10.95 .
+$\OT1/zplm/m/n/10.95 ^^E[](\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 )$ \T1/ppl
+/m/n/10.95 called the \T1/ppl/m/it/10.95 fun-da-men-tal $\OT1/ppl/m/n/10.95 2$\
+T1/ppl/m/it/10.95 -groupoid\T1/ppl/m/n/10.95 .
  []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -20363,7 +20355,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 222.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 222.
-[76]
+[77]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 222.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -20678,7 +20670,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 265.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 265.
- [77]
+ [78]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 265.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -20727,7 +20719,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 317.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 317.
-) [78] (Appendix B.tex
+) [79] (Appendix B.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 4.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -21240,7 +21232,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 59.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 59.
- [79]
+ [80]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 59.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -21459,7 +21451,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 97.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 97.
- [80]
+ [81]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 103.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -21782,7 +21774,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 132.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 132.
- [81]
+ [82]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 132.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -21885,11 +21877,11 @@ ine 166.
 Overfull \hbox (7.16556pt too wide) in paragraph at lines 165--167
 \T1/ppl/m/n/10.95 There-fore, by The-o-rem []5.1[] (Yoneda Lemma), ask-ing for 
 a nat-u-ral trans-for-ma-tion $\OML/zplm/m/it/10.95 G\OT1/zplm/m/n/10.95 (\OMS/
-zplm/m/n/10.95  \OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ) [][]\OT1/zplm/m/n/1
-0.95 (\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 )$
+zplm/m/n/10.95 ^^@\OT1/zplm/m/n/10.95 ) \OMS/zplm/m/n/10.95 ) [][]\OT1/zplm/m/n
+/10.95 (\OML/zplm/m/it/10.95 X\OT1/zplm/m/n/10.95 )$
  []
 
-[82]
+[83]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 174.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -22112,7 +22104,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 227.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 227.
- [83]
+ [84]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 228.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -22161,7 +22153,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 252.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 252.
-) [84] (Appendix C.tex
+) [85] (Appendix C.tex
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 10.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -22290,7 +22282,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 57.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 57.
- [85]
+ [86]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 63.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -22750,7 +22742,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 94.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 94.
-[86]
+[87]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 94.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -22958,7 +22950,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 128.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 128.
-[87]
+[88]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 128.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -23059,7 +23051,7 @@ ine 138.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 144.
 
-LaTeX Warning: Reference `prob C.8' on page 88 undefined on input line 144.
+LaTeX Warning: Reference `prob C.8' on page 89 undefined on input line 144.
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 144.
@@ -23324,7 +23316,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 183.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 183.
-[88]
+[89]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 184.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -23496,7 +23488,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 232.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 232.
-[89]
+[90]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 233.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -24337,7 +24329,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 281.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 281.
- [90]
+ [91]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 281.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
@@ -24624,14 +24616,23 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 317.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 317.
-) [91] (References.tex
+) [92] (References.tex
 Overfull \hbox (15.36726pt too wide) in paragraph at lines 10--11
 []\T1/ppl/m/n/10.95 Angelo Vis-toli. \T1/ppl/m/it/10.95 Notes on Grothendieck t
 opolo-gies, fibered cat-e-gories and de-scent the-ory\T1/ppl/m/n/10.95 . [][]ar
 Xiv:0412512v4[][] 
  []
 
-) [92] (Category Theory Learning Seminar Notes, Winter 2022.aux)
+)
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 76.
+<advanced_techniques.png, id=967, 259.26863pt x 434.52338pt>
+File: advanced_techniques.png Graphic file (type png)
+<use advanced_techniques.png>
+Package pdftex.def Info: advanced_techniques.png  used on input line 82.
+(pdftex.def)             Requested size: 155.56236pt x 260.71603pt.
+ [93 <./advanced_techniques.png (PNG copy)>]
+(Category Theory Learning Seminar Notes, Winter 2022.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -24640,16 +24641,16 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Category Theory Learning Seminar Notes, Win
 ter 2022".out' has not changed.
-(rerunfilecheck)             Checksum: 9E17AFF5008B3932008C2172507B8720;3333.
+(rerunfilecheck)             Checksum: 4087E7495CE7D2985613388B514D1525;3450.
  ) 
 Here is how much of TeX's memory you used:
- 39665 strings out of 478659
- 832698 string characters out of 2845920
- 1099337 words of memory out of 3000000
- 56702 multiletter control sequences out of 15000+600000
- 506799 words of font info for 268 fonts, out of 8000000 for 9000
+ 39807 strings out of 476406
+ 836521 string characters out of 2789566
+ 1932787 words of memory out of 3000000
+ 59090 multiletter control sequences out of 15000+600000
+ 615656 words of font info for 273 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,33n,107p,1072b,1378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 105i,33n,107p,1072b,1390s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/type1/public/dutchcal/DutchCal
 Reg.pfb><C:/Users/bdeew/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
@@ -24673,10 +24674,10 @@ al/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/bdeew/AppData
 ata/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/bdeew/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Users/bde
 ew/AppData/Local/Programs/MiKTeX/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on "Category Theory Learning Seminar Notes, Winter 2022.pdf" (93
- pages, 684644 bytes).
+Output written on "Category Theory Learning Seminar Notes, Winter 2022.pdf" (94
+ pages, 747846 bytes).
 PDF statistics:
- 1131 PDF objects out of 1200 (max. 8388607)
- 364 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1141 PDF objects out of 1200 (max. 8388607)
+ 365 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

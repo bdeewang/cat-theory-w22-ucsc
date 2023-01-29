@@ -24,11 +24,11 @@ How would one express the notion of a $G$-equivariant map in this language? It w
 \vspace*{0.1in}
 
 \begin{example}\label{dualex}
-For a field $k$, recall that any finite dimensional $k$-vector space $V$ is isomorphic to its dual $V^* = \mathrm{Hom}_{k\text{-line}}(V,k)$. This is proven by constructing an explicit \emph{dual basis}: choose a basis $\set{e_1,\ldots,e_n}$ of $V$, then a basis of $V^*$ is given by $\set{e_1^*,\ldots,e_n^*}$ where
+For a field $k$, recall that any finite dimensional $k$-vector space $V$ is isomorphic to its dual $V^* = \mathrm{Hom}_{k\text{-lin}}(V,k)$. This is proven by constructing an explicit \emph{dual basis}: choose a basis $\set{e_1,\ldots,e_n}$ of $V$, then a basis of $V^*$ is given by $\set{e_1^*,\ldots,e_n^*}$ where
 \[e_i^*(e_j) = \begin{cases} 1 & \text{if $i = j$}\\ 0 & \text{otherwise};\end{cases}\]
 this isomorphism is then given by $e_i \mapsto e_i^*$.\\
 \\
-A related construction is the double dual $V^{**} \coloneqq (V^*)^*$. Since the association of a dual describes a functor $(-)^*:\ncat{fdVec}_k^{\text{op}} \to \ncat{fdVec}_k$, for a finite dimensional vector space $V$, we get $V^** = (V^*)^* \cong V^* \cong V$ where the isomorphism sends $e_i$ to the dual dual basis $e_i^{**}$.\\[0.5em]
+A related construction is the double dual $V^{**} \coloneqq (V^*)^*$. Since the association of a dual describes a functor $(-)^*:\ncat{fdVec}_k^{\text{op}} \to \ncat{fdVec}_k$, for a finite dimensional vector space $V$, we get $V^{**} = (V^*)^* \cong V^* \cong V$ where the isomorphism sends $e_i$ to the dual dual basis $e_i^{**}$.\\[0.5em]
 Turns out, there's a cleaner way to give an isomorphism between $V$ and $V^{**}$ without making a choice of basis. For any $v \in V$, the \emph{evaluation map}
 \[\mathrm{ev}_v:V^* \to k,\ \phi \mapsto \phi(v)\]
 is a linear functional on $V^*$, that is, an element of $V^{**}$. The assignment $v \mapsto \mathrm{ev}_v$ defines a \emph{basis-free} \emph{natural} isomorphism $V \cong V^{**}$.
